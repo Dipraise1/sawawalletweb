@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Typography Scale */
+@layer base {
+  html {
+    font-size: 14px; /* Reduced base font size for more professional look */
+  }
+  
+  @media (min-width: 640px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 25%, #f1f5f9 50%, #ffffff 75%, #f8f9fa 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* Professional Card Styles */
+@layer components {
+  .professional-card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:shadow-md hover:border-gray-200;
+  }
+  
+  .professional-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal leading-tight;
+  }
+  
+  .professional-subheading {
+    @apply text-lg sm:text-xl font-semibold text-charcoal;
+  }
+  
+  .professional-text {
+    @apply text-sm sm:text-base text-gray-600 leading-relaxed;
+  }
+  
+  .professional-small {
+    @apply text-xs sm:text-sm text-gray-500;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Background Effects */
+  .bg-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(45, 80, 22, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+  }
+  
+  .bg-pattern-subtle {
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(45, 80, 22, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  }
+  
+  /* Marquee Animations */
+  .animate-marquee-right {
+    animation: marquee-right 60s linear infinite;
+  }
+  
+  .animate-marquee-left {
+    animation: marquee-left 50s linear infinite;
+  }
+  
+  .animate-marquee-right-slow {
+    animation: marquee-right-slow 70s linear infinite;
+  }
+  
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes marquee-right-slow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #2A2A2A;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest-green text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-forest-green text-forest-green px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-forest-green hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
