@@ -58,7 +58,7 @@ export default function InvestmentSection() {
             Grow Your Wealth with DeFi
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Access Solana's high-performance DeFi ecosystem. Earn yield, stake tokens, and participate in liquidity pools - all from your phone.
+            Access Solana&apos;s high-performance DeFi ecosystem. Earn yield, stake tokens, and participate in liquidity pools - all from your phone.
           </p>
         </motion.div>
 
@@ -116,7 +116,7 @@ export default function InvestmentSection() {
               Start Investing Today
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              No minimum investment required. Start with as little as ₦1,000 and grow your portfolio with Solana's fastest DeFi protocols.
+              No minimum investment required. Start with as little as ₦1,000 and grow your portfolio with Solana&apos;s fastest DeFi protocols.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn-primary text-base px-8 py-4">
