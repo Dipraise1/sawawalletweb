@@ -6,39 +6,48 @@ import { useInView } from '@/lib/hooks'
 const investmentFeatures = [
   {
     title: "Solana Ecosystem",
-    description: "Access to high-performance DeFi protocols and yield farming opportunities",
+    description: "Access to high-performance DeFi protocols and yield farming opportunities on the fastest blockchain",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-forest-green">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    stats: "99.9% Uptime"
+    stats: "99.9% Uptime",
+    color: "from-purple-500 to-purple-600",
+    highlight: "Fastest Blockchain",
+    features: ["Raydium", "Jupiter", "Orca", "Serum"]
   },
   {
     title: "Staking Rewards",
-    description: "Earn up to 7% APY by staking your USDC with trusted validators",
+    description: "Earn up to 7% APY by staking your USDC with trusted validators and secure your network",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-forest-green">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    stats: "7% APY"
+    stats: "7% APY",
+    color: "from-green-500 to-green-600",
+    highlight: "Secure Staking",
+    features: ["Auto-compound", "No Lock-up", "Daily Rewards", "Validator Selection"]
   },
   {
     title: "Liquidity Pools",
-    description: "Provide liquidity and earn trading fees from automated market makers",
+    description: "Provide liquidity and earn trading fees from automated market makers with high yields",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-forest-green">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    stats: "12-25% APY"
+    stats: "12-25% APY",
+    color: "from-orange-500 to-orange-600",
+    highlight: "High Yield",
+    features: ["USDC/SOL", "USDC/USDT", "Auto-rebalance", "Impermanent Loss Protection"]
   }
 ]
 
@@ -84,7 +93,7 @@ export default function InvestmentSection() {
               
               <div className="relative z-10 p-6 sm:p-8">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-forest-green/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     {feature.icon}
                   </div>
                   <div className="text-right">
@@ -93,12 +102,26 @@ export default function InvestmentSection() {
                   </div>
                 </div>
                 
-                <h3 className="text-lg sm:text-xl font-bold text-charcoal mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                <div className="space-y-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-charcoal">
+                    {feature.title}
+                  </h3>
+                  <div className={`inline-block px-3 py-1 bg-gradient-to-r ${feature.color} text-white text-xs font-semibold rounded-full`}>
+                    {feature.highlight}
+                  </div>
+                </div>
+                
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed my-4">
                   {feature.description}
                 </p>
+                
+                <div className="flex flex-wrap gap-1">
+                  {feature.features.map((item, index) => (
+                    <span key={index} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

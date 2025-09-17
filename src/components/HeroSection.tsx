@@ -104,6 +104,27 @@ export default function HeroSection() {
                 </h3>
               </motion.div>
               
+              {/* Enhanced Value Proposition */}
+              <motion.div
+                className="flex items-center space-x-4 mt-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <div className="flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-green-700">Live in Nigeria</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-blue-700">Instant Transfer</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-purple-50 px-4 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-purple-700">Zero Fees</span>
+                </div>
+              </motion.div>
+              
               {/* Enhanced Description */}
               <motion.p 
                 className="text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed font-light"

@@ -6,34 +6,40 @@ import { useInView } from '@/lib/hooks'
 const paymentMethods = [
   {
     title: "Bank Transfer",
-    description: "Direct transfer from your Nigerian bank account",
+    description: "Direct transfer from your Nigerian bank account with instant processing",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-forest-green">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
         <path d="M2 10H22" stroke="currentColor" strokeWidth="2"/>
         <path d="M7 14H17" stroke="currentColor" strokeWidth="2"/>
       </svg>
     ),
     fees: "0.5%",
-    speed: "Instant"
+    speed: "Instant",
+    color: "from-blue-500 to-blue-600",
+    highlight: "Most Popular",
+    banks: ["GTBank", "Access Bank", "Zenith Bank", "First Bank"]
   },
   {
     title: "Card Payment",
-    description: "Visa, Mastercard, and local debit cards accepted",
+    description: "Visa, Mastercard, and local debit cards accepted worldwide",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-forest-green">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <rect x="1" y="4" width="22" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
         <path d="M1 10H23" stroke="currentColor" strokeWidth="2"/>
       </svg>
     ),
     fees: "2.5%",
-    speed: "Instant"
+    speed: "Instant",
+    color: "from-purple-500 to-purple-600",
+    highlight: "Global Cards",
+    banks: ["Visa", "Mastercard", "Verve", "Interswitch"]
   },
   {
     title: "Mobile Money",
-    description: "OPay, PalmPay, and other mobile wallets",
+    description: "OPay, PalmPay, and other mobile wallets for instant transfers",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-forest-green">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -41,19 +47,25 @@ const paymentMethods = [
       </svg>
     ),
     fees: "1.5%",
-    speed: "1-2 min"
+    speed: "1-2 min",
+    color: "from-green-500 to-green-600",
+    highlight: "Mobile First",
+    banks: ["OPay", "PalmPay", "Kuda", "Carbon"]
   },
   {
     title: "Crypto Exchange",
-    description: "Direct swap from Bitcoin, Ethereum, and other cryptos",
+    description: "Direct swap from Bitcoin, Ethereum, and other major cryptocurrencies",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-forest-green">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M7 4V20M17 4V20M3 8H7M3 16H7M17 8H21M17 16H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M7 12H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
     fees: "0.1%",
-    speed: "5-10 min"
+    speed: "5-10 min",
+    color: "from-orange-500 to-orange-600",
+    highlight: "Lowest Fees",
+    banks: ["Bitcoin", "Ethereum", "USDT", "BNB"]
   }
 ]
 
@@ -120,23 +132,46 @@ export default function BuyWithdrawSection() {
                   transition: { duration: 0.3 }
                 }}
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-forest-green/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {method.icon}
                 </div>
-                <h4 className="text-lg font-bold text-charcoal mb-2">
-                  {method.title}
-                </h4>
+                
+                <div className="space-y-2 mb-4">
+                  <h4 className="text-lg font-bold text-charcoal">
+                    {method.title}
+                  </h4>
+                  <div className={`inline-block px-3 py-1 bg-gradient-to-r ${method.color} text-white text-xs font-semibold rounded-full`}>
+                    {method.highlight}
+                  </div>
+                </div>
+                
                 <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                   {method.description}
                 </p>
-                <div className="flex justify-between text-sm">
-                  <div>
-                    <span className="text-gray-500">Fee:</span>
-                    <span className="font-semibold text-forest-green ml-1">{method.fees}</span>
+                
+                <div className="space-y-3">
+                  <div className="flex justify-between text-sm">
+                    <div>
+                      <span className="text-gray-500">Fee:</span>
+                      <span className="font-semibold text-forest-green ml-1">{method.fees}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">Speed:</span>
+                      <span className="font-semibold text-charcoal ml-1">{method.speed}</span>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-gray-500">Speed:</span>
-                    <span className="font-semibold text-charcoal ml-1">{method.speed}</span>
+                  
+                  <div className="flex flex-wrap gap-1">
+                    {method.banks.slice(0, 3).map((bank, index) => (
+                      <span key={index} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                        {bank}
+                      </span>
+                    ))}
+                    {method.banks.length > 3 && (
+                      <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                        +{method.banks.length - 3} more
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.div>

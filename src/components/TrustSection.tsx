@@ -10,17 +10,26 @@ const trustItems = [
   {
     Icon: SecurityIcon,
     title: "Bank-grade security",
-    description: "Your money is protected with enterprise-level encryption"
+    description: "Your money is protected with enterprise-level encryption and multi-signature wallets",
+    highlight: "256-bit encryption",
+    color: "from-red-500 to-red-600",
+    features: ["Multi-sig Wallets", "Hardware Security", "Audit Reports", "Insurance Coverage"]
   },
   {
     Icon: LightningIcon,
     title: "WhatsApp simplicity", 
-    description: "Send money as easily as sending a message"
+    description: "Send money as easily as sending a message - no complex interfaces or confusing steps",
+    highlight: "One-tap send",
+    color: "from-green-500 to-green-600",
+    features: ["Phone Number", "No Passwords", "Instant Transfer", "Message-like UI"]
   },
   {
     Icon: GlobeIcon,
     title: "Global reach",
-    description: "USDC works anywhere, quoted in your local currency"
+    description: "USDC works anywhere in the world, always quoted in your local currency for clarity",
+    highlight: "200+ countries",
+    color: "from-blue-500 to-blue-600",
+    features: ["200+ Countries", "Local Currency", "Real-time Rates", "No Borders"]
   }
 ]
 
@@ -97,20 +106,36 @@ export default function TrustSection() {
           {trustItems.map((item, index) => (
             <motion.div
               key={item.title}
-              className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6"
+              className="text-center space-y-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-gray-200"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 bg-forest-green/10 rounded-xl flex items-center justify-center">
-                <item.Icon className="w-5 h-5 sm:w-6 sm:h-6 text-forest-green" />
+              <div className={`w-12 h-12 mx-auto mb-4 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                <item.Icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-charcoal">
-                {item.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-charcoal">
+                  {item.title}
+                </h3>
+                <div className={`inline-block px-3 py-1 bg-gradient-to-r ${item.color} text-white text-xs font-semibold rounded-full`}>
+                  {item.highlight}
+                </div>
+              </div>
+              
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {item.description}
               </p>
+              
+              <div className="flex flex-wrap gap-1 justify-center">
+                {item.features.map((feature, featureIndex) => (
+                  <span key={featureIndex} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                    {feature}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

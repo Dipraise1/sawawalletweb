@@ -10,21 +10,27 @@ import CommunityIcon from './icons/CommunityIcon'
 const features = [
   {
     title: "Phone-First",
-    description: "Login with just your number",
+    description: "Login with just your number - no passwords, no complexity",
     Icon: PhoneIcon,
-    delay: 0.1
+    delay: 0.1,
+    highlight: "No App Store needed",
+    color: "from-blue-500 to-blue-600"
   },
   {
     title: "Speak Local", 
-    description: "₦500 USDC to Sarah - that simple",
+    description: "₦500 USDC to Sarah - that simple. No crypto jargon",
     Icon: MessageIcon,
-    delay: 0.2
+    delay: 0.2,
+    highlight: "Like WhatsApp for money",
+    color: "from-green-500 to-green-600"
   },
   {
     title: "Community Built",
-    description: "Made for how Nigerians really send money",
+    description: "Made for how Nigerians really send money - by the community",
     Icon: CommunityIcon,
-    delay: 0.3
+    delay: 0.3,
+    highlight: "Built in Nigeria",
+    color: "from-purple-500 to-purple-600"
   }
 ]
 
@@ -160,20 +166,25 @@ export default function FeaturesSection() {
               <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-luxury-gold/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative text-center space-y-4">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-gradient-to-br from-forest-green/10 to-luxury-gold/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <feature.Icon className="w-8 h-8 sm:w-10 sm:h-10 text-forest-green" />
+                <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <feature.Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
                 
-                <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-3">
-                  {feature.title}
-                </h3>
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-charcoal">
+                    {feature.title}
+                  </h3>
+                  <div className={`inline-block px-3 py-1 bg-gradient-to-r ${feature.color} text-white text-xs font-semibold rounded-full`}>
+                    {feature.highlight}
+                  </div>
+                </div>
                 
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
                 
-                {/* Decorative line */}
-                <div className="w-12 h-0.5 bg-gradient-to-r from-forest-green to-luxury-gold mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Enhanced decorative line */}
+                <div className={`w-12 h-0.5 bg-gradient-to-r ${feature.color} mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
               </div>
             </motion.div>
           ))}
