@@ -59,11 +59,11 @@ export default function ImageSlider() {
   }
 
   // Calculate tilt based on mouse position
-  const tiltX = (mousePosition.y - 250) / 250 * 15 // Max 15 degrees
-  const tiltY = (mousePosition.x - 175) / 175 * 15 // Max 15 degrees
+  const tiltX = (mousePosition.y - 200) / 200 * 15 // Max 15 degrees
+  const tiltY = (mousePosition.x - 140) / 140 * 15 // Max 15 degrees
 
   return (
-    <div className="relative w-full max-w-80 sm:max-w-96 mx-auto">
+    <div className="relative w-full max-w-64 sm:max-w-72 mx-auto">
       {/* Main Image Container with Tilt Effect */}
       <motion.div 
         className="relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer"
@@ -94,8 +94,8 @@ export default function ImageSlider() {
              <Image
                src={images[currentIndex].src}
                alt={images[currentIndex].alt}
-               width={350}
-               height={500}
+               width={280}
+               height={400}
                className="w-full h-auto"
                priority={currentIndex === 0}
              />
@@ -107,7 +107,7 @@ export default function ImageSlider() {
 
         {/* Floating elements for depth */}
         <motion.div
-          className="absolute -top-3 -right-3 w-6 h-6 sm:w-8 sm:h-8 bg-luxury-gold rounded-full opacity-60"
+          className="absolute -top-2 -right-2 w-4 h-4 sm:w-6 sm:h-6 bg-luxury-gold rounded-full opacity-60"
           animate={{ 
             scale: [1, 1.2, 1], 
             opacity: [0.6, 0.8, 0.6],
@@ -120,7 +120,7 @@ export default function ImageSlider() {
           }}
         />
         <motion.div
-          className="absolute -bottom-3 -left-3 w-4 h-4 sm:w-6 sm:h-6 bg-forest-green rounded-full opacity-40"
+          className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-4 sm:h-4 bg-forest-green rounded-full opacity-40"
           animate={{ 
             scale: [1, 1.3, 1], 
             opacity: [0.4, 0.7, 0.4],
@@ -153,11 +153,11 @@ export default function ImageSlider() {
       {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
       <button
         onClick={prevImage}
-        className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full items-center justify-center shadow-lg hover:bg-white transition-all duration-300 group"
+        className="hidden sm:flex absolute left-1 top-1/2 -translate-y-1/2 w-6 h-6 bg-white/90 backdrop-blur-sm rounded-full items-center justify-center shadow-lg hover:bg-white transition-all duration-300 group"
       >
         <svg
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 24 24"
           fill="none"
           className="text-charcoal group-hover:text-forest-green transition-colors"
@@ -174,11 +174,11 @@ export default function ImageSlider() {
 
       <button
         onClick={nextImage}
-        className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full items-center justify-center shadow-lg hover:bg-white transition-all duration-300 group"
+        className="hidden sm:flex absolute right-1 top-1/2 -translate-y-1/2 w-6 h-6 bg-white/90 backdrop-blur-sm rounded-full items-center justify-center shadow-lg hover:bg-white transition-all duration-300 group"
       >
         <svg
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 24 24"
           fill="none"
           className="text-charcoal group-hover:text-forest-green transition-colors"

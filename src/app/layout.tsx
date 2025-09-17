@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description: 'Send ₦200 worth of USDC to David. The community-focused USDC wallet that quotes transfers in local currency.',
   keywords: 'USDC wallet, Nigeria, cryptocurrency, mobile wallet, local currency',
   authors: [{ name: 'Sawa Wallet' }],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export const viewport: Viewport = {

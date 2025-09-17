@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import Image from 'next/image'
 import ImageSlider from './ImageSlider'
 
 export default function HeroSection() {
@@ -25,6 +26,26 @@ export default function HeroSection() {
           
           {/* Professional grid pattern */}
           <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_2px_2px,rgb(45,80,22)_1px,transparent_0)] bg-[length:24px_24px]"></div>
+          
+          {/* Decorative background images */}
+          <div className="absolute top-20 right-20 w-32 h-32 opacity-10 mix-blend-multiply">
+            <Image
+              src="/Green & Yellow.jpg"
+              alt="Decorative background"
+              width={128}
+              height={128}
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <div className="absolute bottom-20 left-20 w-24 h-24 opacity-8 mix-blend-multiply">
+            <Image
+              src="/Yellow & Green.jpg"
+              alt="Decorative background"
+              width={96}
+              height={96}
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
           
           {/* Subtle animated lines */}
           <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-forest-green/20 to-transparent"></div>
@@ -205,6 +226,17 @@ export default function HeroSection() {
                 
                 {/* Professional border effect */}
                 <div className="absolute inset-0 rounded-3xl border border-forest-green/10"></div>
+                
+                {/* Decorative SVG element */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 opacity-20">
+                  <Image
+                    src="/Green & Yellow.svg"
+                    alt="Decorative SVG"
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
               
               <ImageSlider />

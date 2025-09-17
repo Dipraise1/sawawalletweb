@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useInView } from '@/lib/hooks'
 import PhoneIcon from './icons/PhoneIcon'
 import MessageIcon from './icons/MessageIcon'
@@ -45,6 +46,26 @@ export default function FeaturesSection() {
         
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_2px_2px,rgb(45,80,22)_1px,transparent_0)] bg-[length:16px_16px]"></div>
+        
+        {/* Decorative background images */}
+        <div className="absolute top-20 left-10 w-20 h-20 opacity-5 mix-blend-multiply">
+          <Image
+            src="/Green & Yellow.jpg"
+            alt="Decorative background"
+            width={80}
+            height={80}
+            className="w-full h-full object-cover rounded-full"
+          />
+        </div>
+        <div className="absolute bottom-20 right-10 w-16 h-16 opacity-5 mix-blend-multiply">
+          <Image
+            src="/Yellow & Green.jpg"
+            alt="Decorative background"
+            width={64}
+            height={64}
+            className="w-full h-full object-cover rounded-full"
+          />
+        </div>
       </div>
       
       <div className="container-custom relative z-10">

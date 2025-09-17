@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -97,9 +98,9 @@ export default function Navbar() {
       >
         <div className="container-custom">
           {/* Desktop Pills */}
-          <div className="hidden lg:flex items-center justify-center py-6">
+          <div className="hidden lg:flex items-center justify-center py-8">
             <motion.div
-              className="px-8 py-3 rounded-full bg-white shadow-lg border border-gray-200 transition-all duration-300"
+              className="px-8 py-6 rounded-full bg-white shadow-lg border border-gray-200 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
@@ -110,36 +111,15 @@ export default function Navbar() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-10 h-10 bg-forest-green rounded-xl flex items-center justify-center shadow-lg">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="text-white"
-                    >
-                      <path
-                        d="M12 2L2 7L12 12L22 7L12 2Z"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M2 17L12 22L22 17"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M2 12L12 17L22 12"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+                    <Image
+                      src="/logo.png"
+                      alt="Sawa Wallet Logo"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain"
+                      priority
+                    />
                   </div>
                   <span className="text-xl font-bold text-charcoal">Sawa Wallet</span>
                 </motion.div>
@@ -166,55 +146,35 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Layout */}
-          <div className={`lg:hidden flex items-center justify-between py-3 px-4 transition-all duration-300 ${
+          <div className={`lg:hidden flex items-center justify-between py-4 px-4 transition-all duration-300 ${
             isScrolled 
-              ? 'bg-white shadow-lg border-b border-gray-100' 
+              ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
               : 'bg-transparent'
           }`}>
             {/* Logo */}
             <motion.div
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-3"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-forest-green rounded-xl flex items-center justify-center shadow-lg">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-white sm:w-6 sm:h-6"
-                >
-                  <path
-                    d="M12 2L2 7L12 12L22 7L12 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden bg-gradient-to-br from-forest-green to-luxury-gold p-0.5">
+                <div className="w-full h-full bg-white rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/logo.png"
+                    alt="Sawa Wallet Logo"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-contain"
+                    priority
                   />
-                  <path
-                    d="M2 17L12 22L22 17"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2 12L12 17L22 12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                </div>
               </div>
-              <span className="text-lg sm:text-xl font-bold text-charcoal">Sawa</span>
+              <span className="text-xl font-bold text-charcoal">Sawa Wallet</span>
             </motion.div>
 
-
-            {/* Desktop CTA Button */}
+            {/* Mobile CTA Button */}
             <motion.button
-              className="hidden sm:block btn-primary text-sm px-4 py-2 lg:px-6 lg:py-2.5 shadow-lg"
+              className="hidden sm:block bg-gradient-to-r from-forest-green to-forest-green/90 text-white text-sm px-4 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -223,7 +183,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <motion.button 
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors ml-2"
+              className="p-3 rounded-xl hover:bg-gray-100/50 transition-all duration-300 relative"
               onClick={toggleMobileMenu}
               whileTap={{ scale: 0.95 }}
             >
@@ -258,118 +218,139 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
+            {/* Enhanced Backdrop */}
             <motion.div
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-md z-40 lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
+              onClick={() => setIsMobileMenuOpen(false)}
             />
             
-            {/* Mobile Menu Panel */}
+            {/* Enhanced Mobile Menu Panel */}
             <motion.div
-              className="mobile-menu-container fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50 md:hidden"
+              className="mobile-menu-container fixed top-0 right-0 h-full w-full max-w-sm bg-white shadow-2xl z-50 lg:hidden"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               <div className="flex flex-col h-full">
-                {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b border-gray-100">
+                {/* Enhanced Header */}
+                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-forest-green/5 to-luxury-gold/5 border-b border-gray-100">
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-forest-green rounded-lg flex items-center justify-center">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="text-white"
-                      >
-                        <path
-                          d="M12 2L2 7L12 12L22 7L12 2Z"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden bg-gradient-to-br from-forest-green to-luxury-gold p-0.5">
+                      <div className="w-full h-full bg-white rounded-lg flex items-center justify-center">
+                        <Image
+                          src="/logo.png"
+                          alt="Sawa Wallet Logo"
+                          width={32}
+                          height={32}
+                          className="w-full h-full object-contain"
                         />
-                        <path
-                          d="M2 17L12 22L22 17"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M2 12L12 17L22 12"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      </div>
                     </div>
-                    <span className="text-lg font-bold text-charcoal">Sawa</span>
+                    <div>
+                      <span className="text-xl font-bold text-charcoal block">Sawa Wallet</span>
+                      <span className="text-sm text-gray-500">Global currency, local understanding</span>
+                    </div>
                   </div>
+                  <motion.button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </motion.button>
                 </div>
 
-                {/* Navigation Items */}
-                <div className="flex-1 px-6 py-8">
-                  <nav className="space-y-2">
+                {/* Enhanced Navigation Items */}
+                <div className="flex-1 px-6 py-8 overflow-y-auto">
+                  <nav className="space-y-3">
                     {menuItems.map((item, index) => (
                       <motion.a
                         key={item.href}
                         href={item.href}
-                        className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group"
+                        className="flex items-center space-x-4 p-4 rounded-2xl hover:bg-gradient-to-r hover:from-forest-green/5 hover:to-luxury-gold/5 transition-all duration-300 group border border-transparent hover:border-forest-green/10"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        initial={{ opacity: 0, x: 20 }}
+                        initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                       >
-                        <div className="w-10 h-10 bg-forest-green/10 rounded-lg flex items-center justify-center group-hover:bg-forest-green/20 transition-colors">
+                        <div className="w-12 h-12 bg-gradient-to-br from-forest-green/10 to-luxury-gold/10 rounded-xl flex items-center justify-center group-hover:from-forest-green/20 group-hover:to-luxury-gold/20 transition-all duration-300">
                           {item.icon}
                         </div>
-                        <div>
-                          <div className="font-semibold text-charcoal group-hover:text-forest-green transition-colors">
+                        <div className="flex-1">
+                          <div className="font-semibold text-charcoal group-hover:text-forest-green transition-colors text-base">
                             {item.label}
                           </div>
+                          <div className="text-sm text-gray-500 mt-1">
+                            {item.label === 'Features' && 'Discover what makes us special'}
+                            {item.label === 'Investments' && 'Grow your money smartly'}
+                            {item.label === 'Buy & Withdraw' && 'Easy money management'}
+                            {item.label === 'Download' && 'Get the app now'}
+                          </div>
                         </div>
-                        <svg
-                          className="w-5 h-5 text-gray-400 ml-auto group-hover:text-forest-green transition-colors"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                        <motion.div
+                          className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-forest-green/10 transition-colors"
+                          whileHover={{ rotate: 90 }}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                          <svg
+                            className="w-4 h-4 text-gray-400 group-hover:text-forest-green transition-colors"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </motion.div>
                       </motion.a>
                     ))}
                   </nav>
                 </div>
 
-                {/* Footer Actions */}
-                <div className="p-6 border-t border-gray-100 space-y-4">
+                {/* Enhanced Footer Actions */}
+                <div className="p-6 bg-gradient-to-r from-gray-50 to-gray-100/50 border-t border-gray-200 space-y-4">
                   <motion.button
-                    className="w-full btn-primary text-base py-4 shadow-lg"
+                    className="w-full bg-gradient-to-r from-forest-green to-forest-green/90 text-white text-base py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
                     onClick={() => setIsMobileMenuOpen(false)}
+                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Get Started
+                    Get Started Free
                   </motion.button>
                   
-                  <div className="text-center">
+                  <motion.button
+                    className="w-full bg-white text-charcoal text-base py-4 rounded-2xl border-2 border-gray-200 hover:border-forest-green/50 transition-all duration-300 font-semibold"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Sign In
+                  </motion.button>
+                  
+                  <div className="text-center pt-2">
                     <p className="text-sm text-gray-500">
-                      Already have an account?{' '}
-                      <a href="#" className="text-forest-green font-medium hover:underline">
-                        Sign in
-                      </a>
+                      Trusted by thousands of users
                     </p>
+                    <div className="flex items-center justify-center space-x-1 mt-2">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-luxury-gold" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                      <span className="text-xs text-gray-500 ml-2">4.9/5 rating</span>
+                    </div>
                   </div>
                 </div>
               </div>
