@@ -119,7 +119,7 @@ export default function BuyWithdrawSection() {
             {paymentMethods.map((method, index) => (
               <motion.div
                 key={method.title}
-                className="card group text-center"
+                className="card group text-center cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ 
@@ -128,13 +128,30 @@ export default function BuyWithdrawSection() {
                   ease: "easeOut"
                 }}
                 whileHover={{ 
-                  y: -8,
+                  y: -12,
+                  scale: 1.03,
                   transition: { duration: 0.3 }
                 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  {method.icon}
-                </div>
+                <motion.div 
+                  className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                  whileHover={{ 
+                    scale: 1.15,
+                    rotate: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.div
+                    whileHover={{ 
+                      scale: 1.1,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    {method.icon}
+                  </motion.div>
+                </motion.div>
                 
                 <div className="space-y-2 mb-4">
                   <h4 className="text-lg font-bold text-charcoal">

@@ -4,6 +4,7 @@ import FeaturesSection from '@/components/FeaturesSection'
 import InternationalTransfersSection from '@/components/InternationalTransfersSection'
 import InvestmentSection from '@/components/InvestmentSection'
 import BuyWithdrawSection from '@/components/BuyWithdrawSection'
+import TestimonialsSection from '@/components/TestimonialsSection'
 import TrustSection from '@/components/TrustSection'
 import Footer from '@/components/Footer'
 
@@ -16,6 +17,7 @@ export default function Home() {
       <InternationalTransfersSection />
       <InvestmentSection />
       <BuyWithdrawSection />
+      <TestimonialsSection />
       <TrustSection />
       <Footer />
     </main>

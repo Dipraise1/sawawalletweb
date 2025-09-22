@@ -144,7 +144,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300"
+              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ 
@@ -153,10 +153,11 @@ export default function FeaturesSection() {
                 ease: "easeOut"
               }}
               whileHover={{ 
-                y: -8,
-                scale: 1.02,
+                y: -12,
+                scale: 1.03,
                 transition: { duration: 0.3 }
               }}
+              whileTap={{ scale: 0.98 }}
             >
               {/* Card background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-forest-green/5 via-transparent to-luxury-gold/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -166,9 +167,24 @@ export default function FeaturesSection() {
               <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-luxury-gold/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative text-center space-y-4">
-                <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  <feature.Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                </div>
+                <motion.div 
+                  className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                  whileHover={{ 
+                    scale: 1.15,
+                    rotate: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.div
+                    whileHover={{ 
+                      scale: 1.1,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    <feature.Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                  </motion.div>
+                </motion.div>
                 
                 <div className="space-y-2">
                   <h3 className="text-xl sm:text-2xl font-bold text-charcoal">

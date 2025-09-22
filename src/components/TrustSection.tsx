@@ -106,15 +106,35 @@ export default function TrustSection() {
           {trustItems.map((item, index) => (
             <motion.div
               key={item.title}
-              className="text-center space-y-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-gray-200"
+              className="text-center space-y-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-gray-200 cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ 
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className={`w-12 h-12 mx-auto mb-4 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                <item.Icon className="w-6 h-6 text-white" />
-              </div>
+              <motion.div 
+                className={`w-12 h-12 mx-auto mb-4 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg`}
+                whileHover={{ 
+                  scale: 1.15,
+                  rotate: 5,
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <motion.div
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <item.Icon className="w-6 h-6 text-white" />
+                </motion.div>
+              </motion.div>
               
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold text-charcoal">

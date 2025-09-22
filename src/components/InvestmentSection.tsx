@@ -75,7 +75,7 @@ export default function InvestmentSection() {
           {investmentFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="card group relative overflow-hidden"
+              className="card group relative overflow-hidden cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ 
@@ -84,22 +84,42 @@ export default function InvestmentSection() {
                 ease: "easeOut"
               }}
               whileHover={{ 
-                y: -8,
+                y: -12,
+                scale: 1.02,
                 transition: { duration: 0.3 }
               }}
+              whileTap={{ scale: 0.98 }}
             >
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-forest-green/5 to-luxury-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative z-10 p-6 sm:p-8">
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    {feature.icon}
-                  </div>
-                  <div className="text-right">
+                  <motion.div 
+                    className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg`}
+                    whileHover={{ 
+                      scale: 1.15,
+                      rotate: 5,
+                      transition: { duration: 0.3 }
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <motion.div
+                      whileHover={{ 
+                        scale: 1.1,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      {feature.icon}
+                    </motion.div>
+                  </motion.div>
+                  <motion.div 
+                    className="text-right"
+                    whileHover={{ scale: 1.05 }}
+                  >
                     <div className="text-2xl font-bold text-forest-green">{feature.stats}</div>
                     <div className="text-xs text-gray-500">Annual Yield</div>
-                  </div>
+                  </motion.div>
                 </div>
                 
                 <div className="space-y-3">

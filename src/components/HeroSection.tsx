@@ -106,23 +106,35 @@ export default function HeroSection() {
               
               {/* Enhanced Value Proposition */}
               <motion.div
-                className="flex items-center space-x-4 mt-6"
+                className="flex flex-wrap items-center gap-3 mt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <div className="flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full">
+                <motion.div 
+                  className="flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full border border-green-200 hover:bg-green-100 transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium text-green-700">Live in Nigeria</span>
-                </div>
-                <div className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full">
+                </motion.div>
+                <motion.div 
+                  className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-200 hover:bg-blue-100 transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium text-blue-700">Instant Transfer</span>
-                </div>
-                <div className="flex items-center space-x-2 bg-purple-50 px-4 py-2 rounded-full">
+                </motion.div>
+                <motion.div 
+                  className="flex items-center space-x-2 bg-purple-50 px-4 py-2 rounded-full border border-purple-200 hover:bg-purple-100 transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium text-purple-700">Zero Fees</span>
-                </div>
+                </motion.div>
               </motion.div>
               
               {/* Enhanced Description */}
@@ -188,35 +200,47 @@ export default function HeroSection() {
 
                 {/* Enhanced Trust Indicators */}
                 <motion.div 
-                  className="flex flex-wrap items-center gap-8 text-sm text-gray-600"
+                  className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm text-gray-600"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1 }}
                 >
-                  <div className="flex items-center group">
+                  <motion.div 
+                    className="flex items-center group cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <div className="w-8 h-8 bg-forest-green/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-forest-green/20 transition-colors">
                       <svg className="w-4 h-4 text-forest-green" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="font-medium">Bank-grade security</span>
-                  </div>
-                  <div className="flex items-center group">
+                  </motion.div>
+                  <motion.div 
+                    className="flex items-center group cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <div className="w-8 h-8 bg-forest-green/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-forest-green/20 transition-colors">
                       <svg className="w-4 h-4 text-forest-green" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="font-medium">No hidden fees</span>
-                  </div>
-                  <div className="flex items-center group">
+                  </motion.div>
+                  <motion.div 
+                    className="flex items-center group cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <div className="w-8 h-8 bg-forest-green/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-forest-green/20 transition-colors">
                       <svg className="w-4 h-4 text-forest-green" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="font-medium">Instant transfers</span>
-                  </div>
+                  </motion.div>
                 </motion.div>
               </motion.div>
             </motion.div>

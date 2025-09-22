@@ -7,6 +7,7 @@ import Image from 'next/image'
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +19,11 @@ export default function Navbar() {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode)
+    document.documentElement.classList.toggle('dark')
   }
 
   // Close mobile menu when clicking outside
@@ -91,64 +97,81 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-white/20' 
+            : 'bg-transparent'
+        }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="container-custom">
-          {/* Desktop Pills */}
-          <div className="hidden lg:flex items-center justify-center py-8">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center justify-between py-6">
+            {/* Logo */}
             <motion.div
-              className="px-8 py-6 rounded-full bg-white shadow-lg border border-gray-200 transition-all duration-300"
-              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-3"
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="flex items-center space-x-8">
-                {/* Logo */}
-                <motion.div
-                  className="flex items-center space-x-3"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
-                    <Image
-                      src="/logo.png"
-                      alt="Sawa Wallet Logo"
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-contain"
-                      priority
-                    />
-                  </div>
-                  <span className="text-xl font-bold text-charcoal">Sawa Wallet</span>
-                </motion.div>
-
-                {/* Desktop Navigation */}
-                <div className="flex items-center space-x-1">
-                  {menuItems.map((item, index) => (
-                    <motion.a
-                      key={item.href}
-                      href={item.href}
-                      className="flex items-center space-x-2 px-4 py-2 rounded-full text-charcoal hover:bg-white/20 transition-all duration-200 group"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                    >
-                      <span className="text-sm font-medium">{item.label}</span>
-                    </motion.a>
-                  ))}
-                </div>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="Sawa Wallet Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                  priority
+                />
               </div>
+              <span className="text-xl font-bold text-charcoal">Sawa Wallet</span>
             </motion.div>
+
+            {/* Desktop Navigation */}
+            <div className="flex items-center space-x-8">
+              {menuItems.map((item, index) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  className="text-charcoal hover:text-forest-green transition-colors duration-200 font-medium"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+              
+              {/* Dark Mode Toggle */}
+              <motion.button
+                onClick={toggleDarkMode}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+              >
+                {isDarkMode ? (
+                  <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                  </svg>
+                )}
+              </motion.button>
+            </div>
           </div>
 
           {/* Mobile Layout */}
           <div className={`lg:hidden flex items-center justify-between py-4 px-4 transition-all duration-300 ${
             isScrolled 
-              ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
+              ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-white/20' 
               : 'bg-transparent'
           }`}>
             {/* Logo */}
@@ -337,6 +360,30 @@ export default function Navbar() {
                     whileTap={{ scale: 0.98 }}
                   >
                     Sign In
+                  </motion.button>
+                  
+                  {/* Dark Mode Toggle for Mobile */}
+                  <motion.button
+                    onClick={toggleDarkMode}
+                    className="w-full flex items-center justify-center space-x-3 bg-gray-100 text-charcoal text-base py-4 rounded-2xl hover:bg-gray-200 transition-all duration-300 font-semibold"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {isDarkMode ? (
+                      <>
+                        <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                        </svg>
+                        <span>Light Mode</span>
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                        <span>Dark Mode</span>
+                      </>
+                    )}
                   </motion.button>
                   
                   <div className="text-center pt-2">
