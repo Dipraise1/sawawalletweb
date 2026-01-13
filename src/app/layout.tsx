@@ -11,8 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Sawa Wallet - Send Crypto with Phone Numbers',
-  description: 'Sawa Wallet simplifies crypto transfers by letting you send and receive cryptocurrency using phone numbers, not wallet addresses. Mobile-first, multi-chain, built for emerging markets—starting with Nigeria.',
-  keywords: 'crypto wallet, phone number transfers, mobile-first, multi-chain, Nigeria, cryptocurrency, USDC wallet, emerging markets, Solana',
+  description: 'Sawa Wallet simplifies crypto transfers by letting you send and receive cryptocurrency using phone numbers, not wallet addresses. Mobile-first, multi-chain, built for Africa and emerging markets.',
+  keywords: 'crypto wallet, phone number transfers, mobile-first, multi-chain, Africa, cryptocurrency, USDC wallet, emerging markets, Solana, EVM chains',
   authors: [{ name: 'Sawa Wallet' }],
   icons: {
     icon: '/logo.png',

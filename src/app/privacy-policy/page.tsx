@@ -46,10 +46,10 @@ export default function PrivacyPolicy() {
               <h2 className="text-lg font-bold text-charcoal mb-3">2. What Sawa Wallet Does</h2>
               <p className="text-sm leading-relaxed mb-2">Sawa Wallet provides the following services:</p>
               <ul className="list-disc list-inside space-y-2 text-sm ml-4">
-                <li>Digital wallet for USDC cryptocurrency on the Solana blockchain</li>
+                <li>Digital wallet for USDC cryptocurrency on Solana and EVM chains</li>
                 <li>Peer-to-peer money transfers using phone numbers</li>
                 <li>Local currency quotations for all transactions (e.g., send ₦200 worth of USDC)</li>
-                <li>Access to decentralized finance (DeFi) protocols on Solana</li>
+                <li>Access to decentralized finance (DeFi) protocols on Solana and EVM chains</li>
                 <li>Staking and liquidity pool investment opportunities</li>
                 <li>Cross-border money transfers across Africa and beyond</li>
               </ul>
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-lg font-bold text-charcoal mb-3">5. How We Share Your Information</h2>
               <p className="text-sm leading-relaxed mb-2">We do not sell your personal information. We may share your data with:</p>
               <ul className="list-disc list-inside space-y-2 text-sm ml-4">
-                <li><strong>Blockchain Networks:</strong> Transaction data is publicly visible on the Solana blockchain</li>
+                <li><strong>Blockchain Networks:</strong> Transaction data is publicly visible on Solana and EVM blockchains</li>
                 <li><strong>Service Providers:</strong> Third-party services that help us operate (cloud hosting, analytics, customer support)</li>
                 <li><strong>Legal Compliance:</strong> When required by law, court order, or government regulation</li>
                 <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets</li>

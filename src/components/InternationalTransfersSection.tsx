@@ -5,7 +5,7 @@ import { useInView } from '@/lib/hooks'
 
 const countries = [
   // African Countries
-  { name: 'Nigeria', flag: '🇳🇬' },
+  { name: 'Africa', flag: '🌍' },
   { name: 'Ghana', flag: '🇬🇭' },
   { name: 'Kenya', flag: '🇰🇪' },
   { name: 'South Africa', flag: '🇿🇦' },

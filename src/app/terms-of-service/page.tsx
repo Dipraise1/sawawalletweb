@@ -45,7 +45,7 @@ export default function TermsOfService() {
               <h3 className="text-base font-semibold text-charcoal mb-2 mt-4">2.1 What Sawa Wallet Does</h3>
               <p className="text-sm leading-relaxed mb-2">Sawa Wallet is a non-custodial cryptocurrency wallet platform that provides:</p>
               <ul className="list-disc list-inside space-y-2 text-sm ml-4">
-                <li>Digital wallet infrastructure for USDC cryptocurrency on the Solana blockchain</li>
+                <li>Digital wallet infrastructure for USDC cryptocurrency on Solana and EVM chains</li>
                 <li>Peer-to-peer transfer services using phone number identifiers</li>
                 <li>Local currency quotation system for simplified transactions</li>
                 <li>Gateway to decentralized finance (DeFi) protocols</li>
@@ -133,7 +133,7 @@ export default function TermsOfService() {
               <h2 className="text-lg font-bold text-charcoal mb-3">7. Fees and Payments</h2>
               <p className="text-sm leading-relaxed mb-2">Sawa Wallet may charge fees for certain services:</p>
               <ul className="list-disc list-inside space-y-2 text-sm ml-4">
-                <li><strong>Transaction Fees:</strong> Network fees required by the Solana blockchain (gas fees)</li>
+                <li><strong>Transaction Fees:</strong> Network fees required by Solana and EVM blockchains (gas fees)</li>
                 <li><strong>Service Fees:</strong> Optional fees for premium features or expedited services</li>
                 <li><strong>DeFi Protocol Fees:</strong> Fees charged by third-party DeFi protocols (not controlled by us)</li>
               </ul>

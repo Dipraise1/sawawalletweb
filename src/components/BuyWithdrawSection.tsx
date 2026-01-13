@@ -72,7 +72,7 @@ const paymentMethods = [
 const withdrawalMethods = [
   {
     title: "Bank Account",
-    description: "Withdraw directly to your Nigerian bank account",
+    description: "Withdraw directly to your African bank account",
     time: "1-3 business days",
     minAmount: "₦1,000"
   },

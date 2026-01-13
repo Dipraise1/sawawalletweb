@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: "Multi-Chain Support", 
-    description: "Works across multiple blockchains. Start with Solana, expand to more chains as we grow.",
+    description: "Works across multiple blockchains. Support for Solana and EVM chains (Ethereum, Polygon, BSC, and more).",
     Icon: MessageIcon,
     delay: 0.2,
     highlight: "Multi-chain",
@@ -26,10 +26,10 @@ const features = [
   },
   {
     title: "Built for Emerging Markets",
-    description: "Designed for Nigeria and emerging markets. Local currency quotes, mobile-first experience, zero complexity.",
+    description: "Designed for Africa and emerging markets. Local currency quotes, mobile-first experience, zero complexity.",
     Icon: CommunityIcon,
     delay: 0.3,
-    highlight: "Nigeria-first",
+    highlight: "Africa-first",
     color: "from-green-500 to-green-600"
   }
 ]

@@ -6,7 +6,7 @@ import { useInView } from '@/lib/hooks'
 const investmentFeatures = [
   {
     title: "DeFi Access",
-    description: "Connect to leading Solana DeFi protocols",
+    description: "Connect to leading DeFi protocols on Solana and EVM chains",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -61,7 +61,7 @@ export default function InvestmentSection() {
             DeFi Made Simple
           </h2>
           <p className="text-xs text-gray-500 max-w-2xl mx-auto">
-            Access decentralized finance on Solana. Coming soon.
+            Access decentralized finance on Solana and EVM chains. Coming soon.
           </p>
         </motion.div>
 

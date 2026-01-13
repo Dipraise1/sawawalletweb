@@ -51,7 +51,7 @@ export default function Contact() {
             <div className="bg-gradient-to-br from-forest-green/5 to-luxury-gold/5 rounded-xl p-6 border border-forest-green/10">
               <h2 className="text-lg font-bold text-charcoal mb-3">About Sawa Wallet</h2>
               <p className="text-sm text-gray-700 leading-relaxed mb-3">
-                Sawa Wallet simplifies crypto transfers by letting users send and receive cryptocurrency using phone numbers, not wallet addresses. Mobile-first, multi-chain, built for emerging markets—starting with Nigeria.
+                Sawa Wallet simplifies crypto transfers by letting users send and receive cryptocurrency using phone numbers, not wallet addresses. Mobile-first, multi-chain support for Solana and EVM chains, built for Africa and emerging markets.
               </p>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start">
@@ -70,13 +70,13 @@ export default function Contact() {
                   <svg className="w-4 h-4 text-forest-green mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>Multi-chain support (starting with Solana)</span>
+                  <span>Multi-chain: Solana & EVM chains (Ethereum, Polygon, BSC, etc.)</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-4 h-4 text-forest-green mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>Built for emerging markets, starting with Nigeria</span>
+                  <span>Built for Africa and emerging markets</span>
                 </li>
               </ul>
             </div>

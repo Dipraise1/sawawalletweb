@@ -103,7 +103,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                Sawa Wallet simplifies crypto transfers by letting you send and receive cryptocurrency using phone numbers instead of complex wallet addresses. Mobile-first, multi-chain, built for emerging markets—starting with Nigeria.
+                Sawa Wallet simplifies crypto transfers by letting you send and receive cryptocurrency using phone numbers instead of complex wallet addresses. Mobile-first, multi-chain support for Solana and EVM chains, built for Africa and emerging markets.
               </motion.p>
               
               {/* Enhanced Value Proposition */}
@@ -141,7 +141,7 @@ export default function HeroSection() {
                   <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-xs font-medium text-green-700">Built for Nigeria</span>
+                  <span className="text-xs font-medium text-green-700">Built for Africa</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center space-x-1.5 bg-orange-50 px-3 py-1 rounded-full border border-orange-200 hover:bg-orange-100 transition-colors cursor-pointer"
