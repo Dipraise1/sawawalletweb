@@ -10,9 +10,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Sawa Wallet - Global Currency, Local Understanding',
-  description: 'Send ₦200 worth of USDC to David. The community-focused USDC wallet that quotes transfers in local currency.',
-  keywords: 'USDC wallet, Nigeria, cryptocurrency, mobile wallet, local currency',
+  title: 'Sawa Wallet - Send Crypto with Phone Numbers',
+  description: 'Sawa Wallet simplifies crypto transfers by letting you send and receive cryptocurrency using phone numbers, not wallet addresses. Mobile-first, multi-chain, built for emerging markets—starting with Nigeria.',
+  keywords: 'crypto wallet, phone number transfers, mobile-first, multi-chain, Nigeria, cryptocurrency, USDC wallet, emerging markets, Solana',
   authors: [{ name: 'Sawa Wallet' }],
   icons: {
     icon: '/logo.png',

@@ -5,18 +5,18 @@
 /* Professional Typography Scale */
 @layer base {
   html {
-    font-size: 14px; /* Reduced base font size for more professional look */
+    font-size: 13px; /* Reduced base font size for more classy, refined look */
   }
   
   @media (min-width: 640px) {
     html {
-      font-size: 15px;
+      font-size: 14px;
     }
   }
   
   @media (min-width: 1024px) {
     html {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
   
@@ -30,23 +30,23 @@
 /* Professional Card Styles */
 @layer components {
   .professional-card {
-    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:shadow-md hover:border-gray-200;
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-4 transition-all duration-300 hover:shadow-md hover:border-gray-200;
   }
   
   .professional-heading {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal leading-tight;
+    @apply text-lg sm:text-xl lg:text-2xl font-bold text-charcoal leading-tight;
   }
   
   .professional-subheading {
-    @apply text-lg sm:text-xl font-semibold text-charcoal;
+    @apply text-base sm:text-lg font-semibold text-charcoal;
   }
   
   .professional-text {
-    @apply text-sm sm:text-base text-gray-600 leading-relaxed;
+    @apply text-xs sm:text-sm text-gray-600 leading-relaxed;
   }
   
   .professional-small {
-    @apply text-xs sm:text-sm text-gray-500;
+    @apply text-[10px] sm:text-xs text-gray-500;
   }
   
   .scrollbar-hide {
@@ -128,19 +128,19 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-forest-green text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply bg-forest-green text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-opacity-90 hover:shadow-md transform hover:-translate-y-0.5 text-xs;
   }
   
   .btn-secondary {
-    @apply border-2 border-forest-green text-forest-green px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-forest-green hover:text-white;
+    @apply border border-forest-green text-forest-green px-5 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-forest-green hover:text-white text-xs;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply bg-white rounded-lg shadow-sm p-5 transition-all duration-300 hover:shadow-md hover:-translate-y-1;
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-12 px-4 sm:px-6 lg:px-8;
   }
   
   .container-custom {

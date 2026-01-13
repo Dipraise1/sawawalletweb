@@ -3,7 +3,6 @@ import HeroSection from '@/components/HeroSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import InternationalTransfersSection from '@/components/InternationalTransfersSection'
 import InvestmentSection from '@/components/InvestmentSection'
-import BuyWithdrawSection from '@/components/BuyWithdrawSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import TrustSection from '@/components/TrustSection'
 import Footer from '@/components/Footer'
@@ -16,7 +15,6 @@ export default function Home() {
       <FeaturesSection />
       <InternationalTransfersSection />
       <InvestmentSection />
-      <BuyWithdrawSection />
       <TestimonialsSection />
       <TrustSection />
       <Footer />

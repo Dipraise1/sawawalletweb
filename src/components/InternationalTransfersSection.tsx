@@ -66,7 +66,7 @@ export default function InternationalTransfersSection() {
   const { ref, isInView } = useInView()
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+    <section ref={ref} className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-forest-green/3 via-transparent to-luxury-gold/3"></div>
@@ -76,13 +76,13 @@ export default function InternationalTransfersSection() {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="professional-heading mb-6">
-            Send to family, friends or anyone, across Africa and beyond
+          <h2 className="text-lg sm:text-xl font-bold text-charcoal mb-2">
+            Send money across Africa and beyond
           </h2>
         </motion.div>
 
@@ -93,15 +93,15 @@ export default function InternationalTransfersSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {/* First Marquee Line - Moving Right */}
-          <div className="flex space-x-3 py-2">
-            <div className="flex space-x-3 animate-marquee-right">
+          <div className="flex space-x-2 py-1.5">
+            <div className="flex space-x-2 animate-marquee-right">
               {[...countries, ...countries].map((country, index) => (
                 <div
                   key={`line1-${index}`}
-                  className="flex items-center space-x-2 bg-gray-50 hover:bg-gray-100 rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer flex-shrink-0"
+                  className="flex items-center space-x-1.5 bg-gray-50 hover:bg-gray-100 rounded-full px-2.5 py-1 transition-colors duration-200 cursor-pointer flex-shrink-0"
                 >
-                  <span className="text-sm">{country.flag}</span>
-                  <span className="professional-small font-medium text-gray-700 whitespace-nowrap text-xs">
+                  <span className="text-xs">{country.flag}</span>
+                  <span className="font-medium text-gray-700 whitespace-nowrap text-[10px]">
                     {country.name}
                   </span>
                 </div>
@@ -110,15 +110,15 @@ export default function InternationalTransfersSection() {
           </div>
 
           {/* Second Marquee Line - Moving Left */}
-          <div className="flex space-x-3 py-2">
-            <div className="flex space-x-3 animate-marquee-left">
+          <div className="flex space-x-2 py-1.5">
+            <div className="flex space-x-2 animate-marquee-left">
               {[...countries, ...countries].map((country, index) => (
                 <div
                   key={`line2-${index}`}
-                  className="flex items-center space-x-2 bg-forest-green/5 hover:bg-forest-green/10 rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer flex-shrink-0"
+                  className="flex items-center space-x-1.5 bg-forest-green/5 hover:bg-forest-green/10 rounded-full px-2.5 py-1 transition-colors duration-200 cursor-pointer flex-shrink-0"
                 >
-                  <span className="text-sm">{country.flag}</span>
-                  <span className="professional-small font-medium text-forest-green whitespace-nowrap text-xs">
+                  <span className="text-xs">{country.flag}</span>
+                  <span className="font-medium text-forest-green whitespace-nowrap text-[10px]">
                     {country.name}
                   </span>
                 </div>
@@ -127,15 +127,15 @@ export default function InternationalTransfersSection() {
           </div>
 
           {/* Third Marquee Line - Moving Right */}
-          <div className="flex space-x-3 py-2">
-            <div className="flex space-x-3 animate-marquee-right-slow">
+          <div className="flex space-x-2 py-1.5">
+            <div className="flex space-x-2 animate-marquee-right-slow">
               {[...countries, ...countries].map((country, index) => (
                 <div
                   key={`line3-${index}`}
-                  className="flex items-center space-x-2 bg-luxury-gold/5 hover:bg-luxury-gold/10 rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer flex-shrink-0"
+                  className="flex items-center space-x-1.5 bg-luxury-gold/5 hover:bg-luxury-gold/10 rounded-full px-2.5 py-1 transition-colors duration-200 cursor-pointer flex-shrink-0"
                 >
-                  <span className="text-sm">{country.flag}</span>
-                  <span className="professional-small font-medium text-luxury-gold whitespace-nowrap text-xs">
+                  <span className="text-xs">{country.flag}</span>
+                  <span className="font-medium text-luxury-gold whitespace-nowrap text-[10px]">
                     {country.name}
                   </span>
                 </div>

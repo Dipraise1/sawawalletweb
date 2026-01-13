@@ -6,7 +6,7 @@ import { useInView } from '@/lib/hooks'
 const paymentMethods = [
   {
     title: "Bank Transfer",
-    description: "Direct transfer from your Nigerian bank account with instant processing",
+    description: "Direct transfer from your bank account",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
@@ -22,7 +22,7 @@ const paymentMethods = [
   },
   {
     title: "Card Payment",
-    description: "Visa, Mastercard, and local debit cards accepted worldwide",
+    description: "Visa, Mastercard, and local debit cards",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <rect x="1" y="4" width="22" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
@@ -37,7 +37,7 @@ const paymentMethods = [
   },
   {
     title: "Mobile Money",
-    description: "OPay, PalmPay, and other mobile wallets for instant transfers",
+    description: "OPay, PalmPay, and other mobile wallets",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -54,7 +54,7 @@ const paymentMethods = [
   },
   {
     title: "Crypto Exchange",
-    description: "Direct swap from Bitcoin, Ethereum, and other major cryptocurrencies",
+    description: "Swap from Bitcoin, Ethereum, and other cryptos",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
         <path d="M7 4V20M17 4V20M3 8H7M3 16H7M17 8H21M17 16H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -102,17 +102,17 @@ export default function BuyWithdrawSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-3">
             Buy & Withdraw USDC
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Multiple ways to buy and withdraw USDC. Choose the method that works best for you.
+          <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Multiple payment methods to suit your needs.
           </p>
         </motion.div>
 
         {/* Buy Methods */}
         <div className="mb-16">
-          <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-8 text-center">
+          <h3 className="text-lg sm:text-xl font-bold text-charcoal mb-6 text-center">
             How to Buy USDC
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -198,7 +198,7 @@ export default function BuyWithdrawSection() {
 
         {/* Withdrawal Methods */}
         <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-8 text-center">
+          <h3 className="text-lg sm:text-xl font-bold text-charcoal mb-6 text-center">
             How to Withdraw USDC
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -246,18 +246,18 @@ export default function BuyWithdrawSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <div className="bg-gradient-to-r from-forest-green to-forest-green/80 rounded-2xl p-8 sm:p-12 text-white max-w-4xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">
+          <div className="bg-gradient-to-r from-forest-green to-forest-green/80 rounded-2xl p-6 sm:p-8 text-white max-w-4xl mx-auto">
+            <h3 className="text-lg sm:text-xl font-bold mb-3">
               Ready to Get Started?
             </h3>
-            <p className="text-forest-green/90 mb-6 max-w-2xl mx-auto">
-              Download Sawa Wallet and start buying, staking, and earning with USDC today.
+            <p className="text-white/90 mb-4 max-w-2xl mx-auto text-sm">
+              Join the waitlist to get early access.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-forest-green px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Download App
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button className="bg-white text-forest-green px-6 py-3 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors">
+                Join Waitlist
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-forest-green transition-colors">
+              <button className="border-2 border-white text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white hover:text-forest-green transition-colors">
                 Learn More
               </button>
             </div>
