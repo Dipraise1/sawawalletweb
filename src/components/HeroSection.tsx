@@ -165,7 +165,7 @@ export default function HeroSection() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <motion.a 
                     href="#download"
-                    className="group relative px-6 py-2.5 bg-gradient-to-r from-forest-green to-forest-green/90 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden text-center"
+                    className="group relative px-6 py-2.5 bg-gradient-to-r from-forest-green to-forest-green/90 text-white text-sm font-semibold rounded-xl shadow-[0_4px_12px_rgba(45,80,22,0.2)] hover:shadow-[0_8px_24px_rgba(45,80,22,0.25)] transition-all duration-300 overflow-hidden text-center"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -192,7 +192,7 @@ export default function HeroSection() {
                     href="https://discord.gg/TbvR5UcG"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group px-6 py-2.5 bg-white/80 backdrop-blur-sm text-charcoal text-sm font-semibold rounded-lg border border-gray-200 hover:border-forest-green/50 shadow-md hover:shadow-lg transition-all duration-300 text-center"
+                    className="group px-6 py-2.5 bg-white/90 backdrop-blur-sm text-charcoal text-sm font-semibold rounded-xl border border-gray-200/80 hover:border-forest-green/30 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all duration-300 text-center"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >

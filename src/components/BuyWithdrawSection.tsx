@@ -254,10 +254,10 @@ export default function BuyWithdrawSection() {
               Join the waitlist to get early access.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-white text-forest-green px-6 py-3 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-forest-green px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-50 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
                 Join Waitlist
               </button>
-              <button className="border-2 border-white text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white hover:text-forest-green transition-colors">
+              <button className="border-2 border-white text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-white hover:text-forest-green transition-all duration-300 shadow-sm hover:shadow-md">
                 Learn More
               </button>
             </div>

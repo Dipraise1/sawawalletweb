@@ -106,52 +106,47 @@ export default function TrustSection() {
           {trustItems.map((item, index) => (
             <motion.div
               key={item.title}
-              className="text-center space-y-3 p-5 sm:p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100 hover:border-gray-200 cursor-pointer min-h-[220px] flex flex-col"
+              className="text-center space-y-3 p-6 sm:p-5 bg-white rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 group border border-gray-100/80 hover:border-gray-200/60 cursor-pointer min-h-[240px] flex flex-col backdrop-blur-sm relative overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ 
-                y: -6,
-                scale: 1.01,
-                transition: { duration: 0.3 }
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
               }}
               whileTap={{ scale: 0.98 }}
             >
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-green/3 via-transparent to-luxury-gold/3 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <motion.div 
-                className={`w-11 h-11 sm:w-10 sm:h-10 mx-auto mb-3 bg-gradient-to-br ${item.color} rounded-lg flex items-center justify-center shadow-sm`}
+                className={`relative z-10 w-14 h-14 sm:w-12 sm:h-12 mx-auto mb-3 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)]`}
                 whileHover={{ 
                   scale: 1.15,
                   rotate: 5,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <motion.div
-                  whileHover={{ 
-                    scale: 1.1,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  <item.Icon className="w-5 h-5 text-white" />
-                </motion.div>
+                <item.Icon className="w-7 h-7 sm:w-6 sm:h-6 text-white flex-shrink-0" />
               </motion.div>
               
-              <div className="space-y-1.5">
-                <h3 className="text-sm font-semibold text-charcoal">
+              <div className="relative z-10 space-y-1.5">
+                <h3 className="text-sm font-semibold text-charcoal tracking-tight">
                   {item.title}
                 </h3>
-                <div className={`inline-block px-2 py-0.5 bg-gradient-to-r ${item.color} text-white text-[9px] font-semibold rounded-full`}>
+                <div className={`inline-block px-2.5 py-1 bg-gradient-to-r ${item.color} text-white text-[9px] font-semibold rounded-full shadow-sm`}>
                   {item.highlight}
                 </div>
               </div>
               
-              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+              <p className="relative z-10 text-xs text-gray-600 leading-relaxed flex-1 px-1">
                 {item.description}
               </p>
               
-              <div className="flex flex-wrap gap-1 sm:gap-1.5 justify-center pt-2">
+              <div className="relative z-10 flex flex-wrap gap-1.5 sm:gap-2 justify-center pt-2">
                 {item.features.map((feature, featureIndex) => (
-                  <span key={featureIndex} className="text-[9px] bg-gray-100 text-gray-600 px-2 py-1 sm:px-1.5 sm:py-0.5 rounded-full whitespace-nowrap">
+                  <span key={featureIndex} className="text-[9px] bg-gray-50/80 backdrop-blur-sm text-gray-600 px-2.5 py-1 rounded-full whitespace-nowrap border border-gray-100/60">
                     {feature}
                   </span>
                 ))}
@@ -167,7 +162,7 @@ export default function TrustSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <div className="bg-gradient-to-br from-forest-green/5 to-luxury-gold/5 rounded-xl p-6 sm:p-8 border border-forest-green/10 shadow-sm">
+          <div className="bg-gradient-to-br from-forest-green/5 via-white to-luxury-gold/5 rounded-2xl p-8 sm:p-10 border border-forest-green/10 shadow-[0_4px_16px_rgba(45,80,22,0.08)] backdrop-blur-sm">
             <h3 className="text-base sm:text-lg font-bold text-charcoal mb-2 text-center">
               Join the Waitlist
             </h3>
@@ -195,14 +190,14 @@ export default function TrustSection() {
                   type="text"
                   name="entry.1801242306"
                   placeholder="Your name"
-                  className="flex-1 px-4 py-3 sm:py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300 touch-manipulation"
+                  className="flex-1 px-4 py-3 sm:py-2.5 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-xl text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/30 focus:border-forest-green/30 focus:bg-white transition-all duration-300 touch-manipulation shadow-sm"
                   required
                 />
                 <input
                   type="email"
                   name="entry.728298668"
                   placeholder="Your email"
-                  className="flex-1 px-4 py-3 sm:py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300 touch-manipulation"
+                  className="flex-1 px-4 py-3 sm:py-2.5 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-xl text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/30 focus:border-forest-green/30 focus:bg-white transition-all duration-300 touch-manipulation shadow-sm"
                   required
                 />
               </div>
@@ -210,12 +205,12 @@ export default function TrustSection() {
                 name="entry.336844290"
                 placeholder="What do you think about Sawa? (Optional)"
                 rows={2}
-                className="w-full px-4 py-3 sm:py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300 touch-manipulation resize-none"
+                className="w-full px-4 py-3 sm:py-2.5 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-xl text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/30 focus:border-forest-green/30 focus:bg-white transition-all duration-300 touch-manipulation resize-none shadow-sm"
               />
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-forest-green to-forest-green/90 text-white px-6 py-3 sm:py-2.5 rounded-lg font-semibold hover:shadow-lg hover:shadow-forest-green/25 transition-all duration-300 text-sm touch-manipulation"
-                whileHover={{ scale: 1.02 }}
+                className="w-full bg-gradient-to-r from-forest-green to-forest-green/90 text-white px-6 py-3 sm:py-2.5 rounded-xl font-semibold hover:shadow-[0_8px_24px_rgba(45,80,22,0.25)] transition-all duration-300 text-sm touch-manipulation shadow-[0_4px_12px_rgba(45,80,22,0.2)]"
+                whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Join Waitlist

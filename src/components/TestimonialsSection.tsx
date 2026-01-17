@@ -104,22 +104,22 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              className="group bg-white/80 backdrop-blur-sm rounded-xl p-5 sm:p-4 shadow-sm border border-white/20 hover:shadow-md transition-all duration-300 min-h-[200px] flex flex-col"
+              className="group bg-white/90 backdrop-blur-md rounded-2xl p-6 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100/60 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 min-h-[220px] flex flex-col relative overflow-hidden"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ 
                 duration: 0.6, 
                 delay: 0.3 + (index * 0.1),
-                ease: "easeOut"
+                ease: [0.16, 1, 0.3, 1]
               }}
               whileHover={{ 
-                y: -6,
-                scale: 1.01,
-                transition: { duration: 0.3 }
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
               }}
             >
               {/* Card background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-forest-green/5 via-transparent to-luxury-gold/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-green/5 via-transparent to-luxury-gold/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative z-10 flex-1 flex flex-col">
                 {/* Rating */}
@@ -137,7 +137,7 @@ export default function TestimonialsSection() {
                 </blockquote>
 
                 {/* Highlight Badge */}
-                <div className="inline-block px-2 py-0.5 bg-gradient-to-r from-forest-green/10 to-luxury-gold/10 text-forest-green text-[9px] font-semibold rounded-full mb-3 self-start">
+                <div className="inline-block px-2.5 py-1 bg-gradient-to-r from-forest-green/10 to-luxury-gold/10 text-forest-green text-[9px] font-semibold rounded-full mb-3 self-start border border-forest-green/20 shadow-sm">
                   {testimonial.highlight}
                 </div>
 
@@ -164,7 +164,7 @@ export default function TestimonialsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <div className="bg-gradient-to-r from-forest-green to-forest-green/90 rounded-xl p-6 sm:p-8 text-white max-w-4xl mx-auto shadow-lg">
+          <div className="bg-gradient-to-r from-forest-green to-forest-green/90 rounded-2xl p-8 sm:p-10 text-white max-w-4xl mx-auto shadow-[0_8px_32px_rgba(45,80,22,0.25)] backdrop-blur-sm border border-forest-green/20">
             <h3 className="text-base sm:text-lg font-bold mb-2">
               Be among the first
             </h3>

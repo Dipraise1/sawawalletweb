@@ -66,39 +66,44 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="group relative bg-white rounded-lg p-5 sm:p-4 shadow-sm border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 min-h-[180px] flex flex-col"
+              className="group relative bg-white rounded-2xl p-6 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100/80 hover:border-gray-200/60 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 min-h-[200px] flex flex-col backdrop-blur-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ 
-                duration: 0.4, 
-                delay: feature.delay
+                duration: 0.5, 
+                delay: feature.delay,
+                ease: [0.16, 1, 0.3, 1]
               }}
               whileHover={{ 
-                y: -4,
-                transition: { duration: 0.2 }
+                y: -6,
+                scale: 1.01,
+                transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
               }}
             >
-              <div className="text-center space-y-2.5 flex-1 flex flex-col">
+              {/* Subtle gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-green/2 via-transparent to-luxury-gold/2 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10 text-center space-y-3 flex-1 flex flex-col">
                 <motion.div 
-                  className={`w-11 h-11 sm:w-10 sm:h-10 mx-auto bg-gradient-to-br ${feature.color} rounded-lg flex items-center justify-center shadow-sm`}
+                  className={`w-12 h-12 sm:w-11 sm:h-11 mx-auto bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)]`}
                   whileHover={{ 
                     scale: 1.1,
-                    transition: { duration: 0.2 }
+                    rotate: 5,
+                    transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
                   }}
                 >
-                  <feature.Icon className="w-5 h-5 text-white" />
+                  <feature.Icon className="w-6 h-6 sm:w-5 sm:h-5 text-white" />
                 </motion.div>
                 
-                <div className="space-y-1">
-                  <h3 className="text-sm sm:text-[13px] font-bold text-charcoal">
+                <div className="space-y-1.5">
+                  <h3 className="text-sm sm:text-[13px] font-bold text-charcoal tracking-tight">
                     {feature.title}
                   </h3>
-                  <div className={`inline-block px-2 py-0.5 bg-gradient-to-r ${feature.color} text-white text-[9px] font-semibold rounded-full`}>
+                  <div className={`inline-block px-2.5 py-1 bg-gradient-to-r ${feature.color} text-white text-[9px] font-semibold rounded-full shadow-sm`}>
                     {feature.highlight}
                   </div>
                 </div>
                 
-                <p className="text-xs text-gray-600 leading-relaxed flex-1">
+                <p className="text-xs text-gray-600 leading-relaxed flex-1 px-1">
                   {feature.description}
                 </p>
               </div>

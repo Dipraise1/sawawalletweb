@@ -49,6 +49,9 @@ export default function Footer() {
               <Link href="/terms-of-service" className="block text-[10px] text-gray-400 hover:text-white transition-colors">
                 Terms of Service
               </Link>
+              <Link href="/delete-data" className="block text-[10px] text-gray-400 hover:text-white transition-colors">
+                Delete My Data
+              </Link>
             </nav>
           </div>
 
