@@ -128,19 +128,18 @@ export default function DeleteData() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number (Associated with Account) *
+                  Phone Number (Associated with Account) <span className="text-gray-400">(Optional)</span>
                 </label>
                 <input
                   type="tel"
                   id="phoneNumber"
                   name="phoneNumber"
-                  required
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300"
                   placeholder="+1234567890"
                 />
-                <p className="text-xs text-gray-500 mt-1">Enter the phone number associated with your Sawa Wallet account</p>
+                <p className="text-xs text-gray-500 mt-1">Enter the phone number associated with your Sawa Wallet account (optional)</p>
               </div>
 
               <div>
