@@ -156,7 +156,7 @@ export default function DeleteData() {
                   className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300"
                   placeholder="your.email@example.com"
                 />
-                <p className="text-xs text-gray-500 mt-1">We'll use this email to verify your identity and send confirmation</p>
+                <p className="text-xs text-gray-500 mt-1">We&apos;ll use this email to verify your identity and send confirmation</p>
               </div>
 
               <div>
@@ -185,7 +185,7 @@ export default function DeleteData() {
                   className="mt-1 w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green focus:ring-2"
                 />
                 <label htmlFor="confirmation" className="ml-3 text-sm text-gray-700">
-                  I understand that this action is permanent and cannot be undone. I confirm that I want to delete my personal data from Sawa Wallet's systems. I acknowledge that blockchain transaction data cannot be deleted. *
+                  I understand that this action is permanent and cannot be undone. I confirm that I want to delete my personal data from Sawa Wallet&apos;s systems. I acknowledge that blockchain transaction data cannot be deleted. *
                 </label>
               </div>
 
@@ -212,7 +212,7 @@ export default function DeleteData() {
                     <div>
                       <p className="text-sm text-green-700 font-medium">Request submitted successfully!</p>
                       <p className="text-xs text-green-600 mt-1">
-                        We've received your data deletion request. Our team will verify your identity and process your request within 30 days. You will receive a confirmation email once the deletion is complete.
+                        We&apos;ve received your data deletion request. Our team will verify your identity and process your request within 30 days. You will receive a confirmation email once the deletion is complete.
                       </p>
                     </div>
                   </div>
@@ -240,7 +240,7 @@ export default function DeleteData() {
             <div className="bg-gray-50 rounded-lg p-4 text-sm">
               <p className="mb-2"><strong>Email:</strong> <a href="mailto:privacy@sawawallet.com" className="text-forest-green hover:underline">privacy@sawawallet.com</a></p>
               <p className="mb-2"><strong>Support:</strong> <a href="mailto:support@sawawallet.com" className="text-forest-green hover:underline">support@sawawallet.com</a></p>
-              <p><strong>Subject Line:</strong> "Data Deletion Request"</p>
+              <p><strong>Subject Line:</strong> &quot;Data Deletion Request&quot;</p>
             </div>
           </section>
 
