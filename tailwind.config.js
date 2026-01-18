@@ -18,11 +18,6 @@ module.exports = {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'serif': ['Georgia', 'serif'],
       },
-      animation: {
-        'fade-in': 'fadeIn 0.3s ease-out',
-        'slide-up': 'slideUp 0.3s ease-out',
-        'float': 'float 3s ease-in-out infinite',
-      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
@@ -36,6 +31,21 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        'marquee-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-right': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'float': 'float 3s ease-in-out infinite',
+        'marquee-left': 'marquee-left 60s linear infinite',
+        'marquee-right': 'marquee-right 60s linear infinite',
       },
     },
   },
