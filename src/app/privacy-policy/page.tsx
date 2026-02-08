@@ -2,7 +2,11 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'Privacy Policy - Sawa Wallet',
-  description: 'Learn how Sawa Wallet collects, uses, and protects your personal information.',
+  description: 'Learn how Sawa Wallet collects, uses, and protects your personal information. We prioritize your privacy and data security.',
+  openGraph: {
+    title: 'Privacy Policy - Sawa Wallet',
+    description: 'Learn how Sawa Wallet collects, uses, and protects your personal information. We prioritize your privacy and data security.',
+  },
 }
 
 export default function PrivacyPolicy() {

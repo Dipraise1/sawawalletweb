@@ -2,7 +2,11 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'Terms of Service - Sawa Wallet',
-  description: 'Read the terms and conditions for using Sawa Wallet services.',
+  description: 'Read the terms and conditions for using Sawa Wallet services. Understand your rights and responsibilities as a user.',
+  openGraph: {
+    title: 'Terms of Service - Sawa Wallet',
+    description: 'Read the terms and conditions for using Sawa Wallet services. Understand your rights and responsibilities as a user.',
+  },
 }
 
 export default function TermsOfService() {

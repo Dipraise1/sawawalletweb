@@ -1,23 +1,17 @@
-'use client'
-
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+import type { Metadata } from 'next'
+import ContactForm from '@/components/ContactForm'
+
+export const metadata: Metadata = {
+  title: 'Contact Us - Sawa Wallet Support',
+  description: 'Get in touch with Sawa Wallet team. We are here to help with any questions about sending money, crypto transfers, or account support.',
+  openGraph: {
+    title: 'Contact Us - Sawa Wallet Support',
+    description: 'Get in touch with Sawa Wallet team. We are here to help with any questions about sending money, crypto transfers, or account support.',
+  },
+}
 
 export default function Contact() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setFormStatus('sending')
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus('success')
-      setTimeout(() => setFormStatus('idle'), 5000)
-    }, 1500)
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Header */}
@@ -89,7 +83,7 @@ export default function Contact() {
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <h3 className="text-sm font-semibold text-luxury-gold mb-1">🚀 Seeking Early Investors</h3>
+                  <h3 className="text-sm font-semibold text-luxury-gold mb-1">Seeking Early Investors</h3>
                   <p className="text-xs text-gray-700 leading-relaxed mb-2">
                     We&apos;re looking for strategic investors to join us in revolutionizing money transfers across Africa. Select &quot;Investor Inquiry&quot; below to learn more about investment opportunities.
                   </p>
@@ -137,11 +131,9 @@ export default function Contact() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Email Support */}
-                <motion.a
+                <a
                   href="mailto:support@sawawallet.com"
                   className="flex items-start space-x-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-forest-green hover:shadow-md transition-all duration-300"
-                  whileHover={{ y: -4 }}
-                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="w-10 h-10 bg-forest-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg className="w-5 h-5 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,16 +144,14 @@ export default function Contact() {
                     <h3 className="text-sm font-semibold text-charcoal mb-1">Email Support</h3>
                     <p className="text-xs text-gray-600">support@sawawallet.com</p>
                   </div>
-                </motion.a>
+                </a>
 
                 {/* Discord */}
-                <motion.a
+                <a
                   href="https://discord.gg/TbvR5UcG"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-[#5865F2] hover:shadow-md transition-all duration-300"
-                  whileHover={{ y: -4 }}
-                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="w-10 h-10 bg-[#5865F2]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg className="w-5 h-5 text-[#5865F2]" fill="currentColor" viewBox="0 0 24 24">
@@ -172,14 +162,12 @@ export default function Contact() {
                     <h3 className="text-sm font-semibold text-charcoal mb-1">Discord Community</h3>
                     <p className="text-xs text-gray-600">Join the conversation</p>
                   </div>
-                </motion.a>
+                </a>
 
                 {/* General Inquiries */}
-                <motion.a
+                <a
                   href="mailto:hello@sawawallet.com"
                   className="flex items-start space-x-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-forest-green hover:shadow-md transition-all duration-300"
-                  whileHover={{ y: -4 }}
-                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="w-10 h-10 bg-luxury-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg className="w-5 h-5 text-luxury-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,14 +178,12 @@ export default function Contact() {
                     <h3 className="text-sm font-semibold text-charcoal mb-1">General Inquiries</h3>
                     <p className="text-xs text-gray-600">hello@sawawallet.com</p>
                   </div>
-                </motion.a>
+                </a>
 
                 {/* Legal */}
-                <motion.a
+                <a
                   href="mailto:legal@sawawallet.com"
                   className="flex items-start space-x-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-forest-green hover:shadow-md transition-all duration-300"
-                  whileHover={{ y: -4 }}
-                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +194,7 @@ export default function Contact() {
                     <h3 className="text-sm font-semibold text-charcoal mb-1">Legal & Privacy</h3>
                     <p className="text-xs text-gray-600">legal@sawawallet.com</p>
                   </div>
-                </motion.a>
+                </a>
               </div>
             </div>
 
@@ -228,99 +214,10 @@ export default function Contact() {
 
           {/* Right Column - Contact Form */}
           <div className="lg:sticky lg:top-24 h-fit">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-8">
-              <h2 className="text-lg font-bold text-charcoal mb-4">Send us a Message</h2>
-              
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-gray-700 mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-xs font-medium text-gray-700 mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    id="subject"
-                    required
-                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300"
-                  >
-                    <option value="">Select a topic</option>
-                    <option value="investor">💰 Investor Inquiry</option>
-                    <option value="partnership">🤝 Partnership Opportunity</option>
-                    <option value="support">Technical Support</option>
-                    <option value="account">Account Issues</option>
-                    <option value="transactions">Transaction Help</option>
-                    <option value="feedback">Feedback & Suggestions</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-xs font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={6}
-                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/50 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Tell us how we can help..."
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  disabled={formStatus === 'sending'}
-                  className="w-full bg-gradient-to-r from-forest-green to-forest-green/90 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-forest-green/25 transition-all duration-300 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-                  whileHover={{ scale: formStatus === 'sending' ? 1 : 1.02 }}
-                  whileTap={{ scale: formStatus === 'sending' ? 1 : 0.98 }}
-                >
-                  {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
-                </motion.button>
-
-                {formStatus === 'success' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-green-50 border border-green-200 rounded-lg p-4 text-center"
-                  >
-                    <p className="text-sm text-green-700 font-medium">✓ Message sent successfully!</p>
-                    <p className="text-xs text-green-600 mt-1">We&apos;ll get back to you within 24-48 hours.</p>
-                  </motion.div>
-                )}
-              </form>
-
-              <p className="text-xs text-gray-500 mt-4 text-center">
-                Expected response time: 24-48 hours
-              </p>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </main>
     </div>
   )
 }
-
