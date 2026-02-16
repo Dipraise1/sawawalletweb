@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import TeamSection from '@/components/TeamSection'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -318,6 +319,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* CTA Section */}
       <section className="py-32 bg-forest-green relative overflow-hidden text-center">

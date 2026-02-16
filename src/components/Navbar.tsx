@@ -194,7 +194,7 @@ export default function Navbar() {
                     Get Early Access
                   </Link>
                   <div className="text-center">
-                    <p className="text-xs text-gray-400">© 2024 Sawa Wallet</p>
+                    <p className="text-xs text-gray-400">© 2026 Sawa Wallet</p>
                   </div>
                 </div>
               </div>
