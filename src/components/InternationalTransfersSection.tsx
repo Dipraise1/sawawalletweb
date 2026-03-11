@@ -81,7 +81,7 @@ export default function InternationalTransfersSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-lg sm:text-xl font-bold text-charcoal mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-2">
             Send money across Africa and beyond
           </h2>
         </motion.div>
@@ -101,7 +101,7 @@ export default function InternationalTransfersSection() {
                   className="flex items-center space-x-1.5 bg-gray-50 hover:bg-gray-100 rounded-full px-2.5 py-1 transition-colors duration-200 cursor-pointer flex-shrink-0"
                 >
                   <span className="text-xs">{country.flag}</span>
-                  <span className="font-medium text-gray-700 whitespace-nowrap text-[10px]">
+                  <span className="font-medium text-gray-700 whitespace-nowrap text-xs">
                     {country.name}
                   </span>
                 </div>
@@ -118,7 +118,7 @@ export default function InternationalTransfersSection() {
                   className="flex items-center space-x-1.5 bg-forest-green/5 hover:bg-forest-green/10 rounded-full px-2.5 py-1 transition-colors duration-200 cursor-pointer flex-shrink-0"
                 >
                   <span className="text-xs">{country.flag}</span>
-                  <span className="font-medium text-forest-green whitespace-nowrap text-[10px]">
+                  <span className="font-medium text-forest-green whitespace-nowrap text-xs">
                     {country.name}
                   </span>
                 </div>
@@ -128,14 +128,14 @@ export default function InternationalTransfersSection() {
 
           {/* Third Marquee Line - Moving Right */}
           <div className="flex space-x-2 py-1.5">
-            <div className="flex space-x-2 animate-marquee-right-slow">
+            <div className="flex space-x-2 animate-marquee-right">
               {[...countries, ...countries].map((country, index) => (
                 <div
                   key={`line3-${index}`}
                   className="flex items-center space-x-1.5 bg-luxury-gold/5 hover:bg-luxury-gold/10 rounded-full px-2.5 py-1 transition-colors duration-200 cursor-pointer flex-shrink-0"
                 >
                   <span className="text-xs">{country.flag}</span>
-                  <span className="font-medium text-luxury-gold whitespace-nowrap text-[10px]">
+                  <span className="font-medium text-luxury-gold whitespace-nowrap text-xs">
                     {country.name}
                   </span>
                 </div>

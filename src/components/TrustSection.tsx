@@ -57,7 +57,7 @@ export default function TrustSection() {
             </svg>
           </motion.div>
           
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-charcoal mb-2 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal mb-3 leading-tight">
             Trusted by{' '}
             <span className="text-forest-green relative">
               many
@@ -70,13 +70,13 @@ export default function TrustSection() {
             </span>
           </h2>
           
-          <p className="text-xs text-gray-500 max-w-3xl mx-auto leading-relaxed mb-4">
+          <p className="text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed mb-5">
             Bank-grade security meets WhatsApp simplicity
           </p>
-          
+
           {/* Trust indicators */}
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-gray-500"
+            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-gray-500"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -132,21 +132,21 @@ export default function TrustSection() {
               </motion.div>
               
               <div className="relative z-10 space-y-1.5">
-                <h3 className="text-sm font-semibold text-charcoal tracking-tight">
+                <h3 className="text-base font-semibold text-charcoal tracking-tight">
                   {item.title}
                 </h3>
-                <div className={`inline-block px-2.5 py-1 bg-gradient-to-r ${item.color} text-white text-[9px] font-semibold rounded-full shadow-sm`}>
+                <div className={`inline-block px-2.5 py-1 bg-gradient-to-r ${item.color} text-white text-xs font-semibold rounded-full shadow-sm`}>
                   {item.highlight}
                 </div>
               </div>
-              
-              <p className="relative z-10 text-xs text-gray-600 leading-relaxed flex-1 px-1">
+
+              <p className="relative z-10 text-sm text-gray-600 leading-relaxed flex-1 px-1">
                 {item.description}
               </p>
-              
+
               <div className="relative z-10 flex flex-wrap gap-1.5 sm:gap-2 justify-center pt-2">
                 {item.features.map((feature, featureIndex) => (
-                  <span key={featureIndex} className="text-[9px] bg-gray-50/80 backdrop-blur-sm text-gray-600 px-2.5 py-1 rounded-full whitespace-nowrap border border-gray-100/60">
+                  <span key={featureIndex} className="text-xs bg-gray-50/80 backdrop-blur-sm text-gray-600 px-2.5 py-1 rounded-full whitespace-nowrap border border-gray-100/60">
                     {feature}
                   </span>
                 ))}
@@ -215,8 +215,8 @@ export default function TrustSection() {
               >
                 Join Waitlist
               </motion.button>
-              <p className="text-[10px] text-gray-500 text-center">
-                💡 We&apos;ll notify you when we launch • <a href="https://forms.gle/moguzURumvxWo3VAA" target="_blank" rel="noopener noreferrer" className="text-forest-green hover:underline">View form</a>
+              <p className="text-xs text-gray-500 text-center">
+                We&apos;ll notify you when we launch &mdash; no spam, unsubscribe anytime.
               </p>
             </form>
             

@@ -52,12 +52,12 @@ export default function FeaturesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-lg sm:text-xl font-bold text-charcoal mb-2 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal mb-3 leading-tight">
             Crypto transfers{' '}
             <span className="text-forest-green">made simple</span>
           </h2>
-          
-          <p className="text-xs text-gray-500 max-w-2xl mx-auto">
+
+          <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
             Send crypto with phone numbers. Mobile-first. Multi-chain. Built for emerging markets.
           </p>
         </motion.div>
@@ -95,15 +95,15 @@ export default function FeaturesSection() {
                 </motion.div>
                 
                 <div className="space-y-1.5">
-                  <h3 className="text-sm sm:text-[13px] font-bold text-charcoal tracking-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-charcoal tracking-tight">
                     {feature.title}
                   </h3>
-                  <div className={`inline-block px-2.5 py-1 bg-gradient-to-r ${feature.color} text-white text-[9px] font-semibold rounded-full shadow-sm`}>
+                  <div className={`inline-block px-2.5 py-1 bg-gradient-to-r ${feature.color} text-white text-xs font-semibold rounded-full shadow-sm`}>
                     {feature.highlight}
                   </div>
                 </div>
-                
-                <p className="text-xs text-gray-600 leading-relaxed flex-1 px-1">
+
+                <p className="text-sm text-gray-600 leading-relaxed flex-1 px-1">
                   {feature.description}
                 </p>
               </div>

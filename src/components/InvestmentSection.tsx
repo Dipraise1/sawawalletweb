@@ -57,10 +57,10 @@ export default function InvestmentSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-lg sm:text-xl font-bold text-charcoal mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-3">
             DeFi Made Simple
           </h2>
-          <p className="text-xs text-gray-500 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
             Access decentralized finance on Solana and EVM chains. Coming soon.
           </p>
         </motion.div>
@@ -102,16 +102,16 @@ export default function InvestmentSection() {
                     </div>
                   </motion.div>
                   <div className="text-right">
-                    <div className="text-base sm:text-sm font-bold text-forest-green">{feature.stats}</div>
-                    <div className="text-[10px] text-gray-500">{feature.statLabel}</div>
+                    <div className="text-base font-bold text-forest-green">{feature.stats}</div>
+                    <div className="text-xs text-gray-500">{feature.statLabel}</div>
                   </div>
                 </div>
                 
-                <h3 className="text-sm font-bold text-charcoal mb-1.5">
+                <h3 className="text-base font-bold text-charcoal mb-1.5">
                   {feature.title}
                 </h3>
-                
-                <p className="text-xs text-gray-600 flex-1">
+
+                <p className="text-sm text-gray-600 flex-1">
                   {feature.description}
                 </p>
               </div>

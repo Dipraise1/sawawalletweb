@@ -55,15 +55,34 @@ module.exports = {
         'gentle-pulse': {
             '0%, 100%': { opacity: 1 },
             '50%': { opacity: 0.8 },
-        }
+        },
+        'aurora-1': {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(60px, -40px) scale(1.1)' },
+          '66%': { transform: 'translate(-30px, 50px) scale(0.95)' },
+        },
+        'aurora-2': {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(-50px, 60px) scale(1.05)' },
+          '66%': { transform: 'translate(70px, -30px) scale(1.1)' },
+        },
+        'aurora-3': {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1.05)' },
+          '50%': { transform: 'translate(40px, -60px) scale(0.95)' },
+        },
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
         'marquee-left': 'marquee-left 40s linear infinite',
         'marquee-right': 'marquee-right 40s linear infinite',
+        'marquee-left-slow': 'marquee-left 60s linear infinite',
+        'marquee-right-slow': 'marquee-right 60s linear infinite',
         'shimmer': 'shimmer 3s linear infinite',
         'gentle-pulse': 'gentle-pulse 4s ease-in-out infinite',
+        'aurora-1': 'aurora-1 12s ease-in-out infinite',
+        'aurora-2': 'aurora-2 15s ease-in-out infinite',
+        'aurora-3': 'aurora-3 10s ease-in-out infinite',
       },
     },
   },

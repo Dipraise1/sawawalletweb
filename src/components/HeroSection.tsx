@@ -8,7 +8,7 @@ export default function HeroSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
   return (
     <>
-      <section className="min-h-screen bg-gradient-to-br from-white via-subtle-gray to-white flex items-center section-padding pt-20 relative overflow-hidden">
+      <section className="min-h-screen bg-gradient-to-br from-white via-gray-50/50 to-white flex items-center py-20 lg:py-28 pt-28 relative overflow-hidden">
         {/* Enhanced Professional Background */}
         <div className="absolute inset-0">
           {/* Main gradient overlay with more sophisticated colors */}

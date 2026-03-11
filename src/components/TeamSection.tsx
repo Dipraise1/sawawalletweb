@@ -34,6 +34,7 @@ const teamKeys = [
   }
 ];
 
+
 const TeamSection = () => {
   return (
     <section className="py-24 relative overflow-hidden bg-sand/30">
@@ -60,7 +61,8 @@ const TeamSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* Leadership Grid */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
           {teamKeys.map((member, index) => (
             <motion.div
               key={index}
@@ -130,6 +132,7 @@ const TeamSection = () => {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

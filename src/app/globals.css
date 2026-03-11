@@ -105,8 +105,31 @@
   .text-body {
     @apply text-base leading-relaxed text-gray-600 font-light;
   }
-  
+
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-forest-green/20;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100/80 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] hover:border-gray-200/60 transition-all duration-300 backdrop-blur-sm;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Fade edge masks for marquee / scroll containers */
+  .fade-edges {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   }
 }

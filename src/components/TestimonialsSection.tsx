@@ -82,7 +82,7 @@ export default function TestimonialsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-charcoal mb-2 leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-2 leading-tight">
             Built for{' '}
             <span className="text-forest-green relative">
               early adopters
@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
               />
             </span>
           </h2>
-          <p className="text-xs text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
             See what early supporters are saying
           </p>
         </motion.div>
@@ -132,24 +132,24 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Testimonial Text */}
-                <blockquote className="text-gray-700 leading-relaxed mb-4 text-xs flex-1">
+                <blockquote className="text-gray-700 leading-relaxed mb-4 text-sm flex-1">
                   &ldquo;{testimonial.text}&rdquo;
                 </blockquote>
 
                 {/* Highlight Badge */}
-                <div className="inline-block px-2.5 py-1 bg-gradient-to-r from-forest-green/10 to-luxury-gold/10 text-forest-green text-[9px] font-semibold rounded-full mb-3 self-start border border-forest-green/20 shadow-sm">
+                <div className="inline-block px-2.5 py-1 bg-gradient-to-r from-forest-green/10 to-luxury-gold/10 text-forest-green text-xs font-semibold rounded-full mb-3 self-start border border-forest-green/20 shadow-sm">
                   {testimonial.highlight}
                 </div>
 
                 {/* User Info */}
                 <div className="flex items-center pt-2 border-t border-gray-100">
-                  <div className="w-10 h-10 sm:w-9 sm:h-9 bg-gradient-to-br from-forest-green to-luxury-gold rounded-full flex items-center justify-center text-white font-bold text-xs mr-3 flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-forest-green to-luxury-gold rounded-full flex items-center justify-center text-white font-bold text-xs mr-3 flex-shrink-0">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-charcoal text-xs truncate">{testimonial.name}</div>
-                    <div className="text-gray-500 text-[10px] truncate">{testimonial.role}</div>
-                    <div className="text-gray-400 text-[9px] truncate">{testimonial.location}</div>
+                    <div className="font-semibold text-charcoal text-sm truncate">{testimonial.name}</div>
+                    <div className="text-gray-500 text-xs truncate">{testimonial.role}</div>
+                    <div className="text-gray-400 text-xs truncate">{testimonial.location}</div>
                   </div>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function TestimonialsSection() {
             <h3 className="text-base sm:text-lg font-bold mb-2">
               Be among the first
             </h3>
-            <p className="text-white/90 mb-5 sm:mb-4 max-w-2xl mx-auto text-xs px-2 sm:px-0">
+            <p className="text-white/90 mb-5 sm:mb-4 max-w-2xl mx-auto text-sm px-2 sm:px-0">
               Join our waitlist for early access when we launch.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto sm:max-w-none">
