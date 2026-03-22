@@ -1,12 +1,17 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Privacy Policy - Sawa Wallet',
+  title: 'Privacy Policy',
   description: 'Learn how Sawa Wallet collects, uses, and protects your personal information. We prioritize your privacy and data security.',
+  alternates: {
+    canonical: 'https://sawawallet.com/privacy-policy',
+  },
   openGraph: {
     title: 'Privacy Policy - Sawa Wallet',
-    description: 'Learn how Sawa Wallet collects, uses, and protects your personal information. We prioritize your privacy and data security.',
+    description: 'Learn how Sawa Wallet collects, uses, and protects your personal information.',
+    url: 'https://sawawallet.com/privacy-policy',
   },
+  robots: { index: true, follow: true },
 }
 
 export default function PrivacyPolicy() {

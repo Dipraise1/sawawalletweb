@@ -9,7 +9,7 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-  preload: false,
+  preload: true,
   fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
 })
 
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   publisher: 'Sawa Wallet',
   metadataBase: new URL('https://sawawallet.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://sawawallet.com',
   },
   openGraph: {
     title: 'Sawa Wallet - Money for People, Not Addresses',
@@ -80,9 +80,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'verification_token', // Placeholder
-  },
+  // verification: {
+  //   google: 'YOUR_GOOGLE_SEARCH_CONSOLE_TOKEN', // Add once verified in Google Search Console
+  // },
 }
 
 export const viewport: Viewport = {

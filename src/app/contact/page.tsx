@@ -3,12 +3,17 @@ import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Sawa Wallet Support',
+  title: 'Contact Us',
   description: 'Get in touch with Sawa Wallet team. We are here to help with any questions about sending money, crypto transfers, or account support.',
-  openGraph: {
-    title: 'Contact Us - Sawa Wallet Support',
-    description: 'Get in touch with Sawa Wallet team. We are here to help with any questions about sending money, crypto transfers, or account support.',
+  alternates: {
+    canonical: 'https://sawawallet.com/contact',
   },
+  openGraph: {
+    title: 'Contact Sawa Wallet',
+    description: 'Get in touch with Sawa Wallet. We help with questions about sending money, crypto transfers, or account support.',
+    url: 'https://sawawallet.com/contact',
+  },
+  robots: { index: true, follow: true },
 }
 
 export default function Contact() {
