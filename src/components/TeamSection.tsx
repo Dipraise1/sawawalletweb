@@ -42,22 +42,30 @@ const TeamSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-4"
+          >
+            Leadership
+          </motion.p>
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="heading-2 mb-4"
           >
-            Meet The Leadership
+            The Team Behind Sawa
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-body-lg text-gray-600 max-w-2xl mx-auto"
           >
-            Visionaries building the future of African finance
+            A focused team of builders, strategists, and financial experts committed to making cross-border payments accessible across Africa.
           </motion.p>
         </div>
 

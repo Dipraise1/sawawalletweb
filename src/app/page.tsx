@@ -481,12 +481,12 @@ export default function Home() {
 
         <div className="container-custom relative z-10">
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-widest text-luxury-gold/80 mb-6">Get early access</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-luxury-gold/80 mb-6">Early Access</p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
-              Ready to join the future?
+              Be among the first.
             </h2>
             <p className="text-xl text-white/75 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-              Join the waitlist today and be among the first to experience the most human crypto wallet ever built.
+              Sawa is currently in beta. Sign up to secure your spot and get notified when we launch in your country.
             </p>
 
             <form className="max-w-md mx-auto relative group mb-8" action="/api/waitlist" method="POST">
@@ -502,22 +502,22 @@ export default function Home() {
                   className="flex-1 px-6 bg-transparent text-white placeholder:text-white/40 focus:outline-none text-sm"
                 />
                 <button type="submit" className="px-7 py-2.5 bg-white text-forest-green rounded-full font-bold hover:bg-cream transition-colors shadow-lg text-sm">
-                  Join
+                  Request Access
                 </button>
               </div>
             </form>
 
-            <p className="text-sm text-white/40 mb-10">No spam. Unsubscribe anytime.</p>
+            <p className="text-sm text-white/40 mb-10">No spam. Unsubscribe at any time.</p>
 
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
               {[
-                { icon: '🌍', text: '50+ Countries' },
-                { icon: '⚡', text: 'Instant Transfers' },
-                { icon: '🔒', text: 'Bank-Grade Security' },
-                { icon: '💬', text: 'Discord Community' },
+                { text: '50+ Countries' },
+                { text: 'Instant Settlement' },
+                { text: 'Bank-Grade Security' },
+                { text: 'Non-Custodial' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 text-white/50 text-sm">
-                  <span aria-hidden="true">{item.icon}</span>
+                  <span className="w-1 h-1 rounded-full bg-luxury-gold/60 flex-shrink-0" aria-hidden="true" />
                   <span>{item.text}</span>
                 </div>
               ))}
