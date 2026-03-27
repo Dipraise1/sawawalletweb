@@ -185,6 +185,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── POWERED BY / PARTNER LOGOS MARQUEE ──────────────────────────── */}
+      <section className="py-14 bg-white border-t border-gray-100 overflow-hidden">
+        <div className="container-custom mb-10 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+            Powered by industry-leading infrastructure
+          </p>
+        </div>
+
+        {(() => {
+          const partners = [
+            {
+              name: 'Solana',
+              logo: 'https://cdn.simpleicons.org/solana',
+            },
+            {
+              name: 'Ethereum',
+              logo: 'https://cdn.simpleicons.org/ethereum',
+            },
+            {
+              name: 'Privy',
+              logo: 'https://cdn.simpleicons.org/privy',
+            },
+            {
+              name: 'Tron',
+              logo: 'https://cdn.simpleicons.org/tron',
+            },
+            {
+              name: 'Meld',
+              logo: 'https://meld.io/favicon.ico',
+            },
+            {
+              name: 'Paystack',
+              logo: 'https://cdn.simpleicons.org/paystack',
+            },
+            {
+              name: 'Helius',
+              logo: 'https://www.helius.dev/favicon.ico',
+            },
+          ]
+          const items = [...partners, ...partners, ...partners]
+          return (
+            <div className="relative flex overflow-hidden group fade-edges">
+              <div className="flex items-center gap-20 animate-marquee-left group-hover:[animation-play-state:paused] min-w-full">
+                {items.map((p, i) => (
+                  <div key={i} className="flex-shrink-0 flex items-center gap-3.5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      width={40}
+                      height={40}
+                      className="h-10 w-auto object-contain"
+                      style={{ filter: 'brightness(0)', opacity: 0.8 }}
+                    />
+                    <span className="font-bold text-lg text-gray-900 whitespace-nowrap tracking-tight">
+                      {p.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        })()}
+      </section>
+
       {/* ─── WHY SECTION ──────────────────────────────────────────────────── */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-forest-green/3 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
