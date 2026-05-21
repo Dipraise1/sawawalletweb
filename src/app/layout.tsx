@@ -35,17 +35,17 @@ export const metadata: Metadata = {
   },
   description: 'The human-first crypto wallet. Send USDC and other assets instantly to anyone using just their phone number. Non-custodial, multi-chain, and built for real connections.',
   keywords: ['sawa wallet', 'sawawallet', 'sawa crypto', 'crypto wallet', 'send money to africa', 'usdc wallet', 'solana wallet', 'phone number crypto transfer', 'non-custodial wallet', 'cross-border payments', 'stablecoin wallet', 'nigeria crypto', 'kenya crypto', 'ghana crypto'],
-  authors: [{ name: 'Sawa Wallet Team', url: 'https://sawawallet.com' }],
+  authors: [{ name: 'Sawa Wallet Team', url: 'https://sawawallet.org' }],
   creator: 'Sawa Wallet',
   publisher: 'Sawa Wallet',
-  metadataBase: new URL('https://sawawallet.com'),
+  metadataBase: new URL('https://sawawallet.org'),
   alternates: {
-    canonical: 'https://sawawallet.com',
+    canonical: 'https://sawawallet.org',
   },
   openGraph: {
     title: 'Sawa Wallet - Money for People, Not Addresses',
     description: 'Stop copying long wallet addresses. Send crypto to friends and family using just their phone number. Fast, secure, and built for everyone.',
-    url: 'https://sawawallet.com',
+    url: 'https://sawawallet.org',
     siteName: 'Sawa Wallet',
     images: [
       {
@@ -102,7 +102,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
       </head>
-      <body className="font-sans antialiased text-charcoal bg-cream selection:bg-forest-green/20 selection:text-forest-green overflow-x-hidden">
+      <body className="font-sans antialiased text-charcoal bg-cream selection:bg-forest-green/20 selection:text-forest-green overflow-x-clip">
         <JsonLd />
         <Navbar />
         {children}

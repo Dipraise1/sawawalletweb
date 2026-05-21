@@ -72,7 +72,7 @@ export default function Footer() {
               <li><Link href="/contact" className="text-sm text-gray-400 hover:text-luxury-gold transition-colors">Contact</Link></li>
               <li><Link href="/delete-data" className="text-sm text-gray-400 hover:text-luxury-gold transition-colors">Delete My Data</Link></li>
               <li>
-                <a href="mailto:support@sawawallet.com" className="text-sm text-gray-400 hover:text-luxury-gold transition-colors">
+                <a href="mailto:support@sawawallet.org" className="text-sm text-gray-400 hover:text-luxury-gold transition-colors">
                   Support
                 </a>
               </li>

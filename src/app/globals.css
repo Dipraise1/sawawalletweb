@@ -127,6 +127,12 @@
     display: none;
   }
 
+  /* Hint browser to GPU-composite parallax layers */
+  .parallax-layer {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
   /* Fade edge masks for marquee / scroll containers */
   .fade-edges {
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);

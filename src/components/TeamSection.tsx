@@ -8,21 +8,24 @@ const teamKeys = [
     name: "Divine Raphael",
     role: "Founder",
     title: "Engineering Lead",
-    image: "/images/team/divine.png",
+    image: "/images/team/divine.jpg",
     bio: "Building modern financial infrastructure that connects crypto with real-world payments across Africa. Expert in Node.js, secure API architectures, and blockchain integrations.",
     gradient: "from-purple-500/20 to-blue-500/20",
     socials: {
       email: "raphealdivine2@gmail.com",
-      twitter: "https://x.com/divinecodes11?s=21"
+      twitter: "https://x.com/Divinecodes11"
     }
   },
   {
     name: "Peter",
     role: "Co-Founder",
     title: "Head of Marketing",
-    image: "/images/team/peter.png",
+    image: "/images/team/peter.jpg",
     bio: "Driving growth and brand strategy. Expert in market planning, user acquisition, and crafting the Sawa narrative to reach millions across the continent.",
-    gradient: "from-orange-500/20 to-red-500/20"
+    gradient: "from-orange-500/20 to-red-500/20",
+    socials: {
+      twitter: "https://x.com/thatcrypt00guy"
+    }
   },
   {
     name: "Tyler",

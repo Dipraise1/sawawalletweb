@@ -1,55 +1,29 @@
 import TeamSection from '@/components/TeamSection'
-import { FadeIn, FloatingCard, TestimonialCard } from '@/components/AnimatedSection'
+import {
+  FadeIn,
+  FadeInLeft,
+  FadeInRight,
+  FloatingCard,
+  TestimonialCard,
+  ParallaxLayer,
+  ParallaxScale,
+  StaggerChildren,
+  StaggerItem,
+  RevealWords,
+} from '@/components/AnimatedSection'
+import ParallaxHeroBackground from '@/components/ParallaxHeroBackground'
+import StoryScrollSection from '@/components/StoryScrollSection'
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-cream font-sans selection:bg-forest-green/20 selection:text-forest-green-dark">
+    <main className="min-h-screen overflow-x-clip bg-cream font-sans selection:bg-forest-green/20 selection:text-forest-green-dark">
 
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden">
 
-        {/* ── Static background (orbs are visual only — client animation not needed for SEO) ── */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-          {/* Orb 1 */}
-          <div
-            className="absolute rounded-full animate-pulse"
-            style={{
-              width: 700, height: 700, top: '-15%', right: '-10%',
-              background: 'radial-gradient(circle, rgba(45,80,22,0.18) 0%, rgba(45,80,22,0.06) 50%, transparent 70%)',
-              filter: 'blur(60px)',
-            }}
-          />
-          {/* Orb 2 */}
-          <div
-            className="absolute rounded-full"
-            style={{
-              width: 800, height: 800, bottom: '-20%', left: '-15%',
-              background: 'radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.05) 50%, transparent 70%)',
-              filter: 'blur(70px)',
-            }}
-          />
-          {/* Orb 3 */}
-          <div
-            className="absolute rounded-full"
-            style={{
-              width: 500, height: 500, top: '25%', left: '10%',
-              background: 'radial-gradient(circle, rgba(45,80,22,0.12) 0%, rgba(45,80,22,0.04) 50%, transparent 70%)',
-              filter: 'blur(50px)',
-            }}
-          />
-          {/* Dot grid overlay */}
-          <div className="absolute inset-0 opacity-[0.025] bg-[radial-gradient(circle_at_1px_1px,rgb(45,80,22)_1px,transparent_0)] bg-[length:24px_24px]" />
-          {/* Light lines */}
-          <div
-            className="absolute left-0 w-full h-px"
-            style={{ background: 'linear-gradient(to right, transparent, rgba(45,80,22,0.12), transparent)', top: '33%' }}
-          />
-          <div
-            className="absolute left-0 w-full h-px"
-            style={{ background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.12), transparent)', top: '66%' }}
-          />
-        </div>
+        {/* ── Parallax depth background — 4 layers at different scroll speeds ── */}
+        <ParallaxHeroBackground />
 
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto text-center">
@@ -63,10 +37,11 @@ export default function Home() {
 
             <FadeIn delay={0.1}>
               <h1 className="heading-hero text-charcoal mb-8 tracking-tight">
-                Send money{' '}
+                <RevealWords text="Send money" delay={0.15} />
+                {' '}
                 <br className="hidden sm:block" />
-                <span className="text-gradient-green relative">
-                  like a text.
+                <span className="text-gradient-green relative inline-block">
+                  <RevealWords text="like a text." delay={0.35} />
                   <svg className="absolute w-full h-3 -bottom-1 left-0 text-luxury-gold/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                   </svg>
@@ -185,6 +160,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── CINEMATIC STORY ──────────────────────────────────────────────── */}
+      <StoryScrollSection />
+
       {/* ─── POWERED BY / PARTNER LOGOS MARQUEE ──────────────────────────── */}
       <section className="py-14 bg-white border-t border-gray-100 overflow-hidden">
         <div className="container-custom mb-10 text-center">
@@ -259,28 +237,30 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             {/* Image side */}
-            <FadeIn>
-              <div className="relative rounded-[2rem] overflow-hidden bg-sand aspect-[4/5] lg:aspect-square group shadow-2xl">
-                <Image
-                  src="/Green & Yellow.jpg"
-                  alt="Two people smiling while using Sawa Wallet to send money"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" aria-hidden="true" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <p className="text-white text-lg font-medium leading-snug">&quot;It just works, like magic.&quot;</p>
-                  <p className="text-white/60 text-sm mt-1">— Early beta user, Lagos</p>
+            <FadeInLeft>
+              <ParallaxScale>
+                <div className="relative rounded-[2rem] overflow-hidden bg-sand aspect-[4/5] lg:aspect-square group shadow-2xl">
+                  <Image
+                    src="/Green & Yellow.jpg"
+                    alt="Two people smiling while using Sawa Wallet to send money"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" aria-hidden="true" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <p className="text-white text-lg font-medium leading-snug">&quot;It just works, like magic.&quot;</p>
+                    <p className="text-white/60 text-sm mt-1">— Early beta user, Lagos</p>
+                  </div>
+                  <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md">
+                    <span className="text-xs font-semibold text-forest-green">Beta Live</span>
+                  </div>
                 </div>
-                <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md">
-                  <span className="text-xs font-semibold text-forest-green">Beta Live</span>
-                </div>
-              </div>
-            </FadeIn>
+              </ParallaxScale>
+            </FadeInLeft>
 
             {/* Text side */}
             <div>
-              <FadeIn delay={0.15}>
+              <FadeInRight delay={0.15}>
                 <p className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-4">Why Sawa</p>
                 <h2 className="heading-2 mb-6">Designed for real relationships.</h2>
                 <p className="text-body-lg mb-10">
@@ -288,9 +268,9 @@ export default function Home() {
                   Whether you&apos;re paying tuition, sending support home, or splitting a bill,
                   Sawa respects the connection between you and the recipient.
                 </p>
-              </FadeIn>
+              </FadeInRight>
 
-              <div className="space-y-4">
+              <StaggerChildren className="space-y-4">
                 {[
                   {
                     num: "01",
@@ -308,7 +288,7 @@ export default function Home() {
                     desc: "Add a message to every transfer, because money has meaning."
                   }
                 ].map((item, i) => (
-                  <FadeIn delay={0.2 + i * 0.1} key={i}>
+                  <StaggerItem key={i}>
                     <div className="flex items-start gap-5 p-5 rounded-2xl hover:bg-gray-50 transition-all duration-300 border border-transparent hover:border-gray-100 group">
                       <span className="text-2xl font-bold text-forest-green/20 group-hover:text-forest-green/40 transition-colors font-mono leading-none mt-0.5 flex-shrink-0 w-8" aria-hidden="true">
                         {item.num}
@@ -318,9 +298,9 @@ export default function Home() {
                         <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
-                  </FadeIn>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerChildren>
             </div>
           </div>
         </div>
@@ -340,7 +320,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <StaggerChildren className="grid md:grid-cols-3 gap-8">
             {[
               {
                 num: "01",
@@ -373,7 +353,7 @@ export default function Home() {
                 accent: "border-gray-200/80"
               }
             ].map((feature, i) => (
-              <FadeIn delay={i * 0.1} key={i}>
+              <StaggerItem key={i}>
                 <div className={`relative p-8 rounded-[2rem] border bg-gradient-to-br ${feature.gradient} shadow-sm hover:shadow-xl transition-all duration-500 group h-full overflow-hidden ${feature.accent}`}>
                   <span className="absolute top-7 right-8 text-4xl font-bold text-charcoal/5 group-hover:text-charcoal/10 transition-colors font-mono select-none" aria-hidden="true">
                     {feature.num}
@@ -388,9 +368,9 @@ export default function Home() {
                     <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
-              </FadeIn>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
