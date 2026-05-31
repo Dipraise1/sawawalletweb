@@ -138,4 +138,14 @@
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   }
+
+  /* Looping nudge for the "swipe to read more" hint */
+  .animate-slide-hint {
+    animation: slide-hint 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes slide-hint {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
 }

@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Get in touch with Sawa Wallet team. We are here to help with any questions about sending money, crypto transfers, or account support.',
   alternates: {
-    canonical: 'https://sawawallet.com/contact',
+    canonical: 'https://sawawallet.org/contact',
   },
   openGraph: {
     title: 'Contact Sawa Wallet',
     description: 'Get in touch with Sawa Wallet. We help with questions about sending money, crypto transfers, or account support.',
-    url: 'https://sawawallet.com/contact',
+    url: 'https://sawawallet.org/contact',
   },
   robots: { index: true, follow: true },
 }
@@ -105,10 +105,10 @@ export default function Contact() {
                       Download Pitch Deck
                     </a>
                     <a 
-                      href="mailto:investors@sawawallet.com" 
+                      href="mailto:investors@sawawallet.org" 
                       className="text-[10px] text-gray-600 hover:text-forest-green transition-colors font-semibold"
                     >
-                      investors@sawawallet.com
+                      investors@sawawallet.org
                     </a>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Email Support */}
                 <a
-                  href="mailto:support@sawawallet.com"
+                  href="mailto:support@sawawallet.org"
                   className="flex items-start space-x-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-forest-green hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-10 h-10 bg-forest-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -147,7 +147,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-charcoal mb-1">Email Support</h3>
-                    <p className="text-xs text-gray-600">support@sawawallet.com</p>
+                    <p className="text-xs text-gray-600">support@sawawallet.org</p>
                   </div>
                 </a>
 
@@ -171,7 +171,7 @@ export default function Contact() {
 
                 {/* General Inquiries */}
                 <a
-                  href="mailto:hello@sawawallet.com"
+                  href="mailto:hello@sawawallet.org"
                   className="flex items-start space-x-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-forest-green hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-10 h-10 bg-luxury-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -181,13 +181,13 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-charcoal mb-1">General Inquiries</h3>
-                    <p className="text-xs text-gray-600">hello@sawawallet.com</p>
+                    <p className="text-xs text-gray-600">hello@sawawallet.org</p>
                   </div>
                 </a>
 
                 {/* Legal */}
                 <a
-                  href="mailto:legal@sawawallet.com"
+                  href="mailto:legal@sawawallet.org"
                   className="flex items-start space-x-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-forest-green hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -197,7 +197,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-charcoal mb-1">Legal & Privacy</h3>
-                    <p className="text-xs text-gray-600">legal@sawawallet.com</p>
+                    <p className="text-xs text-gray-600">legal@sawawallet.org</p>
                   </div>
                 </a>
               </div>

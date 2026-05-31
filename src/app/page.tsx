@@ -4,7 +4,6 @@ import {
   FadeInLeft,
   FadeInRight,
   FloatingCard,
-  TestimonialCard,
   ParallaxLayer,
   ParallaxScale,
   StaggerChildren,
@@ -13,6 +12,8 @@ import {
 } from '@/components/AnimatedSection'
 import ParallaxHeroBackground from '@/components/ParallaxHeroBackground'
 import StoryScrollSection from '@/components/StoryScrollSection'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { FAQ_ITEMS } from '@/lib/faq'
 import Image from 'next/image'
 
 export default function Home() {
@@ -182,12 +183,16 @@ export default function Home() {
               logo: 'https://cdn.simpleicons.org/ethereum',
             },
             {
+              name: 'Bitcoin',
+              logo: 'https://cdn.simpleicons.org/bitcoin',
+            },
+            {
               name: 'Privy',
-              logo: 'https://cdn.simpleicons.org/privy',
+              logo: 'https://www.google.com/s2/favicons?domain=privy.io&sz=64',
             },
             {
               name: 'Tron',
-              logo: 'https://cdn.simpleicons.org/tron',
+              logo: 'https://cryptologos.cc/logos/tron-trx-logo.png?v=029',
             },
             {
               name: 'Meld',
@@ -195,7 +200,7 @@ export default function Home() {
             },
             {
               name: 'Paystack',
-              logo: 'https://cdn.simpleicons.org/paystack',
+              logo: 'https://www.google.com/s2/favicons?domain=paystack.com&sz=64',
             },
             {
               name: 'Helius',
@@ -324,8 +329,8 @@ export default function Home() {
             {[
               {
                 num: "01",
-                title: "Multi-Chain Capable",
-                desc: "USDC on Solana, Polygon, or Base? We handle the networks so you don't have to.",
+                title: "One Wallet, Every Chain",
+                desc: "Hold and send USDC, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon and BNB Chain — we handle the networks so you don't have to.",
                 icon: (
                   <svg className="w-8 h-8 text-luxury-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                 ),
@@ -334,23 +339,53 @@ export default function Home() {
               },
               {
                 num: "02",
-                title: "Instant Settlement",
-                desc: "Money moves at the speed of the internet. No more waiting 3–5 business days.",
+                title: "Buy Crypto Instantly",
+                desc: "Top up with a local bank transfer and watch crypto land in your wallet within minutes — no cards, no middlemen.",
                 icon: (
-                  <svg className="w-8 h-8 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  <svg className="w-8 h-8 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m4 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                ),
+                gradient: "from-emerald-50 to-green-50",
+                accent: "border-forest-green/25"
+              },
+              {
+                num: "03",
+                title: "Sawa Pay",
+                desc: "Pay bills, buy airtime & data, and cash out to any bank account or mobile money — straight from your crypto balance.",
+                icon: (
+                  <svg className="w-8 h-8 text-luxury-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z" /></svg>
+                ),
+                gradient: "from-amber-50 to-yellow-50",
+                accent: "border-luxury-gold/30"
+              },
+              {
+                num: "04",
+                title: "We Run Our Own Rails",
+                desc: "Sawa operates its own on- and off-ramp service — so conversions are faster, rates are fairer, and there's no third-party middleman.",
+                icon: (
+                  <svg className="w-8 h-8 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16M7 4v16m10-16v16" /></svg>
                 ),
                 gradient: "from-blue-50 to-indigo-50",
                 accent: "border-blue-200/60"
               },
               {
-                num: "03",
-                title: "Secure & Non-Custodial",
-                desc: "You own your keys. You own your money. We just make it easy to manage.",
+                num: "05",
+                title: "Earn While You Hold",
+                desc: "Put idle assets to work with built-in staking, and protect bigger deals with on-chain escrow.",
                 icon: (
-                  <svg className="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                  <svg className="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 17l6-6 4 4 8-8m0 0h-5m5 0v5" /></svg>
                 ),
                 gradient: "from-gray-50 to-gray-100",
                 accent: "border-gray-200/80"
+              },
+              {
+                num: "06",
+                title: "Secure & Non-Custodial",
+                desc: "You own your keys and your money. Identity verification unlocks higher limits when you need them.",
+                icon: (
+                  <svg className="w-8 h-8 text-luxury-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                ),
+                gradient: "from-forest-green/5 to-luxury-gold/5",
+                accent: "border-luxury-gold/30"
               }
             ].map((feature, i) => (
               <StaggerItem key={i}>
@@ -407,65 +442,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="relative fade-edges">
-            <div className="flex gap-6 overflow-x-auto pb-6 snap-x scrollbar-hide -mx-4 px-4">
-              {[
-                {
-                  quote: "Finally, a crypto wallet that doesn't feel like a science experiment. I sent money to my landlord using just his phone number.",
-                  name: "Adebayo Ogunlesi",
-                  role: "Software Engineer",
-                  location: "Lagos, Nigeria",
-                  initials: "AO",
-                  color: "bg-forest-green"
-                },
-                {
-                  quote: "Perfect for my business. Paying suppliers across Africa now feels like sending a WhatsApp message. Total game changer.",
-                  name: "Fatima Hassan",
-                  role: "Business Owner",
-                  location: "Kano, Nigeria",
-                  initials: "FH",
-                  color: "bg-luxury-gold"
-                },
-                {
-                  quote: "I work with clients worldwide. Sawa helps me receive payments and send money home instantly — no complex addresses ever.",
-                  name: "Emmanuel Boateng",
-                  role: "Freelancer",
-                  location: "Accra, Ghana",
-                  initials: "EB",
-                  color: "bg-blue-500"
-                },
-                {
-                  quote: "So simple as a student. No passwords, no complex setup. Just works with my phone number. I told all my friends.",
-                  name: "David Okonkwo",
-                  role: "Student",
-                  location: "Abuja, Nigeria",
-                  initials: "DO",
-                  color: "bg-purple-500"
-                }
-              ].map((t, i) => (
-                <TestimonialCard
-                  key={i}
-                  className="min-w-[320px] md:min-w-[420px] bg-sand/40 border border-gray-100 p-8 rounded-3xl shrink-0 snap-center hover:bg-sand/70 hover:shadow-lg transition-all duration-300 flex flex-col"
-                >
-                  <div className="flex items-center gap-1 mb-5" aria-label="5 stars">
-                    {[...Array(5)].map((_, j) => <span key={j} className="text-luxury-gold text-lg" aria-hidden="true">★</span>)}
-                  </div>
-                  <p className="text-lg text-charcoal font-medium italic mb-6 leading-relaxed flex-1">
-                    &quot;{t.quote}&quot;
-                  </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                    <div className={`w-11 h-11 rounded-full ${t.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`} aria-hidden="true">
-                      {t.initials}
-                    </div>
-                    <div>
-                      <p className="font-bold text-charcoal text-sm">{t.name}</p>
-                      <p className="text-xs text-gray-500">{t.role} · {t.location}</p>
-                    </div>
-                  </div>
-                </TestimonialCard>
-              ))}
-            </div>
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 
@@ -515,6 +492,39 @@ export default function Home() {
 
       {/* ─── TEAM ─────────────────────────────────────────────────────────── */}
       <TeamSection />
+
+      {/* ─── FAQ ──────────────────────────────────────────────────────────── */}
+      <section id="faq" className="py-28 bg-white border-t border-gray-100">
+        <div className="container-custom max-w-3xl">
+          <div className="text-center mb-14">
+            <FadeIn>
+              <p className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-4">FAQ</p>
+              <h2 className="heading-2 mb-4">Questions, answered.</h2>
+              <p className="text-body-lg text-gray-600">Everything you need to know about sending, buying and spending crypto with Sawa.</p>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.1}>
+            <div className="divide-y divide-gray-100 border-y border-gray-100">
+              {FAQ_ITEMS.map((item, i) => (
+                <details key={i} className="group py-5">
+                  <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
+                    <h3 className="text-base sm:text-lg font-semibold text-charcoal group-hover:text-forest-green transition-colors">
+                      {item.question}
+                    </h3>
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 group-open:rotate-45 group-open:border-forest-green group-open:text-forest-green transition-all duration-300" aria-hidden="true">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
+                    </span>
+                  </summary>
+                  <p className="text-gray-600 leading-relaxed mt-3 pr-10">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       {/* ─── CTA ──────────────────────────────────────────────────────────── */}
       <section id="download" className="py-32 bg-forest-green relative overflow-hidden text-center">

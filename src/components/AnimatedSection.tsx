@@ -94,14 +94,17 @@ export const FloatingCard = ({
 export const TestimonialCard = ({
   children,
   className = '',
+  ...rest
 }: {
   children: React.ReactNode
   className?: string
+  [key: string]: unknown
 }) => (
   <motion.div
     className={className}
     whileHover={{ y: -4 }}
     transition={{ duration: 0.3 }}
+    {...rest}
   >
     {children}
   </motion.div>

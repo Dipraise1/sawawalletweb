@@ -4,12 +4,12 @@ export const metadata = {
   title: 'Privacy Policy',
   description: 'Learn how Sawa Wallet collects, uses, and protects your personal information. We prioritize your privacy and data security.',
   alternates: {
-    canonical: 'https://sawawallet.com/privacy-policy',
+    canonical: 'https://sawawallet.org/privacy-policy',
   },
   openGraph: {
     title: 'Privacy Policy - Sawa Wallet',
     description: 'Learn how Sawa Wallet collects, uses, and protects your personal information.',
-    url: 'https://sawawallet.com/privacy-policy',
+    url: 'https://sawawallet.org/privacy-policy',
   },
   robots: { index: true, follow: true },
 }
@@ -162,7 +162,7 @@ export default function PrivacyPolicy() {
                 <li>Withdraw consent for data processing (where applicable)</li>
               </ul>
               <p className="text-sm leading-relaxed mt-3">
-                To exercise these rights, please contact us at <a href="mailto:privacy@sawawallet.com" className="text-forest-green hover:underline">privacy@sawawallet.com</a>
+                To exercise these rights, please contact us at <a href="mailto:privacy@sawawallet.org" className="text-forest-green hover:underline">privacy@sawawallet.org</a>
               </p>
             </section>
 
@@ -197,8 +197,8 @@ export default function PrivacyPolicy() {
                 If you have questions or concerns about this Privacy Policy, please contact us:
               </p>
               <div className="bg-gray-50 rounded-lg p-4 text-sm">
-                <p className="mb-1"><strong>Email:</strong> <a href="mailto:privacy@sawawallet.com" className="text-forest-green hover:underline">privacy@sawawallet.com</a></p>
-                <p className="mb-1"><strong>Support:</strong> <a href="mailto:support@sawawallet.com" className="text-forest-green hover:underline">support@sawawallet.com</a></p>
+                <p className="mb-1"><strong>Email:</strong> <a href="mailto:privacy@sawawallet.org" className="text-forest-green hover:underline">privacy@sawawallet.org</a></p>
+                <p className="mb-1"><strong>Support:</strong> <a href="mailto:support@sawawallet.org" className="text-forest-green hover:underline">support@sawawallet.org</a></p>
                 <p><strong>Discord:</strong> <a href="https://discord.gg/TbvR5UcG" target="_blank" rel="noopener noreferrer" className="text-forest-green hover:underline">Join our community</a></p>
               </div>
             </section>

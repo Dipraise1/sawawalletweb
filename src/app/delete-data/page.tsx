@@ -238,8 +238,8 @@ export default function DeleteData() {
               You can also request data deletion by contacting us directly:
             </p>
             <div className="bg-gray-50 rounded-lg p-4 text-sm">
-              <p className="mb-2"><strong>Email:</strong> <a href="mailto:privacy@sawawallet.com" className="text-forest-green hover:underline">privacy@sawawallet.com</a></p>
-              <p className="mb-2"><strong>Support:</strong> <a href="mailto:support@sawawallet.com" className="text-forest-green hover:underline">support@sawawallet.com</a></p>
+              <p className="mb-2"><strong>Email:</strong> <a href="mailto:privacy@sawawallet.org" className="text-forest-green hover:underline">privacy@sawawallet.org</a></p>
+              <p className="mb-2"><strong>Support:</strong> <a href="mailto:support@sawawallet.org" className="text-forest-green hover:underline">support@sawawallet.org</a></p>
               <p><strong>Subject Line:</strong> &quot;Data Deletion Request&quot;</p>
             </div>
           </section>

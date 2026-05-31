@@ -1,0 +1,42 @@
+# Sawa Wallet
+
+> Sawa Wallet is a human-first, non-custodial, multi-chain crypto wallet built for Africa and emerging markets. It lets anyone send and receive crypto using just a phone number — no long wallet addresses — and buy, cash out, and spend crypto in local currency.
+
+Sawa Wallet replaces complex wallet addresses with phone numbers, so sending crypto feels as simple as sending a text message. Users own their own keys (non-custodial). It is available on iOS and Android, currently in beta across 50+ countries.
+
+## What Sawa Wallet does
+
+- **Send by phone number**: Send crypto to anyone using their phone number from your contacts — no addresses to copy.
+- **Multi-chain, including Bitcoin**: Hold and send USDC, USDT, SOL, ETH and BTC across Solana, Ethereum, Base, Polygon and BNB Chain from one wallet.
+- **Buy crypto instantly**: Top up with a local bank transfer; crypto arrives in minutes.
+- **Cash out locally**: Withdraw to a bank account or mobile money in your local currency.
+- **Own ramp service**: Sawa operates its own on- and off-ramp infrastructure, so conversions are faster and fairly priced with no third-party middleman.
+- **Sawa Pay**: Pay bills, buy airtime and data, and settle electricity and cable TV directly from your crypto balance.
+- **Earn & protect**: Built-in staking to grow idle assets, and on-chain escrow for safer deals.
+- **Non-custodial & secure**: You own your private keys. Optional identity verification (KYC) unlocks higher limits.
+
+## Who it is for
+
+People sending money to family, paying suppliers across borders, freelancers receiving international payments, and anyone in emerging markets who wants a simple, low-fee way to use stablecoins and crypto in daily life.
+
+## Coverage
+
+50+ countries, with deep local support in Nigeria, Kenya, Ghana, South Africa, Uganda, Tanzania, Zambia and more.
+
+## Key facts
+
+- Category: Non-custodial crypto wallet / cross-border payments / stablecoin wallet
+- Platforms: iOS and Android
+- Networks: Solana, Ethereum, Base, Polygon, BNB Chain, Bitcoin
+- Assets: USDC, USDT, SOL, ETH, BTC
+- Cost: Free to use; small transparent fee on fiat conversions
+- Custody: Non-custodial (user holds keys)
+
+## Links
+
+- Website: https://sawawallet.org
+- iOS (TestFlight): https://testflight.apple.com/join/5CT6rA8q
+- Android (Google Play beta): https://play.google.com/apps/testing/com.sawawallet.app
+- Contact / support: support@sawawallet.org
+- Privacy Policy: https://sawawallet.org/privacy-policy
+- Terms of Service: https://sawawallet.org/terms-of-service

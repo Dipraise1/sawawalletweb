@@ -261,8 +261,8 @@ export default function TermsOfService() {
                 If you have questions or concerns about these Terms of Service, please contact us:
               </p>
               <div className="bg-gray-50 rounded-lg p-4 text-sm">
-                <p className="mb-1"><strong>Email:</strong> <a href="mailto:legal@sawawallet.com" className="text-forest-green hover:underline">legal@sawawallet.com</a></p>
-                <p className="mb-1"><strong>Support:</strong> <a href="mailto:support@sawawallet.com" className="text-forest-green hover:underline">support@sawawallet.com</a></p>
+                <p className="mb-1"><strong>Email:</strong> <a href="mailto:legal@sawawallet.org" className="text-forest-green hover:underline">legal@sawawallet.org</a></p>
+                <p className="mb-1"><strong>Support:</strong> <a href="mailto:support@sawawallet.org" className="text-forest-green hover:underline">support@sawawallet.org</a></p>
                 <p><strong>Discord:</strong> <a href="https://discord.gg/TbvR5UcG" target="_blank" rel="noopener noreferrer" className="text-forest-green hover:underline">Join our community</a></p>
               </div>
             </section>
