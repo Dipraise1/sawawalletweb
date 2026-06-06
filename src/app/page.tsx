@@ -412,6 +412,102 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── SAWA TOOLKIT — DEVELOPER TOOLING ─────────────────────────────── */}
+      <section id="toolkit" className="py-24 bg-white border-t border-gray-100 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#2D5016_0.8px,transparent_1px)] bg-[length:20px_20px] opacity-5" aria-hidden="true"></div>
+        
+        <div className="container-custom relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <FadeIn>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-forest-green/10 text-forest-green rounded-full text-xs font-semibold tracking-widest mb-6">
+                OPEN SOURCE • DEVELOPER TOOLING
+              </div>
+              <h2 className="heading-2 mb-6">Sawa Toolkit</h2>
+              <p className="text-body-lg text-gray-600">
+                Safe Phone-First Identity &amp; Payment Primitives for Solana.<br />
+                Built on <span className="font-semibold text-forest-green">Privy</span> (non-custodial) + high-performance <span className="font-semibold text-forest-green">Rust</span> rails.
+              </p>
+              <p className="mt-4 text-sm text-gray-500 max-w-md mx-auto">
+                Extracted from our production codebase to accelerate the Solana ecosystem. Ideal for Solana Foundation grants and teams building consumer crypto in Africa.
+              </p>
+            </FadeIn>
+          </div>
+
+          <StaggerChildren className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: "@sawa/phone-resolver",
+                desc: "Phone number → Privy DID → Solana address resolution. sendToPhone() with secure hashing. No direct WhatsApp auth.",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2 2 2 0 01-2-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2zM13 5a2 2 0 012-2 2 2 0 01-2-2 2 2 0 01-2-2 2 2 0 012-2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+                link: "https://github.com/Dipraise1/sawa-toolkit/tree/main/packages/phone-resolver",
+                color: "forest-green"
+              },
+              {
+                title: "@sawa/compliance-kit",
+                desc: "KYC (NIN/BVN for 10+ African countries), tiered limits, AML policy, sanctions screening. Extracted from our production flows.",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 8.944 11.922.42.095.858.143 1.295.143a3 3 0 01.497-.08" />
+                  </svg>
+                ),
+                link: "https://github.com/Dipraise1/sawa-toolkit/tree/main/packages/compliance-kit",
+                color: "luxury-gold"
+              },
+              {
+                title: "sawa-ramp (Rust)",
+                desc: "TreasuryManager, Helius deposit watcher, phone-hash processing, auto-rebalancing, Jupiter swap readiness. Production-grade financial rails.",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2" />
+                  </svg>
+                ),
+                link: "https://github.com/Dipraise1/sawa-toolkit/tree/main/crates/ramp",
+                color: "forest-green"
+              }
+            ].map((item, i) => (
+              <StaggerItem key={i}>
+                <a 
+                  href={item.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`group block h-full p-8 rounded-3xl border border-gray-100 bg-white hover:border-${item.color}/30 hover:shadow-xl transition-all duration-500 flex flex-col`}
+                >
+                  <div className={`w-14 h-14 rounded-2xl bg-${item.color}/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-2xl font-semibold text-charcoal mb-3 group-hover:text-forest-green transition-colors">{item.title}</h3>
+                  <p className="text-gray-600 flex-grow leading-relaxed text-[15px]">{item.desc}</p>
+                  <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between text-xs uppercase tracking-widest font-medium text-gray-400 group-hover:text-forest-green transition-colors">
+                    <span>View on GitHub</span>
+                    <span className="text-xl leading-none">→</span>
+                  </div>
+                </a>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+
+          <div className="mt-16 text-center">
+            <FadeIn delay={0.4}>
+              <a 
+                href="https://github.com/Dipraise1/sawa-toolkit" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-white rounded-2xl hover:bg-forest-green transition-all font-medium text-sm tracking-wider group"
+              >
+                EXPLORE FULL REPOSITORY
+                <span className="group-hover:rotate-45 transition-transform">↗</span>
+              </a>
+              <p className="text-xs text-gray-400 mt-6">Monorepo with Turborepo • Example app • Ready for npm/crates.io</p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ─── TOWN HALL — COMMUNITY REVIEWS ────────────────────────────────── */}
       <TownHallSection />
 

@@ -43,4 +43,9 @@ export const FAQ_ITEMS: FaqItem[] = [
     answer:
       'Pick a contact, enter an amount, and send. Sawa maps phone numbers to wallets behind the scenes, so you never copy a long, scary address — sending crypto feels as easy as sending a text.',
   },
+  {
+    question: 'What is the Sawa Toolkit?',
+    answer:
+      'An open-source collection of developer primitives extracted from our production app: @sawa/phone-resolver (phone-to-Solana via Privy), @sawa/compliance-kit (KYC/AML for Africa), and sawa-ramp (Rust treasury & deposit rails). Designed for Solana Foundation Developer Tooling grants and other teams building consumer-first crypto apps. See https://github.com/Dipraise1/sawa-toolkit.',
+  },
 ]
