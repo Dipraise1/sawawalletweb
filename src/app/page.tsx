@@ -83,11 +83,20 @@ export default function Home() {
                   <Image src="/google-play-badge.png" alt="Get it on Google Play" width={180} height={50} className="h-[50px] w-auto" />
                 </a>
                 <a
-                  href="#toolkit"
+                  href="/toolkit"
                   className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-charcoal rounded-3xl hover:bg-forest-green hover:text-white border border-transparent hover:border-white/30 font-medium text-sm tracking-widest transition-all shadow-sm hover:shadow-xl"
                 >
                   EXPLORE TOOLKIT
-                  <span className="text-lg group-hover:rotate-12 transition-transform">🛠</span>
+                  <span className="text-lg group-hover:rotate-12 transition-transform">→</span>
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=dQw4w9wgccc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 px-6 py-4 border border-gray-300 text-gray-700 rounded-3xl hover:bg-white hover:border-forest-green font-medium text-sm tracking-widest transition-all"
+                >
+                  Watch 45s Demo
+                  <span className="text-lg group-hover:rotate-12 transition-transform">▶</span>
                 </a>
               </div>
             </FadeIn>
@@ -97,8 +106,8 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-0 mb-4">
                 {[
                   { value: '50+', label: 'Countries' },
-                  { value: 'Instant', label: 'Transfers' },
-                  { value: '0%', label: 'Hidden Fees' },
+                  { value: '2.4s', label: 'Avg Transfer' },
+                  { value: '<0.5%', label: 'Fees' },
                 ].map((stat, i) => (
                   <div key={i} className="flex items-center">
                     <div className="flex items-center gap-1.5 px-4 sm:px-6">
