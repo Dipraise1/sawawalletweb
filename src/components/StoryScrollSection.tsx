@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useScroll, useTransform, useSpring, useMotionTemplate } from 'framer-motion'
 
 const ADDR_BG = [
@@ -129,21 +130,21 @@ export default function StoryScrollSection() {
 
             <motion.div
               style={{ opacity: p1Opacity, y: p1Y }}
-              className="relative z-10 text-center w-full max-w-2xl mx-auto"
+              className="relative z-10 text-center w-full max-w-2xl lg:max-w-3xl mx-auto"
             >
-              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-4 sm:mb-6">
+              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-4 sm:mb-6 lg:mb-8">
                 01 · The Problem
               </p>
-              <h2 className="text-[1.75rem] sm:text-4xl lg:text-[5rem] font-bold text-charcoal mb-3 sm:mb-5 leading-[1.08] tracking-tight">
+              <h2 className="text-[1.75rem] sm:text-4xl lg:text-[3.75rem] xl:text-[4.5rem] font-bold text-charcoal mb-3 sm:mb-5 lg:mb-7 leading-[1.1] tracking-tight">
                 Crypto promised<br />
                 <span className="text-gray-400 font-light">to free your money.</span>
               </h2>
-              <p className="text-sm sm:text-lg text-gray-500 mb-5 sm:mb-8 font-light">
+              <p className="text-sm sm:text-lg lg:text-xl text-gray-500 mb-5 sm:mb-8 lg:mb-10 font-light">
                 But first, you had to get this exactly right.
               </p>
 
               {/* Scary address */}
-              <div className="inline-block mx-auto relative group w-full max-w-[min(480px,calc(100vw-2.5rem))]">
+              <div className="inline-block mx-auto relative group w-full max-w-[min(480px,calc(100vw-2.5rem))] lg:max-w-[560px]">
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-red-400/20 to-orange-400/20 rounded-2xl blur-md opacity-70" />
                 <div className="relative bg-white border border-red-200/70 rounded-2xl px-4 sm:px-6 py-4 shadow-xl text-left">
                   <div className="flex items-center gap-2 mb-2">
@@ -190,12 +191,12 @@ export default function StoryScrollSection() {
 
             <motion.div
               style={{ opacity: p2Opacity, scale: p2Scale, y: p2Y }}
-              className="relative z-10 text-center w-full max-w-2xl mx-auto"
+              className="relative z-10 text-center w-full max-w-2xl lg:max-w-3xl mx-auto"
             >
-              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-forest-green mb-4 sm:mb-6">
+              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-forest-green mb-4 sm:mb-6 lg:mb-8">
                 02 · The Breakthrough
               </p>
-              <h2 className="text-[1.75rem] sm:text-4xl lg:text-[5rem] font-bold text-charcoal mb-5 sm:mb-8 leading-[1.08] tracking-tight">
+              <h2 className="text-[1.75rem] sm:text-4xl lg:text-[3.75rem] xl:text-[4.5rem] font-bold text-charcoal mb-5 sm:mb-8 lg:mb-10 leading-[1.1] tracking-tight">
                 What if your wallet
                 <br />
                 <span className="text-gradient-green">lived in your contacts?</span>
@@ -247,11 +248,11 @@ export default function StoryScrollSection() {
               className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 max-w-5xl mx-auto w-full"
             >
               {/* Text — always visible */}
-              <div className="text-center lg:text-left max-w-md w-full">
+              <div className="text-center lg:text-left max-w-md lg:max-w-lg w-full">
                 <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-luxury-gold mb-3 sm:mb-6">
                   03 · The Sawa Way
                 </p>
-                <h2 className="text-[1.75rem] sm:text-4xl lg:text-6xl font-bold text-charcoal mb-3 sm:mb-5 leading-[1.08] tracking-tight">
+                <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal mb-3 sm:mb-5 leading-[1.1] tracking-tight">
                   Simple as
                   <br />
                   <span className="text-gradient-green">a text message.</span>
@@ -298,56 +299,14 @@ export default function StoryScrollSection() {
                 style={{ scale: phoneScale, opacity: phoneOp }}
                 className="flex-shrink-0 hidden sm:block"
               >
-                <div className="w-64 sm:w-72 bg-white rounded-[2.5rem] shadow-2xl border border-gray-100/80 overflow-hidden">
-                  <div className="bg-forest-green px-5 pt-6 pb-10 relative">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-white/80 text-sm font-semibold tracking-wide">Sawa</span>
-                      <motion.div
-                        animate={{ rotate: [0, 5, -5, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                        className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center"
-                      >
-                        <svg className="w-3.5 h-3.5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                      </motion.div>
-                    </div>
-                    <p className="text-white/60 text-xs mb-1 uppercase tracking-wide">Balance</p>
-                    <p className="text-white text-3xl font-bold">$1,240.00</p>
-                    <p className="text-white/50 text-xs mt-0.5">≈ 1,240 USDC</p>
-                    <div className="absolute bottom-0 left-0 right-0 h-6 bg-white rounded-t-[1.75rem]" />
-                  </div>
-
-                  <div className="px-5 pt-3 pb-5">
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Send to</p>
-                    <div className="flex items-center gap-3 bg-sand/70 rounded-2xl p-2.5 mb-3 border border-gray-100">
-                      <div className="w-9 h-9 rounded-full bg-forest-green/12 flex items-center justify-center text-base flex-shrink-0">👩🏾</div>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-charcoal text-sm">Mom</p>
-                        <p className="text-xs text-gray-400 truncate">+234 802 123 4567</p>
-                      </div>
-                      <div className="w-5 h-5 bg-forest-green rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="text-center mb-3">
-                      <p className="text-[2.4rem] font-bold text-charcoal leading-none">$50</p>
-                      <p className="text-xs text-gray-400 mt-1">≈ 50 USDC · Instant</p>
-                    </div>
-                    <motion.button
-                      className="w-full bg-forest-green text-white py-3 rounded-2xl font-bold shadow-lg shadow-forest-green/20 flex items-center justify-center gap-2 text-sm"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.97 }}
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                      Send Money
-                    </motion.button>
-                    <p className="text-center text-[10px] text-gray-400 mt-2">No fees · No address required</p>
-                  </div>
+                <div className="relative w-64 sm:w-72 aspect-[9/19.5] bg-charcoal rounded-[2.75rem] border-[7px] border-charcoal shadow-2xl overflow-hidden">
+                  <Image
+                    src="/story-send.png"
+                    alt="Sawa Wallet confirming a payment was sent successfully"
+                    fill
+                    sizes="(min-width: 640px) 288px, 256px"
+                    className="object-cover"
+                  />
                 </div>
               </motion.div>
             </motion.div>

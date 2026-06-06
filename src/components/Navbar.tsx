@@ -56,6 +56,11 @@ export default function Navbar() {
       description: 'Grow wealth'
     },
     {
+      href: '#town-hall',
+      label: 'Town Hall',
+      description: 'Community reviews'
+    },
+    {
       href: '/contact',
       label: 'Support',
       description: 'Get help'

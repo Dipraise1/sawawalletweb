@@ -12,7 +12,7 @@ import {
 } from '@/components/AnimatedSection'
 import ParallaxHeroBackground from '@/components/ParallaxHeroBackground'
 import StoryScrollSection from '@/components/StoryScrollSection'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import TownHallSection from '@/components/TownHallSection'
 import { FAQ_ITEMS } from '@/lib/faq'
 import Image from 'next/image'
 
@@ -30,9 +30,12 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center">
 
             <FadeIn>
-              <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm mb-8 hover:border-forest-green/30 transition-colors">
-                <span className="w-2 h-2 rounded-full bg-forest-green animate-pulse" aria-hidden="true" />
-                <span className="text-sm font-medium text-gray-800">Money for people, not addresses</span>
+              <div className="inline-flex items-center gap-2.5 py-1.5 pl-2 pr-4 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200/80 shadow-sm mb-8 hover:border-forest-green/30 transition-colors">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-forest-green/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-forest-green">
+                  <span className="h-1.5 w-1.5 rounded-full bg-forest-green" aria-hidden="true" />
+                  Beta
+                </span>
+                <span className="text-sm font-medium text-gray-700">Now live in 50+ countries</span>
               </div>
             </FadeIn>
 
@@ -105,7 +108,7 @@ export default function Home() {
               <div className="relative mx-auto w-full max-w-[1000px] h-[600px]">
                 {/* Phone */}
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[300px] h-[620px] bg-charcoal rounded-[3.5rem] border-[8px] border-white shadow-2xl z-20 overflow-hidden">
-                  <Image src="/app-mockup.png" alt="Sawa Wallet app interface showing phone number-based transfers" fill className="object-cover" priority />
+                  <Image src="/hero-device.png" alt="Sawa Wallet app interface showing phone number-based transfers" fill className="object-cover" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-green/10 via-transparent to-transparent" aria-hidden="true" />
                 </div>
                 {/* Phone bottom glow */}
@@ -409,42 +412,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── SOCIAL PROOF ─────────────────────────────────────────────────── */}
-      <section className="py-32 overflow-hidden relative bg-white">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-luxury-gold/4 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-forest-green/4 rounded-full blur-[80px]" />
-        </div>
-
-        <div className="container-custom relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-            <div className="max-w-xl mb-6 md:mb-0">
-              <FadeIn>
-                <p className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-3">Testimonials</p>
-                <h2 className="heading-2 mb-4">Trusted by early adopters.</h2>
-                <p className="text-body-lg">People across Africa connect through Sawa.</p>
-              </FadeIn>
-            </div>
-            <FadeIn delay={0.2}>
-              <div className="flex items-center gap-3 bg-sand/60 border border-gray-100 px-5 py-3 rounded-2xl">
-                <div className="flex gap-0.5" aria-label="5 out of 5 stars">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-luxury-gold" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <div>
-                  <span className="font-bold text-charcoal text-sm">5.0</span>
-                  <span className="text-gray-400 text-xs ml-1">from early users</span>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-
-          <TestimonialsCarousel />
-        </div>
-      </section>
+      {/* ─── TOWN HALL — COMMUNITY REVIEWS ────────────────────────────────── */}
+      <TownHallSection />
 
       {/* ─── GLOBAL REACH ─────────────────────────────────────────────────── */}
       <section className="py-24 bg-cream border-t border-gray-100 overflow-hidden">
