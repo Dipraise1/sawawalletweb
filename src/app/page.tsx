@@ -81,6 +81,13 @@ export default function Home() {
                 >
                   <Image src="/google-play-badge.png" alt="Get it on Google Play" width={180} height={50} className="h-[50px] w-auto" />
                 </a>
+                <a
+                  href="#toolkit"
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-charcoal rounded-3xl hover:bg-forest-green hover:text-white border border-transparent hover:border-white/30 font-medium text-sm tracking-widest transition-all shadow-sm hover:shadow-xl"
+                >
+                  EXPLORE TOOLKIT
+                  <span className="text-lg group-hover:rotate-12 transition-transform">🛠</span>
+                </a>
               </div>
             </FadeIn>
 
