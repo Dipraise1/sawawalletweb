@@ -1,4 +1,5 @@
 import TeamSection from '@/components/TeamSection'
+import TrustSection from '@/components/TrustSection'
 import {
   FadeIn,
   FadeInLeft,
@@ -427,7 +428,7 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <FadeIn>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-forest-green/10 text-forest-green rounded-full text-xs font-semibold tracking-widest mb-6">
-                OPEN SOURCE • DEVELOPER TOOLING
+                SOLANA FOUNDATION GRANT READY • OPEN SOURCE
               </div>
               <h2 className="heading-2 mb-6">Sawa Toolkit</h2>
               <p className="text-body-lg text-gray-600">
@@ -435,7 +436,7 @@ export default function Home() {
                 Built on <span className="font-semibold text-forest-green">Privy</span> (non-custodial) + high-performance private <span className="font-semibold text-forest-green">Rust</span> rails.
               </p>
               <p className="mt-4 text-sm text-gray-500 max-w-md mx-auto">
-                Extracted from our production codebase to accelerate the Solana ecosystem. Ideal for Solana Foundation grants and teams building consumer crypto in Africa.
+                Production-extracted primitives (phone resolver + compliance kit). Private Rust rails power the live app. Perfect for Solana Foundation Developer Tooling grants.
               </p>
             </FadeIn>
           </div>
@@ -500,20 +501,31 @@ export default function Home() {
 
           <div className="mt-16 text-center">
             <FadeIn delay={0.4}>
-              <a 
-                href="https://github.com/Dipraise1/sawa-toolkit" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-white rounded-2xl hover:bg-forest-green transition-all font-medium text-sm tracking-wider group"
-              >
-                EXPLORE FULL REPOSITORY
-                <span className="group-hover:rotate-45 transition-transform">↗</span>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://github.com/Dipraise1/sawa-toolkit" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-white rounded-2xl hover:bg-forest-green transition-all font-medium text-sm tracking-wider group"
+                >
+                  EXPLORE TOOLKIT
+                  <span className="group-hover:rotate-45 transition-transform">↗</span>
+                </a>
+                <a 
+                  href="#trust"
+                  className="inline-flex items-center gap-3 px-8 py-4 border border-charcoal/70 text-charcoal rounded-2xl hover:bg-white hover:border-forest-green transition-all font-medium text-sm tracking-wider"
+                >
+                  SEE WHY WE BUILT IT
+                </a>
+              </div>
               <p className="text-xs text-gray-400 mt-6">Monorepo with Turborepo • Example app • Ready for npm/crates.io</p>
             </FadeIn>
           </div>
         </div>
       </section>
+
+      {/* ─── TRUST & SECURITY ─────────────────────────────────────────────── */}
+      <TrustSection />
 
       {/* ─── TOWN HALL — COMMUNITY REVIEWS ────────────────────────────────── */}
       <TownHallSection />

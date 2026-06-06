@@ -17,19 +17,19 @@ const trustItems = [
   },
   {
     Icon: LightningIcon,
-    title: "WhatsApp simplicity", 
-    description: "Send money as easily as sending a message",
+    title: "Phone-first UX", 
+    description: "Send to any contact using just their phone number (no addresses)",
     highlight: "Simple",
     color: "from-green-500 to-green-600",
-    features: ["Phone Number", "No Passwords", "Instant", "Easy UI"]
+    features: ["Privy Embedded Wallets", "Cryptographic Hashing", "No WhatsApp Auth", "Solana Resolution"]
   },
   {
     Icon: GlobeIcon,
-    title: "Global reach",
-    description: "Works anywhere, quoted in your local currency",
-    highlight: "Global",
+    title: "Compliance-first",
+    description: "Production KYC/AML (NIN, Prembly, sanctions, tiered limits) for 10+ African countries",
+    highlight: "Compliant",
     color: "from-blue-500 to-blue-600",
-    features: ["200+ Countries", "Local Currency", "Real-time Rates", "No Borders"]
+    features: ["NIN/BVN Verification", "AML & Sanctions", "Tiered Limits", "Prembly Integration"]
   }
 ]
 
@@ -58,9 +58,9 @@ export default function TrustSection() {
           </motion.div>
           
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal mb-3 leading-tight">
-            Trusted by{' '}
+            Production Grade.{' '}
             <span className="text-forest-green relative">
-              many
+              Grant Ready
               <motion.div
                 className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-luxury-gold rounded-full"
                 initial={{ scaleX: 0 }}
@@ -71,7 +71,7 @@ export default function TrustSection() {
           </h2>
           
           <p className="text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed mb-5">
-            Bank-grade security meets WhatsApp simplicity
+            Production-grade primitives extracted from Sawa Wallet — built for Solana consumer apps in Africa
           </p>
 
           {/* Trust indicators */}

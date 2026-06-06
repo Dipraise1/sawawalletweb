@@ -8,7 +8,7 @@ const teamKeys = [
     name: "Divine Raphael",
     role: "Founder & Engineering",
     image: "/images/team/divine.jpg",
-    bio: "Builds the payment rails and wallet infrastructure behind Sawa.",
+    bio: "Architect of phone-first identity, Privy integration, Rust treasury rails & open-source toolkit for Solana grants.",
     socials: {
       email: "raphealdivine2@gmail.com",
       twitter: "https://x.com/Divinecodes11"
@@ -18,7 +18,7 @@ const teamKeys = [
     name: "Peter",
     role: "Co-Founder, Growth",
     image: "/images/team/peter.jpg",
-    bio: "Leads brand and growth — getting Sawa into hands across the continent.",
+    bio: "Drives user acquisition, community, and strategic partnerships across Africa.",
     socials: {
       twitter: "https://x.com/thatcrypt00guy"
     }
@@ -27,7 +27,7 @@ const teamKeys = [
     name: "Tyler",
     role: "Co-Founder, Finance",
     image: "/images/team/tyler.png",
-    bio: "Heads finance and strategy, keeping Sawa sustainable and compliant."
+    bio: "Leads financial strategy, compliance (KYC/AML), and grant/fundraising efforts.",
   }
 ];
 
