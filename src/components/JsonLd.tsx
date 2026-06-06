@@ -40,7 +40,7 @@ export default function JsonLd() {
           priceCurrency: 'USD',
         },
         description:
-          'Send and receive crypto instantly using just a phone number. Sawa Wallet is a multi-chain, non-custodial wallet supporting USDC, USDT, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon and BNB Chain. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own ramp service, and pay bills with Sawa Pay.',
+          'Send and receive crypto instantly using just a phone number. Sawa Wallet is a multi-chain, non-custodial wallet supporting USDC, USDT, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon and BNB Chain. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own rails, and pay bills with Sawa Pay.',
         featureList: [
           'Send crypto with a phone number',
           'Multi-chain wallet (Solana, Ethereum, Base, Polygon, BNB Chain)',

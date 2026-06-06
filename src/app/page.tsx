@@ -370,7 +370,7 @@ export default function Home() {
               {
                 num: "04",
                 title: "We Run Our Own Rails",
-                desc: "Sawa operates its own on- and off-ramp service — so conversions are faster, rates are fairer, and there's no third-party middleman.",
+                desc: "Sawa operates its own rails for on- and off-ramps — so conversions are faster, rates are fairer, and there's no third-party middleman.",
                 icon: (
                   <svg className="w-8 h-8 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16M7 4v16m10-16v16" /></svg>
                 ),
@@ -432,7 +432,7 @@ export default function Home() {
               <h2 className="heading-2 mb-6">Sawa Toolkit</h2>
               <p className="text-body-lg text-gray-600">
                 Safe Phone-First Identity &amp; Payment Primitives for Solana.<br />
-                Built on <span className="font-semibold text-forest-green">Privy</span> (non-custodial) + high-performance <span className="font-semibold text-forest-green">Rust</span> rails.
+                Built on <span className="font-semibold text-forest-green">Privy</span> (non-custodial) + high-performance private <span className="font-semibold text-forest-green">Rust</span> rails.
               </p>
               <p className="mt-4 text-sm text-gray-500 max-w-md mx-auto">
                 Extracted from our production codebase to accelerate the Solana ecosystem. Ideal for Solana Foundation grants and teams building consumer crypto in Africa.
@@ -466,14 +466,14 @@ export default function Home() {
                 color: "luxury-gold"
               },
               {
-                title: "sawa-ramp (Rust)",
-                desc: "TreasuryManager, Helius deposit watcher, phone-hash processing, auto-rebalancing, Jupiter swap readiness. Production-grade financial rails.",
+                title: "Private Treasury Primitives",
+                desc: "Production financial rails (on/off-ramp, rebalancing, deposit monitoring). Not open-sourced — used internally to power fast, fair conversions without third-party dependency.",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2" />
                   </svg>
                 ),
-                link: "https://github.com/Dipraise1/sawa-toolkit/tree/main/crates/ramp",
+                link: "#",
                 color: "forest-green"
               }
             ].map((item, i) => (

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     default: 'Sawa Wallet - Send Crypto with Just a Phone Number',
     template: '%s | Sawa Wallet',
   },
-  description: 'The human-first crypto wallet. Send USDC, USDT, SOL, ETH and Bitcoin to anyone with just a phone number. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own ramp, and pay bills with Sawa Pay. Non-custodial and multi-chain.',
+  description: 'The human-first crypto wallet. Send USDC, USDT, SOL, ETH and Bitcoin to anyone with just a phone number. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own rails, and pay bills with Sawa Pay. Non-custodial and multi-chain.',
   keywords: ['sawa wallet', 'sawawallet', 'sawa pay', 'sawa crypto', 'crypto wallet', 'bitcoin wallet', 'buy crypto africa', 'sell crypto', 'cash out crypto', 'crypto off-ramp', 'crypto on-ramp', 'send money to africa', 'usdc wallet', 'usdt wallet', 'solana wallet', 'ethereum wallet', 'phone number crypto transfer', 'non-custodial wallet', 'cross-border payments', 'mobile money crypto', 'pay bills with crypto', 'buy airtime with crypto', 'stablecoin wallet', 'nigeria crypto', 'kenya crypto', 'ghana crypto'],
   authors: [{ name: 'Sawa Wallet Team', url: 'https://sawawallet.org' }],
   creator: 'Sawa Wallet',

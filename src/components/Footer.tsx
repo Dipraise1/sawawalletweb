@@ -102,7 +102,7 @@ export default function Footer() {
               <span className="inline-block w-2 h-2 bg-luxury-gold rounded-full animate-pulse"></span>
               Solana Foundation Grant Ready
             </p>
-            <p>Privy • Rust • Helius</p>
+            <p>Privy • Rust (internal) • Helius</p>
           </div>
         </div>
       </div>

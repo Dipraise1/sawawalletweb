@@ -31,7 +31,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Can I buy crypto and cash out to my bank with Sawa?',
     answer:
-      'Yes. Buy crypto instantly with a local bank transfer, and cash out straight to your bank account or mobile money. Sawa runs its own on- and off-ramp service, so conversions are fast and fairly priced with no third-party middleman.',
+      'Yes. Buy crypto instantly with a local bank transfer, and cash out straight to your bank account or mobile money. Sawa runs its own rails, so conversions are fast and fairly priced with no third-party middleman.',
   },
   {
     question: 'What is Sawa Pay?',
@@ -46,6 +46,6 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'What is the Sawa Toolkit?',
     answer:
-      'An open-source collection of developer primitives extracted from our production app: @sawa/phone-resolver (phone-to-Solana via Privy), @sawa/compliance-kit (KYC/AML for Africa), and sawa-ramp (Rust treasury & deposit rails). Designed for Solana Foundation Developer Tooling grants and other teams building consumer-first crypto apps. See https://github.com/Dipraise1/sawa-toolkit.',
+      'An open-source collection of developer primitives extracted from our production app: @sawa/phone-resolver (phone-to-Solana via Privy) and @sawa/compliance-kit (KYC/AML for 10+ African countries). The ramp/treasury service remains private/internal. Designed for Solana Foundation Developer Tooling grants and other teams building consumer-first crypto apps in Africa. See https://github.com/Dipraise1/sawa-toolkit.',
   },
 ]

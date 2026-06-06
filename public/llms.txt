@@ -10,7 +10,7 @@ Sawa Wallet replaces complex wallet addresses with phone numbers, so sending cry
 - **Multi-chain, including Bitcoin**: Hold and send USDC, USDT, SOL, ETH and BTC across Solana, Ethereum, Base, Polygon and BNB Chain from one wallet.
 - **Buy crypto instantly**: Top up with a local bank transfer; crypto arrives in minutes.
 - **Cash out locally**: Withdraw to a bank account or mobile money in your local currency.
-- **Own ramp service**: Sawa operates its own on- and off-ramp infrastructure, so conversions are faster and fairly priced with no third-party middleman.
+- **Private rails**: Sawa operates its own on- and off-ramp infrastructure (not public), so conversions are faster and fairly priced with no third-party middleman.
 - **Sawa Pay**: Pay bills, buy airtime and data, and settle electricity and cable TV directly from your crypto balance.
 - **Earn & protect**: Built-in staking to grow idle assets, and on-chain escrow for safer deals.
 - **Non-custodial & secure**: You own your private keys. Optional identity verification (KYC) unlocks higher limits.
