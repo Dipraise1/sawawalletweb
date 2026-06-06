@@ -51,6 +51,11 @@ export default function Navbar() {
       description: 'Why Sawa?'
     },
     {
+      href: '#toolkit',
+      label: 'Toolkit',
+      description: 'For developers'
+    },
+    {
       href: '#investments',
       label: 'Investments',
       description: 'Grow wealth'
