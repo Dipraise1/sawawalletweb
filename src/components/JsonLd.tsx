@@ -16,7 +16,8 @@ export default function JsonLd() {
           height: 512,
         },
         sameAs: [
-          'https://twitter.com/sawawallet',
+          'https://x.com/sawawallet',
+          'https://www.tiktok.com/@sawa.wallet',
           'https://linkedin.com/company/sawawallet',
           'https://discord.gg/TbvR5UcG',
         ],
