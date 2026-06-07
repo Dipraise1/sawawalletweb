@@ -26,8 +26,8 @@ export default function ToolkitPage() {
               <div className="bg-white p-8 rounded-3xl border border-gray-100 hover:border-forest-green/30 transition-colors">
                 <div className="text-forest-green text-xl font-mono mb-4">@sawa/phone-resolver</div>
                 <p className="text-gray-600 mb-6">
-                  Phone number → Privy DID → Solana address resolution with secure cryptographic hashing. 
-                  Includes <code>usePhoneResolver()</code> hook and <code>sendToPhone()</code>.
+                  Phone, specialized username, or email → Privy DID → Solana address. 
+                  Phone is live first (easiest for emerging markets); username/mail as easier initial targets. Includes <code>usePhoneResolver()</code> + <code>resolveIdentifier()</code>.
                 </p>
                 <div className="text-xs uppercase tracking-widest text-gray-400">TypeScript • Privy</div>
                 <Link href="https://github.com/Dipraise1/sawa-toolkit/tree/main/packages/phone-resolver" 

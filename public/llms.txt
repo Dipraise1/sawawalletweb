@@ -31,7 +31,7 @@ People sending money to family, paying suppliers across borders, freelancers rec
 - Assets: USDC, USDT, SOL, ETH, BTC
 - Cost: Free to use; small transparent fee on fiat conversions
 - Custody: Non-custodial (user holds keys)
-- Open Source: Sawa Toolkit (@sawa/phone-resolver + @sawa/compliance-kit) — production-extracted primitives for Solana consumer apps. Private Rust rails power on/off-ramps. Ideal for Solana Foundation Developer Tooling grants.
+- Open Source: Sawa Toolkit (@sawa/phone-resolver + @sawa/compliance-kit) — production-extracted primitives for Solana consumer apps. Supports phone, specialized username, and email (mail/username as easier first options before full phone). Private Rust rails power on/off-ramps. Ideal for Solana Foundation Developer Tooling grants.
 
 ## Links
 

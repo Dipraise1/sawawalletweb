@@ -454,7 +454,7 @@ export default function Home() {
             {[
               {
                 title: "@sawa/phone-resolver",
-                desc: "Phone number → Privy DID → Solana address resolution. sendToPhone() with secure hashing. No direct WhatsApp auth.",
+                desc: "Phone, specialized username, or email → Privy DID → Solana address. Phone live first (easiest); username/mail as easier first options. resolveIdentifier() + sendToPhone().",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2 2 2 0 01-2-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2zM13 5a2 2 0 012-2 2 2 0 01-2-2 2 2 0 01-2-2 2 2 0 012-2z" />
