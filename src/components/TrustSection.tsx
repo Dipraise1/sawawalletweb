@@ -2,34 +2,35 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from '@/lib/hooks'
-import SecurityIcon from './icons/SecurityIcon'
-import LightningIcon from './icons/LightningIcon'
 import GlobeIcon from './icons/GlobeIcon'
+import PhoneIcon from './icons/PhoneIcon'
+import SecurityIcon from './icons/SecurityIcon'
+import CommunityIcon from './icons/CommunityIcon'
 
 const trustItems = [
   {
-    Icon: SecurityIcon,
-    title: "Bank-grade security",
-    description: "Protected with enterprise encryption and multi-signature wallets",
-    highlight: "Secure",
-    color: "from-red-500 to-red-600",
-    features: ["Multi-sig Wallets", "Hardware Security", "Audit Reports", "Insurance"]
-  },
-  {
-    Icon: LightningIcon,
-    title: "Phone-first UX", 
-    description: "Send to any contact using just their phone number (no addresses)",
-    highlight: "Simple",
-    color: "from-green-500 to-green-600",
-    features: ["Privy Embedded Wallets", "Cryptographic Hashing", "No WhatsApp Auth", "Solana Resolution"]
-  },
-  {
     Icon: GlobeIcon,
-    title: "Compliance-first",
-    description: "Production KYC/AML (NIN, Prembly, sanctions, tiered limits) for 10+ African countries",
-    highlight: "Compliant",
-    color: "from-blue-500 to-blue-600",
-    features: ["NIN/BVN Verification", "AML & Sanctions", "Tiered Limits", "Prembly Integration"]
+    title: "Built for Africa",
+    description: "Deep local support across Nigeria, Kenya, Ghana, South Africa, Uganda, Tanzania, Zambia and 40+ more countries. Real infrastructure for emerging markets.",
+    highlight: "Local First",
+    color: "from-emerald-500 to-teal-600",
+    features: ["50+ Countries", "Mobile Money", "Local Banks", "Naira • Cedi • Rand"]
+  },
+  {
+    Icon: PhoneIcon,
+    title: "Phone-First Identity",
+    description: "Send, receive, and pay using just a phone number from your contacts. No scary wallet addresses. Non-custodial via Privy embedded wallets.",
+    highlight: "Simple UX",
+    color: "from-amber-500 to-orange-600",
+    features: ["resolveIdentifier()", "sendToPhone()", "Username & Email", "Cryptographic Hashing"]
+  },
+  {
+    Icon: CommunityIcon,
+    title: "Real Production Rails",
+    description: "Our own treasury, compliance (NIN/BVN, Prembly, sanctions screening), and on/off-ramp infrastructure. Fast, fair, and built for African realities.",
+    highlight: "Compliant & Live",
+    color: "from-violet-500 to-purple-600",
+    features: ["Private Rust Backend", "Tiered KYC Limits", "Helius + Jupiter", "AML & Sanctions"]
   }
 ]
 
@@ -37,7 +38,7 @@ export default function TrustSection() {
   const { ref, isInView } = useInView()
 
   return (
-    <section id="download" ref={ref} className="py-10 sm:py-12 lg:py-16 bg-white">
+    <section id="trust" ref={ref} className="py-20 bg-white border-t border-gray-100">
       <div className="container-custom px-4">
         <motion.div
           className="text-center mb-6 sm:mb-8 lg:mb-12"
@@ -57,12 +58,12 @@ export default function TrustSection() {
             </svg>
           </motion.div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal mb-3 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal mb-4 tracking-tighter">
             Built for Africa.
           </h2>
           
-          <p className="text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed mb-5">
-            Primitives extracted from our production wallet for Solana consumer apps.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Real infrastructure, not hype. Phone-first payments, local compliance, and private rails that actually work across the continent.
           </p>
 
 
