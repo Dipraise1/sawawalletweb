@@ -14,6 +14,7 @@ import {
 import ParallaxHeroBackground from '@/components/ParallaxHeroBackground'
 import StoryScrollSection from '@/components/StoryScrollSection'
 import TownHallSection from '@/components/TownHallSection'
+import WatchDemoButton from '@/components/WatchDemoButton'
 import { FAQ_ITEMS } from '@/lib/faq'
 import Image from 'next/image'
 
@@ -83,15 +84,7 @@ export default function Home() {
                   <Image src="/google-play-badge.png" alt="Get it on Google Play" width={180} height={50} className="h-[50px] w-auto" />
                 </a>
 
-                <a
-                  href="https://www.youtube.com/watch?v=dQw4w9wgccc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 px-6 py-4 border border-gray-300 text-gray-700 rounded-3xl hover:bg-white hover:border-forest-green font-medium text-sm tracking-widest transition-all"
-                >
-                  Watch 45s Demo
-                  <span className="text-lg group-hover:rotate-12 transition-transform">▶</span>
-                </a>
+                <WatchDemoButton />
               </div>
             </FadeIn>
 
