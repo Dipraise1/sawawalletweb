@@ -6,14 +6,12 @@ export default function ToolkitPage() {
     <main className="min-h-screen bg-cream py-24">
       <div className="container-custom max-w-4xl mx-auto px-6">
         <FadeIn>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-forest-green/10 text-forest-green rounded-full text-xs font-semibold tracking-widest mb-6">
-            SOLANA FOUNDATION GRANT READY
-          </div>
+
           <h1 className="text-6xl font-bold tracking-tighter text-charcoal mb-6">
             Sawa Toolkit
           </h1>
           <p className="text-2xl text-gray-600 max-w-2xl mb-12">
-            Production-grade primitives extracted from Sawa Wallet. 
+            Primitives extracted from Sawa Wallet. 
             Phone-first identity, compliance, and private financial rails for the Solana ecosystem.
           </p>
         </FadeIn>

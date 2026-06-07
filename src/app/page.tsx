@@ -82,13 +82,7 @@ export default function Home() {
                 >
                   <Image src="/google-play-badge.png" alt="Get it on Google Play" width={180} height={50} className="h-[50px] w-auto" />
                 </a>
-                <a
-                  href="/toolkit"
-                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-charcoal rounded-3xl hover:bg-forest-green hover:text-white border border-transparent hover:border-white/30 font-medium text-sm tracking-widest transition-all shadow-sm hover:shadow-xl"
-                >
-                  EXPLORE TOOLKIT
-                  <span className="text-lg group-hover:rotate-12 transition-transform">→</span>
-                </a>
+
                 <a
                   href="https://www.youtube.com/watch?v=dQw4w9wgccc"
                   target="_blank"
@@ -436,16 +430,14 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-forest-green/10 text-forest-green rounded-full text-xs font-semibold tracking-widest mb-6">
-                SOLANA FOUNDATION GRANT READY • OPEN SOURCE
-              </div>
+
               <h2 className="heading-2 mb-6">Sawa Toolkit</h2>
               <p className="text-body-lg text-gray-600">
                 Safe Phone-First Identity &amp; Payment Primitives for Solana.<br />
                 Built on <span className="font-semibold text-forest-green">Privy</span> (non-custodial) + high-performance private <span className="font-semibold text-forest-green">Rust</span> rails.
               </p>
               <p className="mt-4 text-sm text-gray-500 max-w-md mx-auto">
-                Production-extracted primitives (phone resolver + compliance kit). Private Rust rails power the live app. Perfect for Solana Foundation Developer Tooling grants.
+                Production-extracted primitives for Solana consumer apps in Africa. Private Rust rails power the live app.
               </p>
             </FadeIn>
           </div>

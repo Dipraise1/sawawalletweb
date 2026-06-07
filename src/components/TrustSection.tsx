@@ -58,48 +58,14 @@ export default function TrustSection() {
           </motion.div>
           
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal mb-3 leading-tight">
-            Production Grade.{' '}
-            <span className="text-forest-green relative">
-              Grant Ready
-              <motion.div
-                className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-luxury-gold rounded-full"
-                initial={{ scaleX: 0 }}
-                animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              />
-            </span>
+            Built for Africa.
           </h2>
           
           <p className="text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed mb-5">
-            Production-grade primitives extracted from Sawa Wallet — built for Solana consumer apps in Africa
+            Primitives extracted from our production wallet for Solana consumer apps.
           </p>
 
-          {/* Trust indicators */}
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-gray-500"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <div className="flex items-center">
-              <svg className="w-3 h-3 text-forest-green mr-1.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Secure & Reliable
-            </div>
-            <div className="flex items-center">
-              <svg className="w-3 h-3 text-forest-green mr-1.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Easy to Use
-            </div>
-            <div className="flex items-center">
-              <svg className="w-3 h-3 text-forest-green mr-1.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Global Reach
-            </div>
-          </motion.div>
+
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6 sm:mb-8 lg:mb-12 max-w-5xl mx-auto">
@@ -155,87 +121,7 @@ export default function TrustSection() {
           ))}
         </div>
 
-        {/* Waitlist Form Section */}
-        <motion.div
-          className="mt-8 sm:mt-12 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <div className="bg-gradient-to-br from-forest-green/5 via-white to-luxury-gold/5 rounded-2xl p-8 sm:p-10 border border-forest-green/10 shadow-[0_4px_16px_rgba(45,80,22,0.08)] backdrop-blur-sm">
-            <h3 className="text-base sm:text-lg font-bold text-charcoal mb-2 text-center">
-              Join the Waitlist
-            </h3>
-            <p className="text-xs text-gray-500 mb-5 sm:mb-4 text-center max-w-xl mx-auto px-2 sm:px-0">
-              Be among the first to experience Sawa Wallet. Get early access when we launch.
-            </p>
-            
-            <form 
-              className="space-y-3" 
-              action="https://docs.google.com/forms/d/e/1FAIpQLSc1BfnIRt32kfpWJNW4vInlwM8fvctLqIvJ3tw2PUt2Gp2v4A/formResponse" 
-              method="POST"
-              target="_blank"
-              onSubmit={(e) => {
-                // Track form submission
-                if (typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', 'waitlist_signup', {
-                    event_category: 'engagement',
-                    event_label: 'Join Waitlist'
-                  });
-                }
-              }}
-            >
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="text"
-                  name="entry.1801242306"
-                  placeholder="Your name"
-                  className="flex-1 px-4 py-3 sm:py-2.5 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-xl text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/30 focus:border-forest-green/30 focus:bg-white transition-all duration-300 touch-manipulation shadow-sm"
-                  required
-                />
-                <input
-                  type="email"
-                  name="entry.728298668"
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-3 sm:py-2.5 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-xl text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/30 focus:border-forest-green/30 focus:bg-white transition-all duration-300 touch-manipulation shadow-sm"
-                  required
-                />
-              </div>
-              <textarea
-                name="entry.336844290"
-                placeholder="What do you think about Sawa? (Optional)"
-                rows={2}
-                className="w-full px-4 py-3 sm:py-2.5 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-xl text-sm text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest-green/30 focus:border-forest-green/30 focus:bg-white transition-all duration-300 touch-manipulation resize-none shadow-sm"
-              />
-              <motion.button
-                type="submit"
-                className="w-full bg-gradient-to-r from-forest-green to-forest-green/90 text-white px-6 py-3 sm:py-2.5 rounded-xl font-semibold hover:shadow-[0_8px_24px_rgba(45,80,22,0.25)] transition-all duration-300 text-sm touch-manipulation shadow-[0_4px_12px_rgba(45,80,22,0.2)]"
-                whileHover={{ scale: 1.02, y: -1 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Join Waitlist
-              </motion.button>
-              <p className="text-xs text-gray-500 text-center">
-                We&apos;ll notify you when we launch &mdash; no spam, unsubscribe anytime.
-              </p>
-            </form>
-            
-            <div className="mt-5 sm:mt-4 flex items-center justify-center gap-3">
-              <a
-                href="https://discord.gg/TbvR5UcG"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-gray-600 hover:text-forest-green transition-colors text-xs touch-manipulation py-2"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C2.601 6.7 2 9.224 2 11.776c0 2.181.5 4.237 1.486 6.17a.07.07 0 0 0 .031.03a19.9 19.9 0 0 0 5.993 3.15a.074.074 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.15a.07.07 0 0 0 .032-.03c1.011-1.934 1.486-3.99 1.486-6.17c0-2.552-.6-5.075-1.645-7.38a.066.066 0 0 0-.031-.027zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-                </svg>
-                <span className="hidden sm:inline">Join our Discord community</span>
-                <span className="sm:hidden">Discord community</span>
-              </a>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )

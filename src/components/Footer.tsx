@@ -100,7 +100,7 @@ export default function Footer() {
           <div className="flex items-center gap-8">
             <p className="flex items-center gap-1.5">
               <span className="inline-block w-2 h-2 bg-luxury-gold rounded-full animate-pulse"></span>
-              Solana Foundation Grant Ready
+              Open Source Primitives
             </p>
             <p>Privy • Rust (internal) • Helius</p>
           </div>
