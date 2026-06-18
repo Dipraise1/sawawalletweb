@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '@/lib/analytics'
 
 export default function HeroSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
@@ -61,7 +61,7 @@ export default function HeroSection() {
                   href="/sawa-pitch-deck.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => track('pitch_deck_download')}
+                  onClick={() => trackEvent('pitch_deck_download')}
                   className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-luxury-gold/10 to-forest-green/10 rounded-full text-luxury-gold text-xs font-semibold border border-luxury-gold/20 backdrop-blur-sm hover:bg-luxury-gold/20 transition-colors"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

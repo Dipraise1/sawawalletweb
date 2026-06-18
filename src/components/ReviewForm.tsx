@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '@/lib/analytics'
 
 export type Review = {
   id: string
@@ -42,7 +42,7 @@ export default function ReviewForm({ onPosted }: { onPosted?: (r: Review) => voi
         return
       }
       onPosted?.(data.review)
-      track('review_submitted', { rating })
+      trackEvent('review_submitted', { rating })
       setStatus('done')
     } catch {
       setError('Network error. Please try again.')
