@@ -4,6 +4,9 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
+import AmbientMusicPlayer from '@/components/AmbientMusicPlayer'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -107,7 +110,15 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+
+        {/* Subtle Ambient Background Music - Loops automatically but very low volume */}
+        <AmbientMusicPlayer />
+
         <div className="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-forest-green via-luxury-gold to-forest-green z-50 opacity-0 pointer-events-none" />
+
+        {/* Privacy-friendly Vercel Web Analytics + Core Web Vitals */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

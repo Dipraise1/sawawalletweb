@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { track } from '@vercel/analytics'
 
 export default function ContactForm() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -9,10 +10,11 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormStatus('sending')
-    
+
     // Simulate form submission
     setTimeout(() => {
       setFormStatus('success')
+      track('contact_submitted')
       setTimeout(() => setFormStatus('idle'), 5000)
     }, 1500)
   }

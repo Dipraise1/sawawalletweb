@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { track } from '@vercel/analytics'
 
 export default function WatchDemoButton() {
   const [open, setOpen] = useState(false)
@@ -23,7 +24,7 @@ export default function WatchDemoButton() {
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => { track('watch_demo'); setOpen(true); }}
         className="group inline-flex items-center gap-3 px-6 py-4 border border-gray-300 text-gray-700 rounded-3xl hover:bg-white hover:border-forest-green font-medium text-sm tracking-widest transition-all"
         aria-haspopup="dialog"
       >
