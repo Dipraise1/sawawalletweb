@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from '@/lib/hooks'
+import Image from 'next/image'
 import GlobeIcon from './icons/GlobeIcon'
 import PhoneIcon from './icons/PhoneIcon'
 import SecurityIcon from './icons/SecurityIcon'
@@ -63,7 +64,7 @@ export default function TrustSection() {
           </h2>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Real infrastructure, not hype. Phone-first payments, local compliance, and private rails that actually work across the continent.
+            Real infrastructure, not hype. Phone-first payments, local compliance, private Rust rails, and non-custodial identity tools that actually work across the continent. We built the Sawa Toolkit (@sawa/phone-resolver + compliance-kit) so other developers can build similar human-first apps without reinventing the wheel.
           </p>
 
 
@@ -86,17 +87,32 @@ export default function TrustSection() {
             >
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-forest-green/3 via-transparent to-luxury-gold/3 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <motion.div 
-                className={`relative z-10 w-14 h-14 sm:w-12 sm:h-12 mx-auto mb-3 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)]`}
-                whileHover={{ 
-                  scale: 1.15,
-                  rotate: 5,
-                  transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <item.Icon className="w-7 h-7 sm:w-6 sm:h-6 text-white flex-shrink-0" />
-              </motion.div>
+              {/* Visual for each trust card - mix of icon + subtle image for 1 & 3 */}
+              <div className="relative z-10 mx-auto mb-4 w-20 h-20 rounded-2xl overflow-hidden shadow-md">
+                {index === 0 && (
+                  <Image 
+                    src="/lifestyle-street.jpg"
+                    alt="Local infrastructure in Africa"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                )}
+                {index === 1 && (
+                  <div className={`w-full h-full bg-gradient-to-br ${item.color} flex items-center justify-center`}>
+                    <item.Icon className="w-10 h-10 text-white" />
+                  </div>
+                )}
+                {index === 2 && (
+                  <Image 
+                    src="/lifestyle-market.jpg"
+                    alt="Real production rails"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                )}
+              </div>
               
               <div className="relative z-10 space-y-1.5">
                 <h3 className="text-base font-semibold text-charcoal tracking-tight">

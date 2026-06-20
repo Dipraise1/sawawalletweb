@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Link href="/" className="flex items-center space-x-3 mb-6 group">
               <div className="relative w-10 h-10 rounded-2xl overflow-hidden bg-gradient-to-br from-forest-green to-luxury-gold flex-shrink-0 shadow-inner ring-1 ring-white/20">
-                <Image src="/logo.png" alt="Sawa" fill className="object-cover scale-90 group-hover:scale-100 transition-transform" />
+                <Image src="/logo.png" alt="Sawa" fill sizes="40px" className="object-cover scale-90 group-hover:scale-100 transition-transform" />
               </div>
               <div>
                 <span className="text-2xl font-bold tracking-tighter text-white">Sawa</span>

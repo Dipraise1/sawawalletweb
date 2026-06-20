@@ -95,6 +95,7 @@ export default function Navbar() {
                     src="/logo.png"
                     alt="Sawa"
                     fill
+                    sizes="40px"
                     className="object-cover"
                   />
                 </div>

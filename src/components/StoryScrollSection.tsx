@@ -294,6 +294,34 @@ export default function StoryScrollSection() {
                 </div>
               </div>
 
+              {/* Lifestyle imagery — adds human warmth (new images) */}
+              <div className="flex-shrink-0 hidden sm:flex flex-col gap-6 lg:gap-8">
+                <motion.div
+                  style={{ scale: phoneScale, opacity: phoneOp }}
+                  className="relative w-52 lg:w-64 aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
+                >
+                  <Image
+                    src="/lifestyle-market.jpg"
+                    alt="Young woman sending money in Lagos market using Sawa Wallet"
+                    fill
+                    sizes="(min-width: 1024px) 256px, 208px"
+                    className="object-cover"
+                  />
+                </motion.div>
+                <motion.div
+                  className="relative w-52 lg:w-64 aspect-square rounded-3xl overflow-hidden shadow-2xl -mt-8 lg:-mt-12"
+                  style={{ opacity: phoneOp }}
+                >
+                  <Image
+                    src="/lifestyle-family.jpg"
+                    alt="Family receiving money alert on phone"
+                    fill
+                    sizes="(min-width: 1024px) 256px, 208px"
+                    className="object-cover"
+                  />
+                </motion.div>
+              </div>
+
               {/* Phone UI — desktop only (sm+) */}
               <motion.div
                 style={{ scale: phoneScale, opacity: phoneOp }}

@@ -129,6 +129,8 @@ export default function ParallaxHeroBackground() {
               height: p.s + 1,
               background: PARTICLE_COLORS[p.col],
               willChange: 'transform, opacity',
+              animation: 'organic-wobble 8s ease-in-out infinite',
+              animationDelay: `${p.delay * -1.2}s`,
             }}
             animate={{
               y: [-14, 14, -14],
@@ -139,8 +141,8 @@ export default function ParallaxHeroBackground() {
             transition={{
               duration: p.dur,
               repeat: Infinity,
-              ease: 'easeInOut',
-              delay: p.delay,
+              ease: [0.23, 0.52, 0.31, 0.97], // organic custom ease
+              delay: p.delay * 0.6 + Math.random() * 0.8, // subtle randomization per particle
             }}
           />
         ))}

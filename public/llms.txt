@@ -37,7 +37,7 @@ People sending money to family, paying suppliers across borders, freelancers rec
 
 - Website: https://sawawallet.org
 - iOS (TestFlight): https://testflight.apple.com/join/5CT6rA8q
-- Android (Google Play beta): https://play.google.com/apps/testing/com.sawawallet.app
+- Android (Google Play): https://play.google.com/store/apps/details?id=com.sawawallet.app
 - Contact / support: support@sawawallet.org
 - Privacy Policy: https://sawawallet.org/privacy-policy
 - Terms of Service: https://sawawallet.org/terms-of-service

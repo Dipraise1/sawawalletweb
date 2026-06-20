@@ -75,7 +75,7 @@ export default function Home() {
                   <Image src="/app-store-badge.svg" alt="Download on the App Store" width={160} height={50} className="h-[50px] w-auto" />
                 </a>
                 <a
-                  href="https://play.google.com/apps/testing/com.sawawallet.app"
+                  href="https://play.google.com/store/apps/details?id=com.sawawallet.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-105"
@@ -112,7 +112,7 @@ export default function Home() {
               <div className="relative mx-auto w-full max-w-[1000px] h-[600px]">
                 {/* Phone */}
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[300px] h-[620px] bg-charcoal rounded-[3.5rem] border-[8px] border-white shadow-2xl z-20 overflow-hidden">
-                  <Image src="/hero-device.png" alt="Sawa Wallet app interface showing phone number-based transfers" fill className="object-cover" priority />
+                  <Image src="/hero-device.png" alt="Sawa Wallet app interface showing phone number-based transfers" fill sizes="300px" className="object-cover" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-green/10 via-transparent to-transparent" aria-hidden="true" />
                 </div>
                 {/* Phone bottom glow */}
@@ -226,6 +226,8 @@ export default function Home() {
                       alt={p.name}
                       width={40}
                       height={40}
+                      loading="lazy"
+                      decoding="async"
                       className="h-10 w-auto object-contain"
                       style={{ filter: 'brightness(0)', opacity: 0.8 }}
                     />
@@ -256,6 +258,7 @@ export default function Home() {
                     src="/Green & Yellow.jpg"
                     alt="Two people smiling while using Sawa Wallet to send money"
                     fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" aria-hidden="true" />
@@ -507,9 +510,10 @@ export default function Home() {
                 </a>
                 <a 
                   href="#trust"
-                  className="inline-flex items-center gap-3 px-8 py-4 border border-charcoal/70 text-charcoal rounded-2xl hover:bg-white hover:border-forest-green transition-all font-medium text-sm tracking-wider"
+                  className="inline-flex items-center gap-3 px-8 py-4 border border-charcoal/70 text-charcoal rounded-2xl hover:bg-white hover:border-forest-green transition-all font-medium text-sm tracking-wider group"
                 >
                   SEE WHY WE BUILT IT
+                  <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                 </a>
               </div>
               <p className="text-xs text-gray-400 mt-6">Monorepo with Turborepo • Example app • Ready for npm/crates.io</p>
