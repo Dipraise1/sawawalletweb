@@ -24,8 +24,9 @@ module.exports = {
         'sage': '#94A388',
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'serif': ['Georgia', 'serif'],
+        'sans': ['var(--font-outfit)', 'system-ui', 'sans-serif'],
+        'display': ['var(--font-fraunces)', 'Georgia', 'serif'],
+        'serif': ['var(--font-fraunces)', 'Georgia', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

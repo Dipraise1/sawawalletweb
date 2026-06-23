@@ -110,6 +110,79 @@ export const TestimonialCard = ({
   </motion.div>
 )
 
+// Cursor-tracking 3D perspective tilt. Children can sit at different depths
+// with `[transform:translateZ(Npx)]` since this sets transform-style: preserve-3d.
+// Disabled on touch devices and when the user prefers reduced motion.
+export const Tilt3D = ({
+  children,
+  className = '',
+  max = 10,
+  lift = -6,
+  scale = 1.02,
+  perspective = 1000,
+}: {
+  children: React.ReactNode
+  className?: string
+  max?: number
+  lift?: number
+  scale?: number
+  perspective?: number
+}) => {
+  const ref = useRef<HTMLDivElement>(null)
+  const rx = useMotionValue(0)
+  const ry = useMotionValue(0)
+  const springCfg = { stiffness: 170, damping: 16, mass: 0.4 }
+  const srx = useSpring(rx, springCfg)
+  const sry = useSpring(ry, springCfg)
+  const [enabled, setEnabled] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setEnabled(fine.matches && !reduce.matches)
+    update()
+    fine.addEventListener('change', update)
+    reduce.addEventListener('change', update)
+    return () => {
+      fine.removeEventListener('change', update)
+      reduce.removeEventListener('change', update)
+    }
+  }, [])
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!enabled || !ref.current) return
+    const r = ref.current.getBoundingClientRect()
+    const px = (e.clientX - r.left) / r.width - 0.5
+    const py = (e.clientY - r.top) / r.height - 0.5
+    ry.set(px * max * 2)
+    rx.set(-py * max * 2)
+  }
+  const reset = () => {
+    rx.set(0)
+    ry.set(0)
+  }
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMove}
+      onMouseLeave={reset}
+      style={{
+        rotateX: srx,
+        rotateY: sry,
+        transformStyle: 'preserve-3d',
+        transformPerspective: perspective,
+      }}
+      whileHover={enabled ? { scale, y: lift } : undefined}
+      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 // Scroll-linked parallax — children move at `speed` fraction of scroll rate
 export const ParallaxLayer = ({
   children,

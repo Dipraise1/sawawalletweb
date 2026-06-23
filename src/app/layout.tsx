@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Calistoga, Outfit } from 'next/font/google'
+import { Outfit, Fraunces } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -9,27 +9,23 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-  preload: true,
-  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
-})
-
-const calSans = Calistoga({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: false,
-  weight: '400',
-  variable: '--font-cal-sans',
-})
-
+// Body / UI face — clean, characterful geometric sans
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
-  preload: false,
   variable: '--font-outfit',
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+})
+
+// Display face — warm, editorial serif with soft optical styling.
+// `opsz` (optical size) + `SOFT`/`WONK` axes give it the human, premium feel.
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fraunces',
+  preload: true,
+  axes: ['opsz', 'SOFT'],
 })
 
 export const metadata: Metadata = {
@@ -101,7 +97,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${calSans.variable} ${outfit.variable} scroll-smooth`}>
+    <html lang="en" className={`${outfit.variable} ${fraunces.variable} scroll-smooth`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" href="/favicon.ico?v=2" sizes="any" />

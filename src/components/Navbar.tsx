@@ -99,7 +99,7 @@ export default function Navbar() {
                     className="object-cover"
                   />
                 </div>
-                <span className="text-lg font-bold tracking-tight text-charcoal">
+                <span className="font-display text-xl font-semibold tracking-tight text-charcoal">
                   Sawa
                 </span>
               </Link>

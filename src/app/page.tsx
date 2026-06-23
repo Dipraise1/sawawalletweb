@@ -10,10 +10,12 @@ import {
   StaggerChildren,
   StaggerItem,
   RevealWords,
+  Tilt3D,
 } from '@/components/AnimatedSection'
 import ParallaxHeroBackground from '@/components/ParallaxHeroBackground'
 import StoryScrollSection from '@/components/StoryScrollSection'
 import TownHallSection from '@/components/TownHallSection'
+import Globe3D from '@/components/Globe3D'
 import WatchDemoButton from '@/components/WatchDemoButton'
 import { FAQ_ITEMS } from '@/lib/faq'
 import Image from 'next/image'
@@ -28,13 +30,26 @@ export default function Home() {
         {/* ── Parallax depth background — 4 layers at different scroll speeds ── */}
         <ParallaxHeroBackground />
 
+        {/* Sunrise motif — warm horizon glow + concentric arcs anchor the composition */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-[6%] w-[min(1100px,96vw)] aspect-[2/1] pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-x-0 bottom-0 h-full rounded-t-[100%] bg-[radial-gradient(120%_100%_at_50%_100%,rgba(212,175,55,0.16),rgba(45,80,22,0.07)_42%,transparent_70%)] blur-xl" />
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1100 550" fill="none" preserveAspectRatio="xMidYMax meet">
+            <path d="M70 550 A 480 480 0 0 1 1030 550" stroke="rgba(212,175,55,0.22)" strokeWidth="1.5" />
+            <path d="M210 550 A 340 340 0 0 1 890 550" stroke="rgba(45,80,22,0.16)" strokeWidth="1.5" />
+            <path d="M350 550 A 200 200 0 0 1 750 550" stroke="rgba(212,175,55,0.16)" strokeWidth="1.5" />
+          </svg>
+        </div>
+
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto text-center">
 
             <FadeIn>
               <div className="inline-flex items-center gap-2.5 py-1.5 pl-2 pr-4 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200/80 shadow-sm mb-8 hover:border-forest-green/30 transition-colors">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-forest-green/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-forest-green">
-                  <span className="h-1.5 w-1.5 rounded-full bg-forest-green" aria-hidden="true" />
+                  <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-forest-green/60 animate-ping" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-forest-green" />
+                  </span>
                   Beta
                 </span>
                 <span className="text-sm font-medium text-gray-700">Now live in 50+ countries</span>
@@ -42,13 +57,13 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h1 className="heading-hero text-charcoal mb-8 tracking-tight">
+              <h1 className="heading-hero text-charcoal mb-8">
                 <RevealWords text="Send money" delay={0.15} />
                 {' '}
                 <br className="hidden sm:block" />
-                <span className="text-gradient-green relative inline-block">
+                <span className="text-gradient-green italic relative inline-block pr-2">
                   <RevealWords text="like a text." delay={0.35} />
-                  <svg className="absolute w-full h-3 -bottom-1 left-0 text-luxury-gold/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
+                  <svg className="absolute w-full h-3 -bottom-1 left-0 text-luxury-gold/40 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                   </svg>
                 </span>
@@ -88,20 +103,21 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            {/* Stats row */}
+            {/* Editorial stats — serif numerals, gold hairline dividers */}
             <FadeIn delay={0.4}>
-              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-0 mb-4">
+              <div className="flex items-stretch justify-center divide-x divide-luxury-gold/25 mt-10">
                 {[
                   { value: '50+', label: 'Countries' },
-                  { value: '2.4s', label: 'Avg Transfer' },
-                  { value: '<0.5%', label: 'Fees' },
+                  { value: '2.4s', label: 'Avg transfer' },
+                  { value: '<0.5%', label: 'Network fees' },
                 ].map((stat, i) => (
-                  <div key={i} className="flex items-center">
-                    <div className="flex items-center gap-1.5 px-4 sm:px-6">
-                      <span className="font-bold text-forest-green text-base">{stat.value}</span>
-                      <span className="text-sm text-gray-500">{stat.label}</span>
+                  <div key={i} className="px-6 sm:px-9 first:pl-0 last:pr-0 text-center">
+                    <div className="font-display text-3xl sm:text-4xl font-semibold text-forest-green leading-none tracking-tight">
+                      {stat.value}
                     </div>
-                    {i < 2 && <div className="hidden sm:block w-px h-4 bg-gray-200" aria-hidden="true" />}
+                    <div className="mt-2 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-gray-400 font-medium">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -325,14 +341,28 @@ export default function Home() {
       <section id="features" className="py-32 bg-sand/30 relative">
         <div className="absolute inset-0 bg-grain opacity-[0.03]" aria-hidden="true" />
         <div className="container-custom relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <FadeIn>
-              <p className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-4">What we built</p>
-              <h2 className="heading-2 mb-6">Professional grade. <br /><span className="text-forest-green">Human simple.</span></h2>
-              <p className="text-body-lg text-gray-600">
-                Built on powerful blockchain technology, wrapped in an interface anyone can use.
-              </p>
-            </FadeIn>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-16 lg:mb-20">
+            <div className="lg:col-span-7">
+              <FadeIn>
+                <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-forest-green mb-5">
+                  <span className="h-px w-8 bg-forest-green/40" aria-hidden="true" />
+                  What we built
+                </p>
+                <h2 className="heading-2">
+                  Professional grade.
+                  <br />
+                  <span className="italic text-forest-green">Human simple.</span>
+                </h2>
+              </FadeIn>
+            </div>
+            <div className="lg:col-span-5">
+              <FadeIn delay={0.15}>
+                <p className="text-body-lg text-gray-600 lg:border-l-2 lg:border-luxury-gold/30 lg:pl-6">
+                  Built on powerful blockchain technology, wrapped in an interface anyone can use.
+                  Six capabilities, one calm app.
+                </p>
+              </FadeIn>
+            </div>
           </div>
 
           <StaggerChildren className="grid md:grid-cols-3 gap-8">
@@ -342,79 +372,76 @@ export default function Home() {
                 title: "One Wallet, Every Chain",
                 desc: "Hold and send USDC, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon and BNB Chain — we handle the networks so you don't have to.",
                 icon: (
-                  <svg className="w-8 h-8 text-luxury-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                 ),
-                gradient: "from-forest-green/5 to-luxury-gold/5",
-                accent: "border-luxury-gold/30"
+                tint: "gold"
               },
               {
                 num: "02",
                 title: "Buy Crypto Instantly",
                 desc: "Top up with a local bank transfer and watch crypto land in your wallet within minutes — no cards, no middlemen.",
                 icon: (
-                  <svg className="w-8 h-8 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m4 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m4 6H4m0 0l4 4m-4-4l4-4" /></svg>
                 ),
-                gradient: "from-emerald-50 to-green-50",
-                accent: "border-forest-green/25"
+                tint: "gold"
               },
               {
                 num: "03",
                 title: "Sawa Pay",
                 desc: "Pay bills, buy airtime & data, and cash out to any bank account or mobile money — straight from your crypto balance.",
                 icon: (
-                  <svg className="w-8 h-8 text-luxury-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z" /></svg>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z" /></svg>
                 ),
-                gradient: "from-amber-50 to-yellow-50",
-                accent: "border-luxury-gold/30"
+                tint: "forest"
               },
               {
                 num: "04",
                 title: "We Run Our Own Rails",
                 desc: "Sawa operates its own rails for on- and off-ramps — so conversions are faster, rates are fairer, and there's no third-party middleman.",
                 icon: (
-                  <svg className="w-8 h-8 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16M7 4v16m10-16v16" /></svg>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16M7 4v16m10-16v16" /></svg>
                 ),
-                gradient: "from-blue-50 to-indigo-50",
-                accent: "border-blue-200/60"
+                tint: "gold"
               },
               {
                 num: "05",
                 title: "Earn While You Hold",
                 desc: "Put idle assets to work with built-in staking, and protect bigger deals with on-chain escrow.",
                 icon: (
-                  <svg className="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 17l6-6 4 4 8-8m0 0h-5m5 0v5" /></svg>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 17l6-6 4 4 8-8m0 0h-5m5 0v5" /></svg>
                 ),
-                gradient: "from-gray-50 to-gray-100",
-                accent: "border-gray-200/80"
+                tint: "forest"
               },
               {
                 num: "06",
                 title: "Secure & Non-Custodial",
                 desc: "You own your keys and your money. Identity verification unlocks higher limits when you need them.",
                 icon: (
-                  <svg className="w-8 h-8 text-luxury-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                 ),
-                gradient: "from-forest-green/5 to-luxury-gold/5",
-                accent: "border-luxury-gold/30"
+                tint: "gold"
               }
-            ].map((feature, i) => (
-              <StaggerItem key={i}>
-                <div className={`relative p-8 rounded-[2rem] border bg-gradient-to-br ${feature.gradient} shadow-sm hover:shadow-xl transition-all duration-500 group h-full overflow-hidden ${feature.accent}`}>
-                  <span className="absolute top-7 right-8 text-4xl font-bold text-charcoal/5 group-hover:text-charcoal/10 transition-colors font-mono select-none" aria-hidden="true">
+            ].map((feature, i) => {
+              const isGold = feature.tint === 'gold'
+              const tile = isGold ? 'text-luxury-gold bg-luxury-gold/10' : 'text-forest-green bg-forest-green/10'
+              const underline = isGold ? 'via-luxury-gold/50' : 'via-forest-green/50'
+              return (
+              <StaggerItem key={i} className="h-full [perspective:1200px]">
+                <Tilt3D max={8} className="relative p-8 rounded-3xl border border-charcoal/[0.06] bg-cream/60 shadow-[0_1px_2px_rgba(45,80,22,0.04)] hover:shadow-[0_30px_60px_-18px_rgba(45,80,22,0.22)] hover:border-charcoal/[0.10] transition-[box-shadow,border-color] duration-500 group h-full overflow-hidden">
+                  <span className="absolute top-7 right-8 font-display text-5xl font-medium text-charcoal/[0.06] group-hover:text-charcoal/[0.10] transition-colors select-none italic [transform:translateZ(30px)]" aria-hidden="true">
                     {feature.num}
                   </span>
-                  <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
-                  <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-forest-green/0 via-forest-green/40 to-forest-green/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full" aria-hidden="true" />
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <div className={`absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent ${underline} to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full`} aria-hidden="true" />
+                  <div className="relative z-10 [transform-style:preserve-3d]">
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-[0_8px_20px_-6px_rgba(45,80,22,0.25)] group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 [transform:translateZ(55px)] ${tile}`}>
                       {feature.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-charcoal mb-4 group-hover:text-forest-green transition-colors">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                    <h3 className="font-display text-xl font-semibold text-charcoal mb-3 group-hover:text-forest-green transition-colors [transform:translateZ(28px)]">{feature.title}</h3>
+                    <p className="text-gray-600 leading-relaxed [transform:translateZ(15px)]">{feature.desc}</p>
                   </div>
-                </div>
+                </Tilt3D>
               </StaggerItem>
-            ))}
+            )})}
           </StaggerChildren>
         </div>
       </section>
@@ -450,7 +477,7 @@ export default function Home() {
                   </svg>
                 ),
                 link: "https://github.com/Dipraise1/sawa-toolkit/tree/main/packages/phone-resolver",
-                color: "forest-green"
+                tint: "forest"
               },
               {
                 title: "@sawa/compliance-kit",
@@ -461,7 +488,7 @@ export default function Home() {
                   </svg>
                 ),
                 link: "https://github.com/Dipraise1/sawa-toolkit/tree/main/packages/compliance-kit",
-                color: "luxury-gold"
+                tint: "gold"
               },
               {
                 title: "Private Treasury Primitives",
@@ -472,20 +499,24 @@ export default function Home() {
                   </svg>
                 ),
                 link: "#",
-                color: "forest-green"
+                tint: "forest"
               }
-            ].map((item, i) => (
+            ].map((item, i) => {
+              const isGold = item.tint === 'gold'
+              const tile = isGold ? 'bg-luxury-gold/10 text-luxury-gold' : 'bg-forest-green/10 text-forest-green'
+              const hoverBorder = isGold ? 'hover:border-luxury-gold/40' : 'hover:border-forest-green/40'
+              return (
               <StaggerItem key={i}>
-                <a 
-                  href={item.link} 
-                  target="_blank" 
+                <a
+                  href={item.link}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className={`group block h-full p-8 rounded-3xl border border-gray-100 bg-white hover:border-${item.color}/30 hover:shadow-xl transition-all duration-500 flex flex-col`}
+                  className={`group block h-full p-8 rounded-3xl border border-charcoal/[0.07] bg-white ${hoverBorder} shadow-[0_1px_2px_rgba(45,80,22,0.04)] hover:shadow-[0_24px_48px_-16px_rgba(45,80,22,0.16)] hover:-translate-y-1 transition-all duration-500 flex flex-col`}
                 >
-                  <div className={`w-14 h-14 rounded-2xl bg-${item.color}/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:-rotate-3 transition-transform ${tile}`}>
                     {item.icon}
                   </div>
-                  <h3 className="text-2xl font-semibold text-charcoal mb-3 group-hover:text-forest-green transition-colors">{item.title}</h3>
+                  <h3 className="font-sans text-xl font-semibold text-charcoal mb-3 tracking-tight group-hover:text-forest-green transition-colors">{item.title}</h3>
                   <p className="text-gray-600 flex-grow leading-relaxed text-[15px]">{item.desc}</p>
                   <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between text-xs uppercase tracking-widest font-medium text-gray-400 group-hover:text-forest-green transition-colors">
                     <span>View on GitHub</span>
@@ -493,7 +524,7 @@ export default function Home() {
                   </div>
                 </a>
               </StaggerItem>
-            ))}
+            )})}
           </StaggerChildren>
 
           <div className="mt-16 text-center">
@@ -542,6 +573,15 @@ export default function Home() {
             </div>
           </FadeIn>
         </div>
+
+        {/* 3D globe centerpiece */}
+        <FadeIn className="mb-16 sm:mb-20">
+          <div className="py-6 flex justify-center">
+            <div className="scale-[0.62] sm:scale-90 lg:scale-100">
+              <Globe3D />
+            </div>
+          </div>
+        </FadeIn>
 
         <div className="relative flex flex-col gap-4 fade-edges">
           {[
@@ -611,10 +651,33 @@ export default function Home() {
       {/* ─── CTA ──────────────────────────────────────────────────────────── */}
       <section id="download" className="py-32 bg-forest-green relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-grain opacity-10 mix-blend-overlay" aria-hidden="true" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-luxury-gold/15 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-forest-green-dark/60 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
+
+        {/* Parallax depth glows — move at different rates as you scroll */}
+        <ParallaxLayer speed={0.3} className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none">
+          <div className="w-[700px] h-[700px] bg-luxury-gold/15 rounded-full blur-[130px]" aria-hidden="true" />
+        </ParallaxLayer>
+        <ParallaxLayer speed={0.65} className="absolute bottom-0 right-0 pointer-events-none">
+          <div className="w-[400px] h-[400px] bg-forest-green-dark/60 rounded-full blur-[80px]" aria-hidden="true" />
+        </ParallaxLayer>
+
         <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" aria-hidden="true" />
         <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" aria-hidden="true" />
+
+        {/* Floating glass token chips — depth + warmth, desktop only */}
+        <div className="hidden lg:block pointer-events-none" aria-hidden="true">
+          {[
+            { label: 'USDC', pos: 'top-[18%] left-[12%]', drift: [0, -18, 0] as [number, number, number], delay: 0 },
+            { label: '◎ SOL', pos: 'top-[30%] right-[10%]', drift: [0, 16, 0] as [number, number, number], delay: 1.2 },
+            { label: '₦ ↔ $', pos: 'bottom-[22%] left-[16%]', drift: [0, 14, 0] as [number, number, number], delay: 0.6 },
+            { label: '✦ Ξ ETH', pos: 'bottom-[26%] right-[14%]', drift: [0, -14, 0] as [number, number, number], delay: 1.8 },
+          ].map((t, i) => (
+            <ParallaxLayer key={i} speed={0.4 + i * 0.12} className={`absolute ${t.pos}`}>
+              <FloatingCard animateY={t.drift} delay={t.delay} className="px-4 py-2 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-xl">
+                <span className="text-sm font-semibold text-white/80 tracking-wide">{t.label}</span>
+              </FloatingCard>
+            </ParallaxLayer>
+          ))}
+        </div>
 
         <div className="container-custom relative z-10">
           <FadeIn>

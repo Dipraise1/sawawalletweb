@@ -29,7 +29,9 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans tracking-tight text-charcoal;
+    @apply font-display text-charcoal;
+    letter-spacing: -0.015em;
+    font-optical-sizing: auto;
   }
 }
 
@@ -91,11 +93,13 @@
   }
 
   .heading-hero {
-    @apply text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight;
+    @apply font-display text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.02];
+    letter-spacing: -0.02em;
   }
 
   .heading-2 {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight;
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.08];
+    letter-spacing: -0.015em;
   }
 
   .text-body-lg {
@@ -168,6 +172,27 @@
   0%, 100% { transform: translate(0, 0) scale(1.02) rotate(1deg); }
   40% { transform: translate(28px, -48px) scale(0.97) rotate(-3deg); }
   70% { transform: translate(-25px, 22px) scale(1.09) rotate(2deg); }
+}
+
+/* ── 3D Globe — spinning wireframe + billboarded orbiting flags ── */
+@keyframes globe-spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+@keyframes globe-spin-rev {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(-360deg); }
+}
+@keyframes globe-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.globe-spin     { animation: globe-spin 36s linear infinite; }
+.globe-spin-rev { animation: globe-spin-rev 36s linear infinite; }
+.globe-float    { animation: globe-float 7s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .globe-spin, .globe-spin-rev, .globe-float { animation: none; }
 }
 
 /* Subtle organic wobble for particles and elements to reduce AI perfection */
