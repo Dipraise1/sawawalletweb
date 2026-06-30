@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
 import AmbientMusicPlayer from '@/components/AmbientMusicPlayer'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/next'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
@@ -112,6 +113,7 @@ export default function RootLayout({
         <AmbientMusicPlayer />
 
         <div className="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-forest-green via-luxury-gold to-forest-green z-50 opacity-0 pointer-events-none" />
+        <Analytics />
       </body>
       {/* Free Google Analytics 4 — loads only when NEXT_PUBLIC_GA_ID is set */}
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
