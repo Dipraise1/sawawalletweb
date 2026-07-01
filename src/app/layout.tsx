@@ -126,8 +126,10 @@ try{if(localStorage.getItem('sawa-consent')==='granted')gtag('consent','update',
         {/* Subtle Ambient Background Music - Loops automatically but very low volume */}
         <AmbientMusicPlayer />
 
-        {/* Hybrid privacy: cookieless by default, opt-in for full analytics */}
-        {GA_ID && <ConsentBanner />}
+        {/* Hybrid privacy: cookieless by default, opt-in for full analytics.
+            Always shown so the visitor's choice is captured up front — it is
+            re-applied automatically if/when GA is configured. */}
+        <ConsentBanner />
 
         <div className="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-forest-green via-luxury-gold to-forest-green z-50 opacity-0 pointer-events-none" />
         <Analytics />

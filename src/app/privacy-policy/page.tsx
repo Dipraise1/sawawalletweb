@@ -36,7 +36,7 @@ export default function PrivacyPolicy() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-10">
           <h1 className="text-2xl sm:text-3xl font-bold text-charcoal mb-2">Privacy Policy</h1>
-          <p className="text-xs text-gray-500 mb-8">Last Updated: December 25, 2025</p>
+          <p className="text-xs text-gray-500 mb-8">Last Updated: July 1, 2026</p>
 
           <div className="prose prose-sm max-w-none space-y-6 text-gray-700">
             {/* Introduction */}
@@ -125,9 +125,25 @@ export default function PrivacyPolicy() {
               </ul>
             </section>
 
+            {/* Cookies & Analytics */}
+            <section>
+              <h2 className="text-lg font-bold text-charcoal mb-3">6. Cookies, Analytics &amp; Tracking Technologies</h2>
+              <p className="text-sm leading-relaxed mb-3">
+                Our website (sawawallet.org) is private by default. When you first arrive, analytics run in a <strong>cookieless, IP-anonymized mode</strong> — no tracking cookies are set and no personal identifiers are stored. We use the following technologies:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-sm ml-4">
+                <li><strong>Strictly necessary storage:</strong> Local browser storage that remembers your cookie choice and keeps the site working. This cannot be switched off.</li>
+                <li><strong>Google Analytics 4 (optional):</strong> Aggregate, anonymized usage measurement. It runs in cookieless Consent Mode by default and only sets analytics cookies after you select &quot;Allow&quot; on our consent banner.</li>
+                <li><strong>Vercel Analytics:</strong> Privacy-friendly, cookieless traffic measurement that uses no tracking cookies and stores no personal data.</li>
+              </ul>
+              <p className="text-sm leading-relaxed mt-3">
+                On your first visit a consent banner lets you <strong>Allow</strong> or <strong>Decline</strong> optional analytics cookies — the site works fully either way. You can change your choice at any time by clearing this site&apos;s data in your browser, which will show the banner again.
+              </p>
+            </section>
+
             {/* Data Security */}
             <section>
-              <h2 className="text-lg font-bold text-charcoal mb-3">6. Data Security</h2>
+              <h2 className="text-lg font-bold text-charcoal mb-3">7. Data Security</h2>
               <p className="text-sm leading-relaxed mb-2">We implement industry-standard security measures to protect your information:</p>
               <ul className="list-disc list-inside space-y-2 text-sm ml-4">
                 <li>End-to-end encryption for sensitive data</li>
@@ -143,7 +159,7 @@ export default function PrivacyPolicy() {
 
             {/* Data Retention */}
             <section>
-              <h2 className="text-lg font-bold text-charcoal mb-3">7. Data Retention</h2>
+              <h2 className="text-lg font-bold text-charcoal mb-3">8. Data Retention</h2>
               <p className="text-sm leading-relaxed">
                 We retain your personal information for as long as necessary to provide our services and comply with legal obligations. Transaction data on the blockchain is permanent and cannot be deleted. When you close your account, we will delete or anonymize your personal information within 90 days, except where retention is required by law.
               </p>
@@ -151,7 +167,7 @@ export default function PrivacyPolicy() {
 
             {/* Your Rights */}
             <section>
-              <h2 className="text-lg font-bold text-charcoal mb-3">8. Your Rights</h2>
+              <h2 className="text-lg font-bold text-charcoal mb-3">9. Your Rights</h2>
               <p className="text-sm leading-relaxed mb-2">You have the right to:</p>
               <ul className="list-disc list-inside space-y-2 text-sm ml-4">
                 <li>Access your personal information</li>
@@ -166,9 +182,27 @@ export default function PrivacyPolicy() {
               </p>
             </section>
 
+            {/* Legal Bases & Regional Rights */}
+            <section>
+              <h2 className="text-lg font-bold text-charcoal mb-3">10. Legal Bases &amp; Regional Rights (NDPA &amp; GDPR)</h2>
+              <p className="text-sm leading-relaxed mb-3">
+                We process personal data in accordance with the <strong>Nigeria Data Protection Act 2023 (NDPA)</strong> and, for visitors in the European Economic Area and the United Kingdom, the <strong>General Data Protection Regulation (GDPR)</strong>.
+              </p>
+              <p className="text-sm leading-relaxed mb-2">We rely on the following legal bases to process your data:</p>
+              <ul className="list-disc list-inside space-y-2 text-sm ml-4">
+                <li><strong>Performance of a contract:</strong> To provide the wallet services you request.</li>
+                <li><strong>Consent:</strong> For optional analytics cookies and marketing communications, which you can withdraw at any time.</li>
+                <li><strong>Legal obligation:</strong> To meet regulatory, anti-fraud, and record-keeping requirements.</li>
+                <li><strong>Legitimate interests:</strong> To secure our platform, prevent abuse, and improve our services, balanced against your rights.</li>
+              </ul>
+              <p className="text-sm leading-relaxed mt-3">
+                If you are protected by the NDPA or GDPR, you also have the right to object to processing based on legitimate interests, request data portability, and lodge a complaint with a supervisory authority — the <strong>Nigeria Data Protection Commission (NDPC)</strong> in Nigeria, or your local data protection authority in the EEA/UK. Our data protection contact is <a href="mailto:privacy@sawawallet.org" className="text-forest-green hover:underline">privacy@sawawallet.org</a>.
+              </p>
+            </section>
+
             {/* International Transfers */}
             <section>
-              <h2 className="text-lg font-bold text-charcoal mb-3">9. International Data Transfers</h2>
+              <h2 className="text-lg font-bold text-charcoal mb-3">11. International Data Transfers</h2>
               <p className="text-sm leading-relaxed">
                 Your information may be transferred to and processed in countries outside your country of residence. We ensure that appropriate safeguards are in place to protect your data in accordance with this Privacy Policy and applicable data protection laws.
               </p>
@@ -176,7 +210,7 @@ export default function PrivacyPolicy() {
 
             {/* Children's Privacy */}
             <section>
-              <h2 className="text-lg font-bold text-charcoal mb-3">10. Children&apos;s Privacy</h2>
+              <h2 className="text-lg font-bold text-charcoal mb-3">12. Children&apos;s Privacy</h2>
               <p className="text-sm leading-relaxed">
                 Sawa Wallet is not intended for use by anyone under the age of 18. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately.
               </p>
@@ -184,7 +218,7 @@ export default function PrivacyPolicy() {
 
             {/* Updates to Policy */}
             <section>
-              <h2 className="text-lg font-bold text-charcoal mb-3">11. Changes to This Privacy Policy</h2>
+              <h2 className="text-lg font-bold text-charcoal mb-3">13. Changes to This Privacy Policy</h2>
               <p className="text-sm leading-relaxed">
                 We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. Your continued use of Sawa Wallet after any changes constitutes acceptance of the updated policy.
               </p>
@@ -192,7 +226,7 @@ export default function PrivacyPolicy() {
 
             {/* Contact */}
             <section>
-              <h2 className="text-lg font-bold text-charcoal mb-3">12. Contact Us</h2>
+              <h2 className="text-lg font-bold text-charcoal mb-3">14. Contact Us</h2>
               <p className="text-sm leading-relaxed mb-2">
                 If you have questions or concerns about this Privacy Policy, please contact us:
               </p>
