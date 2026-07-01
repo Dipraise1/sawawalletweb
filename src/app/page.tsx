@@ -43,19 +43,6 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto text-center">
 
-            <FadeIn>
-              <div className="inline-flex items-center gap-2.5 py-1.5 pl-2 pr-4 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200/80 shadow-sm mb-8 hover:border-forest-green/30 transition-colors">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-forest-green/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-forest-green">
-                  <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-forest-green/60 animate-ping" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-forest-green" />
-                  </span>
-                  Beta
-                </span>
-                <span className="text-sm font-medium text-gray-700">Now live in 50+ countries</span>
-              </div>
-            </FadeIn>
-
             <FadeIn delay={0.1}>
               <h1 className="heading-hero text-charcoal mb-8">
                 <RevealWords text="Send money" delay={0.15} />
@@ -87,7 +74,7 @@ export default function Home() {
                   className="transition-transform hover:scale-105"
                   aria-label="Download Sawa Wallet on the App Store"
                 >
-                  <Image src="/app-store-badge.svg" alt="Download on the App Store" width={160} height={50} className="h-[50px] w-auto" />
+                  <Image src="/app-store-badge.svg" alt="Download on the App Store" width={135} height={40} className="h-14 w-auto" />
                 </a>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.sawawallet.app"
@@ -96,7 +83,7 @@ export default function Home() {
                   className="transition-transform hover:scale-105"
                   aria-label="Get Sawa Wallet on Google Play"
                 >
-                  <Image src="/google-play-badge.png" alt="Get it on Google Play" width={180} height={50} className="h-[50px] w-auto" />
+                  <Image src="/google-play-badge.png" alt="Get it on Google Play" width={646} height={250} className="h-14 w-auto" />
                 </a>
 
                 <WatchDemoButton />

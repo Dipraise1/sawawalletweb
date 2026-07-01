@@ -1,4 +1,16 @@
 /** @type {import('next').NextConfig} */
+const isDev = process.env.NODE_ENV !== 'production'
+
+// Next.js dev mode (Fast Refresh / HMR) evaluates modules via eval(), so it
+// needs 'unsafe-eval'. Production builds don't — keep prod strict.
+const scriptSrc = [
+  "script-src 'self' 'unsafe-inline'",
+  isDev ? "'unsafe-eval'" : '',
+  'https://www.googletagmanager.com https://www.google-analytics.com',
+]
+  .filter(Boolean)
+  .join(' ')
+
 const nextConfig = {
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -13,6 +25,27 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
+          // Content Security Policy — restricts where scripts, styles, and
+          // connections may come from. Even if markup were ever injected, the
+          // browser would refuse to load off-origin scripts or exfiltrate data.
+          // 'unsafe-inline' is required for Next.js' hydration bootstrap and GA;
+          // the allowlisted origins are limited to Google Analytics/Tag Manager.
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "base-uri 'self'",
+              "object-src 'none'",
+              "frame-ancestors 'none'",
+              "form-action 'self'",
+              "img-src 'self' data: blob: https:",
+              "font-src 'self' data:",
+              "style-src 'self' 'unsafe-inline'",
+              scriptSrc,
+              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.analytics.google.com",
+              "upgrade-insecure-requests",
+            ].join('; '),
+          },
           // Prevent browsers from MIME-sniffing a response away from the declared content-type
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           // Deny embedding this site in iframes (clickjacking protection)

@@ -14,6 +14,9 @@ export type Review = {
 
 const LIST_KEY = 'sawa:reviews'
 const SEED_FLAG = 'sawa:reviews:seeded'
+// Private, operator-only abuse log. Never exposed via GET — holds the request
+// fingerprint (IP / user-agent) for each submission so probes are attributable.
+const META_KEY = 'sawa:reviews:meta'
 const MAX_RETURN = 60
 
 const SEED: Review[] = [
@@ -43,8 +46,38 @@ const SEED: Review[] = [
   },
 ]
 
+// Private request fingerprint stored alongside each review for abuse triage.
+type ReviewMeta = {
+  reviewId: string
+  ip: string
+  ua: string
+  ref: string
+  createdAt: number
+  flagged: boolean
+}
+
 // In-memory fallback used in local dev / before Vercel KV is provisioned.
 let memory: Review[] | null = null
+let memoryMeta: ReviewMeta[] = []
+
+// Looks like a script / markup injection attempt rather than a real review.
+const ATTACK_PATTERN = /<[a-z!/]|on\w+\s*=|javascript:|data:text\/html|&#x?\d/i
+
+function clientMeta(request: Request) {
+  const h = request.headers
+  // x-forwarded-for is a comma-separated chain; the first entry is the client.
+  const fwd = h.get('x-forwarded-for') || ''
+  const ip =
+    fwd.split(',')[0].trim() ||
+    h.get('x-real-ip') ||
+    h.get('x-vercel-forwarded-for') ||
+    'unknown'
+  return {
+    ip,
+    ua: (h.get('user-agent') || 'unknown').slice(0, 300),
+    ref: (h.get('referer') || '').slice(0, 300),
+  }
+}
 
 async function getKv() {
   if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) return null
@@ -131,14 +164,26 @@ export async function POST(request: Request) {
     createdAt: Date.now(),
   }
 
+  const { ip, ua, ref } = clientMeta(request)
+  const flagged = ATTACK_PATTERN.test(name) || ATTACK_PATTERN.test(message) || ATTACK_PATTERN.test(location)
+  const meta: ReviewMeta = { reviewId: review.id, ip, ua, ref, createdAt: review.createdAt, flagged }
+
+  // Server-side abuse log — lands in Vercel logs, never in the public API.
+  console[flagged ? 'warn' : 'log'](
+    `[reviews] submission id=${review.id} ip=${ip} ua="${ua}" flagged=${flagged}`,
+  )
+
   try {
     const kv = await getKv()
     if (kv) {
       await kv.lpush(LIST_KEY, review)
       await kv.ltrim(LIST_KEY, 0, 499)
+      await kv.lpush(META_KEY, meta)
+      await kv.ltrim(META_KEY, 0, 999)
     } else {
       if (!memory) memory = [...SEED]
       memory.unshift(review)
+      memoryMeta.unshift(meta)
     }
   } catch {
     return NextResponse.json({ error: 'Could not save your review. Please try again.' }, { status: 500 })

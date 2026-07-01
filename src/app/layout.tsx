@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import JsonLd from '@/components/JsonLd'
 import AmbientMusicPlayer from '@/components/AmbientMusicPlayer'
+import ConsentBanner from '@/components/ConsentBanner'
+import Script from 'next/script'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/next'
 
@@ -102,6 +104,18 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+        {/* Consent Mode v2 defaults — must run before GA loads. Privacy-first:
+            no analytics cookies until the visitor opts in; measurement runs in
+            anonymized, cookieless mode by default. */}
+        {GA_ID && (
+          <Script id="consent-default" strategy="beforeInteractive">
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+window.gtag=window.gtag||gtag;
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
+try{if(localStorage.getItem('sawa-consent')==='granted')gtag('consent','update',{analytics_storage:'granted'});}catch(e){}`}
+          </Script>
+        )}
       </head>
       <body className="font-sans antialiased text-charcoal bg-cream selection:bg-forest-green/20 selection:text-forest-green overflow-x-clip">
         <JsonLd />
@@ -111,6 +125,9 @@ export default function RootLayout({
 
         {/* Subtle Ambient Background Music - Loops automatically but very low volume */}
         <AmbientMusicPlayer />
+
+        {/* Hybrid privacy: cookieless by default, opt-in for full analytics */}
+        {GA_ID && <ConsentBanner />}
 
         <div className="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-forest-green via-luxury-gold to-forest-green z-50 opacity-0 pointer-events-none" />
         <Analytics />
