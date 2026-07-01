@@ -201,12 +201,10 @@ export const ParallaxLayer = ({
   const yRange = (1 - speed) * 120
   const y = useTransform(scrollYProgress, [0, 1], [`${-yRange / 2}px`, `${yRange / 2}px`])
   const springY = useSpring(y, { stiffness: 60, damping: 20 })
-  // The scroll target lives on a plain, statically-positioned div so SSR and
-  // client hydrate identically; the motion.div only carries the transform.
   return (
-    <div ref={ref} className={`relative ${className}`}>
-      <motion.div style={{ y: springY }}>{children}</motion.div>
-    </div>
+    <motion.div ref={ref} style={{ y: springY }} className={className}>
+      {children}
+    </motion.div>
   )
 }
 
@@ -225,11 +223,10 @@ export const ParallaxScale = ({
   })
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1.04])
   const springScale = useSpring(scale, { stiffness: 50, damping: 18 })
-  // Scroll target on a plain positioned div (SSR-stable); motion.div animates.
   return (
-    <div ref={ref} className={`relative ${className}`}>
-      <motion.div style={{ scale: springScale }}>{children}</motion.div>
-    </div>
+    <motion.div ref={ref} style={{ scale: springScale }} className={className}>
+      {children}
+    </motion.div>
   )
 }
 
