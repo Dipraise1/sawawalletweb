@@ -50,6 +50,9 @@ export default function Footer() {
               <li><a href="#toolkit" className="text-gray-400 hover:text-white transition-colors">Sawa Toolkit</a></li>
               <li><a href="#investments" className="text-gray-400 hover:text-white transition-colors">Investments</a></li>
               <li><a href="#town-hall" className="text-gray-400 hover:text-white transition-colors">Town Hall</a></li>
+              <li><Link href="/fees" className="text-gray-400 hover:text-white transition-colors">Fees &amp; Limits</Link></li>
+              <li><Link href="/security" className="text-gray-400 hover:text-white transition-colors">Security</Link></li>
+              <li><Link href="/status" className="text-gray-400 hover:text-white transition-colors">System Status</Link></li>
               <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors">Get Support</a></li>
             </ul>
           </div>
@@ -62,9 +65,11 @@ export default function Footer() {
                   GitHub
                 </a>
               </li>
+              <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
               <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
               <li><Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
               <li><Link href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
+              <li><Link href="/aml-policy" className="text-gray-400 hover:text-white transition-colors">AML &amp; Compliance</Link></li>
               <li><Link href="/delete-data" className="text-gray-400 hover:text-white transition-colors">Delete Data</Link></li>
             </ul>
           </div>
