@@ -194,29 +194,60 @@ export default function Home() {
         </div>
 
         {(() => {
-          // Typographic wordmark marquee — no external logo dependencies,
-          // roster matches what the app actually runs on.
           const partners = [
-            'Solana',
-            'Ethereum',
-            'Bitcoin',
-            'Base',
-            'Polygon',
-            'BNB Chain',
-            'Privy',
-            'Paystack',
-            'Helius',
+            {
+              name: 'Solana',
+              logo: 'https://cdn.simpleicons.org/solana',
+            },
+            {
+              name: 'Ethereum',
+              logo: 'https://cdn.simpleicons.org/ethereum',
+            },
+            {
+              name: 'Bitcoin',
+              logo: 'https://cdn.simpleicons.org/bitcoin',
+            },
+            {
+              name: 'Privy',
+              logo: 'https://www.google.com/s2/favicons?domain=privy.io&sz=64',
+            },
+            {
+              name: 'Tron',
+              logo: 'https://cryptologos.cc/logos/tron-trx-logo.png?v=029',
+            },
+            {
+              name: 'Meld',
+              logo: 'https://meld.io/favicon.ico',
+            },
+            {
+              name: 'Paystack',
+              logo: 'https://www.google.com/s2/favicons?domain=paystack.com&sz=64',
+            },
+            {
+              name: 'Helius',
+              logo: 'https://www.helius.dev/favicon.ico',
+            },
           ]
           const items = [...partners, ...partners, ...partners]
           return (
-            <div className="relative flex overflow-hidden group fade-edges" aria-label="Infrastructure partners">
-              <div className="flex items-center animate-marquee-left group-hover:[animation-play-state:paused] min-w-full">
-                {items.map((name, i) => (
-                  <div key={i} className="flex-shrink-0 flex items-center">
-                    <span className="font-display text-2xl font-medium text-charcoal/40 hover:text-charcoal/70 whitespace-nowrap tracking-tight transition-colors duration-300">
-                      {name}
+            <div className="relative flex overflow-hidden group fade-edges">
+              <div className="flex items-center gap-20 animate-marquee-left group-hover:[animation-play-state:paused] min-w-full">
+                {items.map((p, i) => (
+                  <div key={i} className="flex-shrink-0 flex items-center gap-3.5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-10 w-auto object-contain"
+                      style={{ filter: 'brightness(0)', opacity: 0.8 }}
+                    />
+                    <span className="font-bold text-lg text-gray-900 whitespace-nowrap tracking-tight">
+                      {p.name}
                     </span>
-                    <span className="mx-10 w-1.5 h-1.5 rounded-full bg-luxury-gold/50" aria-hidden="true" />
                   </div>
                 ))}
               </div>
