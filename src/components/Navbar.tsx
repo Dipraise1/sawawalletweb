@@ -46,24 +46,24 @@ export default function Navbar() {
 
   const menuItems = [
     {
-      href: '#features',
+      href: '/#features',
       label: 'Features',
       description: 'Why Sawa?'
     },
     {
-      href: '#toolkit',
+      href: '/#toolkit',
       label: 'Toolkit',
       description: 'For developers'
     },
     {
-      href: '#investments',
-      label: 'Investments',
-      description: 'Grow wealth'
-    },
-    {
-      href: '#town-hall',
+      href: '/#town-hall',
       label: 'Town Hall',
       description: 'Community reviews'
+    },
+    {
+      href: '/blog',
+      label: 'Blog',
+      description: 'Guides & learning'
     },
     {
       href: '/contact',
@@ -117,7 +117,7 @@ export default function Navbar() {
                 ))}
                 <div className="w-px h-6 bg-gray-200 mx-2"></div>
                 <Link
-                  href="#download"
+                  href="/#download"
                   className="btn-primary !py-2.5 !px-6 !text-sm shadow-md hover:shadow-xl"
                 >
                   Get the App
@@ -198,7 +198,7 @@ export default function Navbar() {
 
                 <div className="mt-auto pt-8 space-y-4">
                   <Link
-                    href="#download"
+                    href="/#download"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="btn-primary w-full justify-center shadow-xl"
                   >

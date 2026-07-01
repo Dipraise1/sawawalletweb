@@ -17,6 +17,7 @@ import StoryScrollSection from '@/components/StoryScrollSection'
 import TownHallSection from '@/components/TownHallSection'
 import Globe3D from '@/components/Globe3D'
 import WatchDemoButton from '@/components/WatchDemoButton'
+import WaitlistForm from '@/components/WaitlistForm'
 import { FAQ_ITEMS } from '@/lib/faq'
 import Image from 'next/image'
 
@@ -157,7 +158,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-sm font-bold text-charcoal">Instant Transfer</div>
-                    <div className="text-xs text-gray-500">No network fees</div>
+                    <div className="text-xs text-gray-500">Settled in seconds</div>
                   </div>
                 </FloatingCard>
 
@@ -193,60 +194,29 @@ export default function Home() {
         </div>
 
         {(() => {
+          // Typographic wordmark marquee — no external logo dependencies,
+          // roster matches what the app actually runs on.
           const partners = [
-            {
-              name: 'Solana',
-              logo: 'https://cdn.simpleicons.org/solana',
-            },
-            {
-              name: 'Ethereum',
-              logo: 'https://cdn.simpleicons.org/ethereum',
-            },
-            {
-              name: 'Bitcoin',
-              logo: 'https://cdn.simpleicons.org/bitcoin',
-            },
-            {
-              name: 'Privy',
-              logo: 'https://www.google.com/s2/favicons?domain=privy.io&sz=64',
-            },
-            {
-              name: 'Tron',
-              logo: 'https://cryptologos.cc/logos/tron-trx-logo.png?v=029',
-            },
-            {
-              name: 'Meld',
-              logo: 'https://meld.io/favicon.ico',
-            },
-            {
-              name: 'Paystack',
-              logo: 'https://www.google.com/s2/favicons?domain=paystack.com&sz=64',
-            },
-            {
-              name: 'Helius',
-              logo: 'https://www.helius.dev/favicon.ico',
-            },
+            'Solana',
+            'Ethereum',
+            'Bitcoin',
+            'Base',
+            'Polygon',
+            'BNB Chain',
+            'Privy',
+            'Paystack',
+            'Helius',
           ]
           const items = [...partners, ...partners, ...partners]
           return (
-            <div className="relative flex overflow-hidden group fade-edges">
-              <div className="flex items-center gap-20 animate-marquee-left group-hover:[animation-play-state:paused] min-w-full">
-                {items.map((p, i) => (
-                  <div key={i} className="flex-shrink-0 flex items-center gap-3.5">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={p.logo}
-                      alt={p.name}
-                      width={40}
-                      height={40}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-10 w-auto object-contain"
-                      style={{ filter: 'brightness(0)', opacity: 0.8 }}
-                    />
-                    <span className="font-bold text-lg text-gray-900 whitespace-nowrap tracking-tight">
-                      {p.name}
+            <div className="relative flex overflow-hidden group fade-edges" aria-label="Infrastructure partners">
+              <div className="flex items-center animate-marquee-left group-hover:[animation-play-state:paused] min-w-full">
+                {items.map((name, i) => (
+                  <div key={i} className="flex-shrink-0 flex items-center">
+                    <span className="font-display text-2xl font-medium text-charcoal/40 hover:text-charcoal/70 whitespace-nowrap tracking-tight transition-colors duration-300">
+                      {name}
                     </span>
+                    <span className="mx-10 w-1.5 h-1.5 rounded-full bg-luxury-gold/50" aria-hidden="true" />
                   </div>
                 ))}
               </div>
@@ -450,14 +420,15 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <FadeIn>
-
+              <p className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-4">For developers</p>
               <h2 className="heading-2 mb-6">Sawa Toolkit</h2>
               <p className="text-body-lg text-gray-600">
-                Safe Phone-First Identity &amp; Payment Primitives for Solana.<br />
-                Built on <span className="font-semibold text-forest-green">Privy</span> (non-custodial) + high-performance private <span className="font-semibold text-forest-green">Rust</span> rails.
+                Phone-first identity &amp; payment primitives for Solana — built on{' '}
+                <span className="font-semibold text-forest-green">Privy</span> (non-custodial) and
+                high-performance <span className="font-semibold text-forest-green">Rust</span> rails.
               </p>
               <p className="mt-4 text-sm text-gray-500 max-w-md mx-auto">
-                Production-extracted primitives for Solana consumer apps in Africa. Private Rust rails power the live app.
+                Everything here is extracted from the code running the live app — not demo-ware.
               </p>
             </FadeIn>
           </div>
@@ -466,7 +437,7 @@ export default function Home() {
             {[
               {
                 title: "@sawa/phone-resolver",
-                desc: "Phone, specialized username, or email → Privy DID → Solana address. Phone live first (easiest); username/mail as easier first options. resolveIdentifier() + sendToPhone().",
+                desc: "Turn a phone number, username, or email into a Solana address via Privy — the primitive behind sending money to a contact. One call: resolveIdentifier(), then sendToPhone().",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2 2 2 0 01-2-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2zM13 5a2 2 0 012-2 2 2 0 01-2-2 2 2 0 01-2-2 2 2 0 012-2z" />
@@ -495,31 +466,48 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2" />
                   </svg>
                 ),
-                link: "#",
+                link: null,
                 tint: "forest"
               }
             ].map((item, i) => {
               const isGold = item.tint === 'gold'
               const tile = isGold ? 'bg-luxury-gold/10 text-luxury-gold' : 'bg-forest-green/10 text-forest-green'
               const hoverBorder = isGold ? 'hover:border-luxury-gold/40' : 'hover:border-forest-green/40'
-              return (
-              <StaggerItem key={i}>
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group block h-full p-8 rounded-3xl border border-charcoal/[0.07] bg-white ${hoverBorder} shadow-[0_1px_2px_rgba(45,80,22,0.04)] hover:shadow-[0_24px_48px_-16px_rgba(45,80,22,0.16)] hover:-translate-y-1 transition-all duration-500 flex flex-col`}
-                >
+              const isPrivate = !item.link
+              const cardClass = `group block h-full p-8 rounded-3xl border border-charcoal/[0.07] bg-white ${hoverBorder} shadow-[0_1px_2px_rgba(45,80,22,0.04)] hover:shadow-[0_24px_48px_-16px_rgba(45,80,22,0.16)] hover:-translate-y-1 transition-all duration-500 flex flex-col`
+              const inner = (
+                <>
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:-rotate-3 transition-transform ${tile}`}>
                     {item.icon}
                   </div>
                   <h3 className="font-sans text-xl font-semibold text-charcoal mb-3 tracking-tight group-hover:text-forest-green transition-colors">{item.title}</h3>
                   <p className="text-gray-600 flex-grow leading-relaxed text-[15px]">{item.desc}</p>
                   <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between text-xs uppercase tracking-widest font-medium text-gray-400 group-hover:text-forest-green transition-colors">
-                    <span>View on GitHub</span>
-                    <span className="text-xl leading-none">→</span>
+                    {isPrivate ? (
+                      <>
+                        <span>Private · Powers the live app</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                      </>
+                    ) : (
+                      <>
+                        <span>View on GitHub</span>
+                        <span className="text-xl leading-none">→</span>
+                      </>
+                    )}
                   </div>
-                </a>
+                </>
+              )
+              return (
+              <StaggerItem key={i}>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className={cardClass}>
+                    {inner}
+                  </a>
+                ) : (
+                  <div className={cardClass}>{inner}</div>
+                )}
               </StaggerItem>
             )})}
           </StaggerChildren>
@@ -562,11 +550,16 @@ export default function Home() {
           <FadeIn>
             <p className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-4">Coverage</p>
             <h2 className="heading-2 mb-4">Africa &amp; Beyond.</h2>
-            <p className="text-body text-gray-600 mb-6">
-              Sawa supports transfers across 50+ countries.
+            <p className="text-body text-gray-600 mb-6 max-w-xl mx-auto">
+              Send to any phone number across 50+ countries — from Lagos to London,
+              Nairobi to New York.
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-forest-green/8 border border-forest-green/15 rounded-full">
-              <span className="text-sm font-semibold text-forest-green">🌍 50+ countries supported</span>
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-forest-green/10 border border-forest-green/15 rounded-full">
+              <span className="relative flex w-2 h-2" aria-hidden="true">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-forest-green opacity-60 animate-ping" />
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-forest-green" />
+              </span>
+              <span className="text-sm font-semibold text-forest-green">Live in beta · Expanding monthly</span>
             </div>
           </FadeIn>
         </div>
@@ -679,30 +672,14 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <FadeIn>
             <p className="text-xs font-semibold uppercase tracking-widest text-luxury-gold/80 mb-6">Early Access</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight text-white">
               Be among the first.
             </h2>
             <p className="text-xl text-white/75 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
               Sawa is currently in beta. Sign up to secure your spot and get notified when we launch in your country.
             </p>
 
-            <form className="max-w-md mx-auto relative group mb-8" action="/api/waitlist" method="POST">
-              <div className="absolute -inset-1 bg-gradient-to-r from-luxury-gold/50 to-white/20 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-700" aria-hidden="true" />
-              <div className="relative flex p-1.5 bg-forest-green-dark rounded-full border border-white/10">
-                <label htmlFor="waitlist-email" className="sr-only">Email address</label>
-                <input
-                  id="waitlist-email"
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  required
-                  className="flex-1 px-6 bg-transparent text-white placeholder:text-white/40 focus:outline-none text-sm"
-                />
-                <button type="submit" className="px-7 py-2.5 bg-white text-forest-green rounded-full font-bold hover:bg-cream transition-colors shadow-lg text-sm">
-                  Request Access
-                </button>
-              </div>
-            </form>
+            <WaitlistForm />
 
             <p className="text-sm text-white/40 mb-10">No spam. Unsubscribe at any time.</p>
 
