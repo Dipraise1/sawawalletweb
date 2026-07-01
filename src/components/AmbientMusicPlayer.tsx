@@ -15,22 +15,12 @@ export default function AmbientMusicPlayer() {
     audio.volume = volume
     audio.loop = true
 
-    // Autoplay attempt
-    const tryPlay = () => {
-      audio.play().then(() => {
-        setIsPlaying(true)
-      }).catch((err) => {
-        console.log('Autoplay prevented by browser:', err.message)
-        setIsPlaying(false)
-      })
-    }
-
-    tryPlay()
-
-    // Fallback: start on first user interaction
+    // No autoplay attempt on mount — browsers block it anyway, and calling
+    // play() forces the ~576KB track to start downloading on every page load,
+    // defeating preload="none". Playback begins on first user interaction.
     const handleFirstInteraction = () => {
       if (audio.paused) {
-        audio.play().then(() => setIsPlaying(true))
+        audio.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false))
       }
       document.removeEventListener('click', handleFirstInteraction)
       document.removeEventListener('touchstart', handleFirstInteraction)

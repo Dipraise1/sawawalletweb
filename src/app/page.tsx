@@ -26,7 +26,7 @@ export default function Home() {
     <main className="min-h-screen overflow-x-clip bg-cream font-sans selection:bg-forest-green/20 selection:text-forest-green-dark">
 
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden">
+      <section className="relative pt-40 pb-20 lg:pt-48 lg:pb-40 overflow-hidden">
 
         {/* ── Parallax depth background — 4 layers at different scroll speeds ── */}
         <ParallaxHeroBackground />
