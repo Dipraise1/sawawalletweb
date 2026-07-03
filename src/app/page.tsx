@@ -357,7 +357,7 @@ export default function Home() {
               <FadeIn delay={0.15}>
                 <p className="text-body-lg text-gray-600 lg:border-l-2 lg:border-luxury-gold/30 lg:pl-6">
                   Built on powerful blockchain technology, wrapped in an interface anyone can use.
-                  Six capabilities, one calm app.
+                  Nine capabilities, one calm app.
                 </p>
               </FadeIn>
             </div>
@@ -368,7 +368,7 @@ export default function Home() {
               {
                 num: "01",
                 title: "One Wallet, Every Chain",
-                desc: "Hold and send USDC, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon and BNB Chain — we handle the networks so you don't have to.",
+                desc: "Hold and send USDC, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism and Sui — we handle the networks so you don't have to.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                 ),
@@ -386,7 +386,7 @@ export default function Home() {
               {
                 num: "03",
                 title: "Sawa Pay",
-                desc: "Pay bills, buy airtime & data, and cash out to any bank account or mobile money — straight from your crypto balance.",
+                desc: "Pay bills, buy airtime & data, cash out to any bank or mobile money — and get paid as a merchant with shareable payment links and QR checkout.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z" /></svg>
                 ),
@@ -418,6 +418,33 @@ export default function Home() {
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                 ),
                 tint: "gold"
+              },
+              {
+                num: "07",
+                title: "Swap in Seconds",
+                desc: "Trade tokens at the best available rates on Solana and EVM chains — even across chains — without ever leaving the app.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                ),
+                tint: "forest"
+              },
+              {
+                num: "08",
+                title: "Virtual Cards",
+                desc: "Spend your balance anywhere with virtual Visa cards — create, fund, and freeze them right from the app. Rolling out soon.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                ),
+                tint: "gold"
+              },
+              {
+                num: "09",
+                title: "Speaks Your Language",
+                desc: "Use Sawa in English, Pidgin, Yoruba, Igbo, Hausa, French or Swahili — with your balance shown in 19 local currencies.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" /></svg>
+                ),
+                tint: "forest"
               }
             ].map((feature, i) => {
               const isGold = feature.tint === 'gold'

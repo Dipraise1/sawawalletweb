@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     default: 'Sawa Wallet - Send Crypto with Just a Phone Number',
     template: '%s | Sawa Wallet',
   },
-  description: 'The human-first crypto wallet. Send USDC, USDT, SOL, ETH and Bitcoin to anyone with just a phone number. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own rails, and pay bills with Sawa Pay. Non-custodial and multi-chain.',
-  keywords: ['sawa wallet', 'sawawallet', 'sawa pay', 'sawa crypto', 'crypto wallet', 'bitcoin wallet', 'buy crypto africa', 'sell crypto', 'cash out crypto', 'crypto off-ramp', 'crypto on-ramp', 'send money to africa', 'usdc wallet', 'usdt wallet', 'solana wallet', 'ethereum wallet', 'phone number crypto transfer', 'non-custodial wallet', 'cross-border payments', 'mobile money crypto', 'pay bills with crypto', 'buy airtime with crypto', 'stablecoin wallet', 'nigeria crypto', 'kenya crypto', 'ghana crypto'],
+  description: 'The human-first crypto wallet. Send USDC, USDT, SOL, ETH, SUI and Bitcoin to anyone with just a phone number. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own rails, swap tokens in-app, and pay bills with Sawa Pay. Non-custodial and multi-chain, in 7 languages.',
+  keywords: ['sawa wallet', 'sawawallet', 'sawa pay', 'sawa crypto', 'crypto wallet', 'bitcoin wallet', 'buy crypto africa', 'sell crypto', 'cash out crypto', 'crypto off-ramp', 'crypto on-ramp', 'send money to africa', 'usdc wallet', 'usdt wallet', 'solana wallet', 'ethereum wallet', 'sui wallet', 'crypto swap', 'token swap app', 'virtual card crypto', 'phone number crypto transfer', 'non-custodial wallet', 'cross-border payments', 'mobile money crypto', 'pay bills with crypto', 'buy airtime with crypto', 'crypto payment links', 'stablecoin wallet', 'nigeria crypto', 'kenya crypto', 'ghana crypto'],
   authors: [{ name: 'Sawa Wallet Team', url: 'https://sawawallet.org' }],
   creator: 'Sawa Wallet',
   publisher: 'Sawa Wallet',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Sawa Wallet - Money for People, Not Addresses',
-    description: 'Send USDC, SOL, ETH & Bitcoin with just a phone number. Buy crypto with a bank transfer, cash out to your bank or mobile money, and pay bills with Sawa Pay. Fast, secure, non-custodial.',
+    description: 'Send USDC, SOL, ETH, SUI & Bitcoin with just a phone number. Buy crypto with a bank transfer, cash out to your bank or mobile money, swap tokens in-app, and pay bills with Sawa Pay. Fast, secure, non-custodial.',
     url: 'https://sawawallet.org',
     siteName: 'Sawa Wallet',
     images: [

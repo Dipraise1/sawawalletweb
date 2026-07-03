@@ -6,14 +6,17 @@ Sawa Wallet replaces complex wallet addresses with phone numbers, so sending cry
 
 ## What Sawa Wallet does
 
-- **Send by phone number**: Send crypto to anyone using their phone number from your contacts — no addresses to copy.
-- **Multi-chain, including Bitcoin**: Hold and send USDC, USDT, SOL, ETH and BTC across Solana, Ethereum, Base, Polygon and BNB Chain from one wallet.
+- **Send by phone number**: Send crypto to anyone using their phone number from your contacts — no addresses to copy. Usernames and email work too.
+- **Multi-chain, including Bitcoin**: Hold and send USDC, USDT, SOL, ETH, SUI and BTC across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism and Sui from one wallet.
 - **Buy crypto instantly**: Top up with a local bank transfer; crypto arrives in minutes.
 - **Cash out locally**: Withdraw to a bank account or mobile money in your local currency.
 - **Private rails**: Sawa operates its own on- and off-ramp infrastructure (not public), so conversions are faster and fairly priced with no third-party middleman.
-- **Sawa Pay**: Pay bills, buy airtime and data, and settle electricity and cable TV directly from your crypto balance.
+- **In-app swaps**: Trade tokens at the best available rates on Solana and EVM chains, including cross-chain swaps, without leaving the app.
+- **Sawa Pay**: Pay bills, buy airtime and data, and settle electricity and cable TV directly from your crypto balance — plus merchant payment links with QR checkout for getting paid.
+- **Virtual cards**: Virtual Visa cards to spend your balance anywhere (rolling out soon, starting with Nigeria and South Africa).
 - **Earn & protect**: Built-in staking to grow idle assets, and on-chain escrow for safer deals.
-- **Non-custodial & secure**: You own your private keys. Optional identity verification (KYC) unlocks higher limits.
+- **Non-custodial & secure**: You own your private keys, protected by biometrics and a server-verified passcode with brute-force lockout. Optional identity verification (KYC) unlocks higher limits.
+- **Local-first experience**: 7 languages (English, Nigerian Pidgin, Yoruba, Igbo, Hausa, French, Swahili) and 19 display currencies with live exchange rates.
 
 ## Who it is for
 
@@ -27,8 +30,9 @@ People sending money to family, paying suppliers across borders, freelancers rec
 
 - Category: Non-custodial crypto wallet / cross-border payments / stablecoin wallet
 - Platforms: iOS and Android
-- Networks: Solana, Ethereum, Base, Polygon, BNB Chain, Bitcoin
-- Assets: USDC, USDT, SOL, ETH, BTC
+- Networks: Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism, Sui, Bitcoin
+- Assets: USDC, USDT, SOL, ETH, SUI, BTC
+- Languages: English, Nigerian Pidgin, Yoruba, Igbo, Hausa, French, Swahili
 - Cost: Free to use; small transparent fee on fiat conversions
 - Custody: Non-custodial (user holds keys)
 - Open Source: Sawa Toolkit (@sawa/phone-resolver + @sawa/compliance-kit) — production-extracted primitives for Solana consumer apps. Supports phone, specialized username, and email (mail/username as easier first options before full phone). Private Rust rails power on/off-ramps. Ideal for Solana Foundation Developer Tooling grants.

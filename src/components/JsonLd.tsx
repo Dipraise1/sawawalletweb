@@ -40,15 +40,19 @@ export default function JsonLd() {
           priceCurrency: 'USD',
         },
         description:
-          'Send and receive crypto instantly using just a phone number. Sawa Wallet is a multi-chain, non-custodial wallet supporting USDC, USDT, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon and BNB Chain. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own rails, and pay bills with Sawa Pay.',
+          'Send and receive crypto instantly using just a phone number. Sawa Wallet is a multi-chain, non-custodial wallet supporting USDC, USDT, SOL, ETH, SUI and Bitcoin across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism and Sui. Buy crypto with a bank transfer, cash out to your bank or mobile money via our own rails, swap tokens in-app, pay bills with Sawa Pay, and use it in 7 languages.',
         featureList: [
           'Send crypto with a phone number',
-          'Multi-chain wallet (Solana, Ethereum, Base, Polygon, BNB Chain)',
+          'Multi-chain wallet (Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism, Sui)',
           'Bitcoin support',
           'Buy crypto with a local bank transfer',
           'Cash out to bank or mobile money',
+          'In-app token swaps at the best rates, including cross-chain',
           'Sawa Pay — bills, airtime, data, electricity & cable',
+          'Merchant payment links with QR checkout',
+          'Virtual Visa cards (rolling out soon)',
           'Built-in staking and on-chain escrow',
+          '7 languages and 19 display currencies',
           'Non-custodial — you own your keys',
         ],
         // aggregateRating is intentionally omitted until real review data is available
