@@ -147,6 +147,48 @@
   .animate-slide-hint {
     animation: slide-hint 1.2s ease-in-out infinite;
   }
+
+  /* ── Above-the-fold reveals ───────────────────────────────────────────
+     Hero content must never depend on JS to become visible. The JS-driven
+     reveals (FadeIn & friends) render at opacity:0 in the SSR HTML and only
+     animate once React has hydrated and an IntersectionObserver has fired —
+     which means a blank hero until then, and an LCP element the browser
+     can't count. These are pure CSS, so they start on first paint and still
+     work if the bundle is slow or never arrives. Use them above the fold;
+     keep the framer-motion reveals for sections further down the page. */
+  .reveal {
+    animation: reveal-up 0.65s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+  .reveal-1 { animation-delay: 0.05s; }
+  .reveal-2 { animation-delay: 0.1s; }
+  .reveal-3 { animation-delay: 0.15s; }
+  .reveal-4 { animation-delay: 0.2s; }
+
+  .reveal-nav {
+    animation: reveal-nav 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes reveal-nav {
+  from { opacity: 0; transform: translateY(-100px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Respect the OS setting — content still ends up visible, just without motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-1,
+  .reveal-2,
+  .reveal-3,
+  .reveal-4,
+  .reveal-nav {
+    animation: none;
+  }
 }
 
 @keyframes slide-hint {

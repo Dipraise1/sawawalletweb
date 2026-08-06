@@ -76,14 +76,15 @@ export default function Navbar() {
     <>
       {/* Navbar Container */}
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none">
-        <motion.nav
-          className={`pointer-events-auto transition-all duration-500 ease-out ${isScrolled
+        {/* The drop-in used to be a framer-motion mount animation, which meant
+            the nav shipped as opacity:0 in the SSR HTML and stayed invisible
+            until hydration. It's a CSS animation now so it paints with the
+            markup and survives a slow or failed bundle. */}
+        <nav
+          className={`reveal-nav pointer-events-auto transition-all duration-500 ease-out ${isScrolled
             ? 'glass'
             : 'bg-transparent border-transparent'
             } rounded-full max-w-5xl w-full`}
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="px-6 py-3 lg:px-8">
             <div className="flex items-center justify-between">
@@ -138,7 +139,7 @@ export default function Navbar() {
               </button>
             </div>
           </div>
-        </motion.nav>
+        </nav>
       </div>
 
       {/* Mobile Menu Overlay */}

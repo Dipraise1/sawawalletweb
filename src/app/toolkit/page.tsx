@@ -1,5 +1,22 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/AnimatedSection';
+
+export const metadata: Metadata = {
+  title: 'Sawa Toolkit — Phone-First Payment Primitives for Solana',
+  description:
+    'Open-source developer primitives extracted from Sawa Wallet: phone-number identity resolution, KYC/compliance for 10+ African countries, and private financial rails for the Solana ecosystem. Built on Privy and Rust.',
+  keywords: ['sawa toolkit', 'solana phone resolver', 'solana kyc', 'crypto compliance kit', 'privy sdk', 'phone number to solana address', 'african crypto developer tools', 'non-custodial payment primitives'],
+  alternates: { canonical: 'https://sawawallet.org/toolkit' },
+  openGraph: {
+    title: 'Sawa Toolkit — Phone-First Payment Primitives for Solana',
+    description:
+      'Developer primitives from the live Sawa Wallet: phone-number identity, compliance/KYC, and private treasury rails for Solana.',
+    url: 'https://sawawallet.org/toolkit',
+    type: 'website',
+  },
+  robots: { index: true, follow: true },
+};
 
 export default function ToolkitPage() {
   return (

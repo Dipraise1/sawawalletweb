@@ -5,16 +5,14 @@ import Image from 'next/image'
 import { motion, useScroll, useTransform, useSpring, useMotionTemplate } from 'framer-motion'
 
 const ADDR_BG = [
-  { text: '0x742d35Cc6634C0532925a3b844Bc454b2c1d4F3a', top: '7%',  left: '2%',  size: 9,  rot: -2,  op: 0.07 },
-  { text: '9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtA', top: '17%', left: '52%', size: 8,  rot: 3,   op: 0.06 },
-  { text: 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq',  top: '28%', left: '18%', size: 9, rot: -1,  op: 0.07 },
-  { text: 'TJRabPrwbZy45sbavfcjinPJC18kjpRTv8',          top: '40%', left: '62%', size: 10, rot: 2,   op: 0.05 },
-  { text: '0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B',  top: '53%', left: '8%',  size: 8,  rot: -3,  op: 0.06 },
-  { text: 'addr1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh',top: '63%', left: '42%', size: 9, rot: 1,   op: 0.06 },
-  { text: '0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db',  top: '74%', left: '70%', size: 9,  rot: -2,  op: 0.05 },
-  { text: 'DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX7KMYZ',      top: '82%', left: '4%',  size: 8,  rot: 2,   op: 0.06 },
-  { text: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', top: '12%', left: '35%', size: 8,  rot: 1.5, op: 0.05 },
-  { text: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',        top: '47%', left: '80%', size: 8,  rot: -2,  op: 0.05 },
+  { text: '0x742d35Cc6634C0532925a3b844Bc454b2c1d4F3a', top: '9%',  left: '3%',  size: 11, rot: -2 },
+  { text: '9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtA',  top: '19%', left: '58%', size: 10, rot: 3 },
+  { text: 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq',  top: '31%', left: '14%', size: 12, rot: -1 },
+  { text: 'TJRabPrwbZy45sbavfcjinPJC18kjpRTv8',          top: '43%', left: '68%', size: 11, rot: 2 },
+  { text: '0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B',  top: '57%', left: '6%',  size: 10, rot: -3 },
+  { text: 'addr1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh',top: '68%', left: '46%', size: 12, rot: 1 },
+  { text: '0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db',  top: '79%', left: '72%', size: 10, rot: -2 },
+  { text: 'DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX7KMYZ',       top: '87%', left: '5%',  size: 11, rot: 2 },
 ]
 
 export default function StoryScrollSection() {
@@ -99,31 +97,22 @@ export default function StoryScrollSection() {
               style={{ y: addrY, opacity: addrOp }}
               className="absolute inset-0 overflow-hidden pointer-events-none select-none"
             >
+              {/* One texture layer, one colour, one opacity. The previous
+                  version stacked small red addresses under four much larger
+                  grey ones, which read as smudges rather than as a field of
+                  addresses. */}
               {ADDR_BG.map((a, i) => (
                 <span
                   key={i}
-                  className="absolute font-mono text-red-800"
+                  className="absolute font-mono text-red-900/[0.07] whitespace-nowrap"
                   style={{
-                    top: a.top, left: a.left,
-                    fontSize: a.size, opacity: a.op,
+                    top: a.top,
+                    left: a.left,
+                    fontSize: a.size,
                     transform: `rotate(${a.rot}deg)`,
                   }}
                 >
                   {a.text}
-                </span>
-              ))}
-              {['0x742d...', '9WzDX...', 'bc1q...', 'addr1...'].map((s, i) => (
-                <span
-                  key={`g${i}`}
-                  className="absolute font-mono text-charcoal/[0.03]"
-                  style={{
-                    top: `${20 + i * 16}%`,
-                    right: `${4 + i * 8}%`,
-                    fontSize: 16 + i * 6,
-                    transform: `rotate(${-1 + i * 0.8}deg)`,
-                  }}
-                >
-                  {s}
                 </span>
               ))}
             </motion.div>
@@ -135,7 +124,12 @@ export default function StoryScrollSection() {
               <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-4 sm:mb-6 lg:mb-8">
                 01 · The Problem
               </p>
-              <h2 className="text-[1.75rem] sm:text-4xl lg:text-[3.75rem] xl:text-[4.5rem] font-bold text-charcoal mb-3 sm:mb-5 lg:mb-7 leading-[1.1] tracking-tight">
+              {/* Line height rides on each text-* step. A bare `leading-*`
+                  loses to the line-height that `sm:text-4xl` bundles in — it
+                  sits inside a media query, so it wins on source order — and
+                  the 72px lines end up 40px apart, printed on top of one
+                  another. Every size below carries its own leading. */}
+              <h2 className="text-[1.75rem]/[1.15] sm:text-4xl/[1.1] lg:text-[3.5rem]/[1.05] xl:text-[4.25rem]/[1.02] font-bold text-charcoal mb-4 sm:mb-6 lg:mb-8 tracking-tight text-balance">
                 Crypto promised<br />
                 <span className="text-gray-400 font-light">to free your money.</span>
               </h2>
@@ -196,7 +190,7 @@ export default function StoryScrollSection() {
               <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-forest-green mb-4 sm:mb-6 lg:mb-8">
                 02 · The Breakthrough
               </p>
-              <h2 className="text-[1.75rem] sm:text-4xl lg:text-[3.75rem] xl:text-[4.5rem] font-bold text-charcoal mb-5 sm:mb-8 lg:mb-10 leading-[1.1] tracking-tight">
+              <h2 className="text-[1.75rem]/[1.15] sm:text-4xl/[1.1] lg:text-[3.5rem]/[1.05] xl:text-[4.25rem]/[1.02] font-bold text-charcoal mb-6 sm:mb-9 lg:mb-11 tracking-tight text-balance">
                 What if your wallet
                 <br />
                 <span className="text-gradient-green">lived in your contacts?</span>
@@ -252,7 +246,7 @@ export default function StoryScrollSection() {
                 <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-luxury-gold mb-3 sm:mb-6">
                   03 · The Sawa Way
                 </p>
-                <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal mb-3 sm:mb-5 leading-[1.1] tracking-tight">
+                <h2 className="text-[1.75rem]/[1.15] sm:text-4xl/[1.1] lg:text-5xl/[1.05] xl:text-6xl/[1.02] font-bold text-charcoal mb-4 sm:mb-6 tracking-tight text-balance">
                   Simple as
                   <br />
                   <span className="text-gradient-green">a text message.</span>
