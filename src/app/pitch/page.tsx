@@ -48,7 +48,8 @@ export default function PitchPage() {
             <p className="mt-6 text-xl sm:text-2xl text-gray-600 max-w-2xl">
               Sawa turns a phone number into the only crypto address you need — non-custodial,
               built on Solana, with real local naira rails. The product is <strong>live</strong>.
-              We&apos;re building the usage first, then the token that captures it.
+              We&apos;re building real usage first; any token design stays conditional on legal
+              review and payment volume.
             </p>
           </FadeIn>
 
@@ -258,9 +259,9 @@ export default function PitchPage() {
           </FadeIn>
           <StaggerChildren className="mt-10 grid sm:grid-cols-3 gap-5">
             {[
-              ['Phase 1 · Now–Q2 2026', 'Nigeria Launch', 'SEC/VASP compliance live, NGN → USDC ramp at scale, push from hundreds to 10k+ active users.'],
-              ['Phase 2 · Q3 2026', 'Ghana & Sawa Pay', 'Ghana entry (GHS rails), merchant network rollout, virtual card beta, bill pay & airtime.'],
-              ['Phase 3 · 2027', 'Toolkit & Expansion', 'Open-source developer toolkit GA, multi-country corridors (XOF, KES), diaspora remittance product.'],
+              ['Phase 1 · Now–Q3 2026', 'Nigeria Launch', 'ARIP/VASP readiness, NGN → USDC ramp at scale, push from 200+ to 10k+ active verified users.'],
+              ['Phase 2 · Q4 2026', 'Ghana & Sawa Pay', 'Ghana entry (GHS rails), merchant network rollout, virtual card beta, bill pay & airtime.'],
+              ['Phase 3 · 2027+', 'Toolkit & Expansion', 'Open-source developer toolkit GA, multi-country corridors (XOF, KES), diaspora remittance product.'],
             ].map(([phase, title, body]) => (
               <StaggerItem key={title}>
                 <div className="h-full rounded-3xl border border-gray-100 bg-white overflow-hidden">
@@ -277,8 +278,8 @@ export default function PitchPage() {
           </StaggerChildren>
           <FadeIn delay={0.1}>
             <p className="mt-8 font-mono text-sm text-gray-500 max-w-2xl">
-              Each phase compounds the last: more users → more ramp volume → richer liquidity → real
-              revenue backing the $SAWA token at launch.
+              Each phase compounds the last: more verified users → more ramp volume → richer
+              liquidity → stronger utility for any future $SAWA token design.
             </p>
           </FadeIn>
         </div>
@@ -380,19 +381,21 @@ export default function PitchPage() {
           <FadeIn>
             <Kicker>The ask</Kicker>
             <h2 className="mt-5 text-4xl sm:text-5xl font-bold tracking-tighter">
-              Raising <span className="text-forest-green">$15k</span> pre-seed on a SAFE.
+              Raising <span className="text-forest-green">$120k</span> pre-seed on a SAFE.
             </h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl">
-              The product already exists. This round turns it into a compliant, Nigeria-first stablecoin
-              payment network — and pushes adoption hard.
+              The product already exists. This round funds compliance, liquidity, security, and
+              launch execution so Sawa can become a Nigeria-first stablecoin payment network.
             </p>
           </FadeIn>
-          <StaggerChildren className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <StaggerChildren className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              ['$5k', 'Compliance + legal', 'SEC/VASP readiness and legal review.'],
-              ['$3k', 'Rails + liquidity', 'NGN → USDC rails and a liquidity buffer.'],
-              ['$4k', 'Card + float', '$3,500 float + $500 card issuing.'],
-              ['$3k', 'Launch + adoption', 'Growth loops and first-user acquisition.'],
+              ['$35k', 'Compliance + legal', 'Nigeria SEC ARIP/VASP readiness and legal work.'],
+              ['$35k', 'Rails + liquidity', 'NGN → USDC rails and settlement liquidity buffer.'],
+              ['$15k', 'KYC/AML + fraud', 'Sanctions screening, monitoring, and verification costs.'],
+              ['$10k', 'Security hardening', 'External review and infrastructure hardening.'],
+              ['$10k', 'Ghana prep', 'Regulatory mapping and partner onboarding.'],
+              ['$15k', 'Launch + operations', 'Acquisition, support, and launch operations.'],
             ].map(([v, t, b]) => (
               <StaggerItem key={t}>
                 <div className="h-full rounded-3xl bg-forest-green text-white p-7">
