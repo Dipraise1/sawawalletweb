@@ -93,7 +93,7 @@ export default function Home() {
             <div className="reveal reveal-3">
               <div className="flex items-center justify-center gap-8 sm:gap-14 mb-12">
                 {[
-                  { value: '50+', label: 'Countries' },
+                  { value: 'Any', label: 'Phone number' },
                   { value: '2.4s', label: 'Avg transfer' },
                   { value: '<0.5%', label: 'Network fees' },
                 ].map((stat, i) => (
@@ -250,7 +250,7 @@ export default function Home() {
               },
               {
                 title: 'Buy Crypto Instantly',
-                desc: 'Top up with a local bank transfer and watch crypto land in your wallet within minutes — no cards, no middlemen.',
+                desc: 'Top up with a local bank transfer and watch crypto land in your wallet within minutes. Live in Nigeria today; more corridors as they open.',
                 icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m4 6H4m0 0l4 4m-4-4l4-4"/></svg>),
               },
               {
@@ -260,7 +260,7 @@ export default function Home() {
               },
               {
                 title: 'We Run Our Own Rails',
-                desc: 'Sawa operates its own rails for on- and off-ramps — so conversions are faster, rates are fairer, and there\'s no third-party middleman.',
+                desc: 'The order engine, treasury and rates are ours, not a reseller\'s — so pricing is set by us and not marked up down a chain. The bank leg is executed by our licensed payment partner, Korapay.',
                 icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16M7 4v16m10-16v16"/></svg>),
               },
               {
@@ -402,7 +402,7 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-widest text-forest-green mb-4">Coverage</p>
             <h2 className="heading-2 mb-4">Africa &amp; Beyond.</h2>
             <p className="text-body text-gray-600 max-w-xl mx-auto">
-              Send to any phone number across 50+ countries — from Lagos to London, Nairobi to New York.
+              Send to any phone number — transfers settle on-chain, so they arrive wherever your person is. Cashing out to a local bank is live in Nigeria today.
             </p>
           </FadeIn>
         </div>

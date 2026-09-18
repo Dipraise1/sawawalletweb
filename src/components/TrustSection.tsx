@@ -19,8 +19,8 @@ const trustItems = [
     eyebrow: 'Local first',
     title: 'Local rails, local currencies',
     description:
-      'Deep local support across Nigeria, Kenya, Ghana, South Africa, Uganda, Tanzania, Zambia and 40+ more countries — mobile money and bank rails that people already use.',
-    chips: ['50+ countries', 'Mobile money', 'Local banks', 'Naira · Cedi · Rand'],
+      'Balances in 19 local currencies and 7 languages, from Naira to Cedi to Rand. Bank cash-out is live in Nigeria, with the next corridors in build.',
+    chips: ['Nigeria live', '19 currencies', '7 languages', 'Naira · Cedi · Rand'],
     accent: {
       tile: 'bg-forest-green/10 text-forest-green',
       eyebrow: 'text-forest-green',

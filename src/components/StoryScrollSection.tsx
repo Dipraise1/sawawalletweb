@@ -259,7 +259,7 @@ export default function StoryScrollSection() {
                 {/* Feature bullets */}
                 <div className="flex flex-col gap-2 sm:gap-2.5">
                   {[
-                    { color: 'bg-forest-green', text: '50+ countries supported' },
+                    { color: 'bg-forest-green', text: 'Send to any phone number' },
                     { color: 'bg-luxury-gold',  text: 'Instant on-chain settlement' },
                     { color: 'bg-forest-green', text: 'Zero hidden fees' },
                     { color: 'bg-sage',          text: 'Non-custodial — you own your keys' },

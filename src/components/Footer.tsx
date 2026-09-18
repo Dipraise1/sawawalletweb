@@ -93,10 +93,33 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Who we are and what this is — the disclosure the app stores, and
+            anyone reading a price on this page, are entitled to see. Kept in step
+            with constants/disclosures.ts in the app; change both together. */}
+        <div className="pt-8 pb-2 text-xs leading-relaxed text-gray-500 border-t border-white/10">
+          <p className="max-w-4xl">
+            Sawa Wallet is operated by <span className="text-gray-400">APE IT TECH (PTY) LTD</span>. Sawa is
+            software, not a broker, exchange, bank or investment adviser, and nothing on this site is investment
+            advice. Crypto-assets are volatile and are not bank deposits — they are not covered by any deposit
+            insurance scheme, and you can lose money. Sawa is non-custodial: your keys are held on your device
+            through Privy, so we cannot move your funds or restore them if you lose your recovery phrase.
+            Tokenized stocks are third-party tokens issued by Backed Finance that track a share price — they carry
+            no ownership or voting rights — and both they and prediction markets are traded through Jupiter, an
+            independent protocol that is not Sawa. Buying and cashing out to a bank are live in Nigeria only, with
+            the bank leg executed by our licensed payment partner, Korapay. Features and availability vary by
+            country. See our{' '}
+            <Link href="/terms-of-service" className="text-gray-400 hover:text-white underline underline-offset-2">Terms</Link>,{' '}
+            <Link href="/privacy-policy" className="text-gray-400 hover:text-white underline underline-offset-2">Privacy Policy</Link>{' '}
+            and{' '}
+            <Link href="/aml-policy" className="text-gray-400 hover:text-white underline underline-offset-2">AML &amp; Compliance</Link>{' '}
+            policy.
+          </p>
+        </div>
+
         {/* Bottom Bar with Grant/Positioning */}
         <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500 border-t border-white/10">
           <div className="flex items-center gap-6">
-            <p>© {new Date().getFullYear()} Sawa Wallet. Non-custodial • Built for Africa.</p>
+            <p>© {new Date().getFullYear()} APE IT TECH (PTY) LTD. Non-custodial • Built for Africa.</p>
             <a href="https://github.com/Dipraise1/sawa-toolkit" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors flex items-center gap-1">
               <span className="text-luxury-gold">↗</span> Open Source Toolkit
             </a>

@@ -16,7 +16,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Which countries does Sawa Wallet support?',
     answer:
-      'Sawa works across 50+ countries, with deep local support in Nigeria, Kenya, Ghana, South Africa, Uganda, Tanzania, Zambia and more — including cash-outs to local banks and mobile money in your own currency.',
+      'Sending and receiving crypto works anywhere — transfers settle on-chain, so all your recipient needs is a phone. Buying with a bank transfer and cashing out to a local bank are live in Nigeria (NGN) today; other corridors are in build. The app displays balances in 19 local currencies and 7 languages wherever you are.',
   },
   {
     question: 'Is Sawa Wallet safe and non-custodial?',
@@ -46,7 +46,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Can I buy crypto and cash out to my bank with Sawa?',
     answer:
-      'Yes. Buy crypto instantly with a local bank transfer, and cash out straight to your bank account or mobile money. Sawa runs its own rails, so conversions are fast and fairly priced with no third-party middleman.',
+      'Yes, in Nigeria today — buy with a local bank transfer and cash out straight to your bank account. Sawa runs its own ramp, so the order engine, treasury and rates are ours; the bank leg is executed by our licensed payment partner, Korapay. Other countries are not open yet.',
   },
   {
     question: 'What is Sawa Pay?',
