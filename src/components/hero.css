@@ -21,7 +21,6 @@
   text-transform: uppercase;
   color: #526348;
 }
-.sawa-hero-eyebrow > span { width: 7px; height: 7px; border-radius: 50%; background: #6d8847; }
 .sawa-hero-heading {
   font-size: clamp(60px, 6.8vw, 88px);
   font-weight: 500;

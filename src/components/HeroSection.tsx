@@ -16,7 +16,7 @@ export default function HeroSection() {
         <div className="sawa-hero-grid">
           <div className="sawa-hero-copy">
             <p className="sawa-hero-eyebrow reveal">
-              <span aria-hidden="true" /> A little more human. A lot more Sawa.
+              A little more human. A lot more Sawa.
             </p>
             <h1 id="hero-heading" className="sawa-hero-heading reveal reveal-1">
               Send money.<br />
