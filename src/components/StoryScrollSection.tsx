@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import DesktopStorySection from './DesktopStorySection'
 import Image from 'next/image'
 import { motion, useScroll, useTransform, useSpring, useMotionTemplate } from 'framer-motion'
 
@@ -15,7 +16,7 @@ const ADDR_BG = [
   { text: 'DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX7KMYZ',       top: '87%', left: '5%',  size: 11, rot: 2 },
 ]
 
-export default function StoryScrollSection() {
+function MobileStoryScrollSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -60,9 +61,8 @@ export default function StoryScrollSection() {
 
   return (
     <section
-      id="how-it-works"
       ref={containerRef}
-      className="relative z-10"
+      className="relative z-10 lg:hidden"
       style={{ height: '360vh' }}
       aria-label="The Sawa story"
     >
@@ -350,5 +350,14 @@ export default function StoryScrollSection() {
 
       </div>
     </section>
+  )
+}
+
+export default function StoryScrollSection() {
+  return (
+    <div id="how-it-works">
+      <DesktopStorySection />
+      <MobileStoryScrollSection />
+    </div>
   )
 }
