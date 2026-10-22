@@ -22,10 +22,9 @@ export default function HeroScrollPhone({ className = '' }: { className?: string
   const [src, setSrc] = useState<string | null>(null)
 
   useEffect(() => {
-    // The hero phone is `hidden sm:block` — never shown below 640px. Skip the
-    // video download entirely on small screens so mobile visitors don't pull a
-    // multi-MB asset they'll never see (the poster covers the desktop reveal).
-    if (window.matchMedia('(max-width: 639px)').matches) return
+    // Keep the visible poster on small screens and when motion is reduced.
+    // Only desktop visitors need the larger scroll-animation download.
+    if (window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)').matches) return
 
     const ua = navigator.userAgent
     const isSafari = /safari/i.test(ua) && !/chrome|chromium|crios|android|edg/i.test(ua)
@@ -36,9 +35,11 @@ export default function HeroScrollPhone({ className = '' }: { className?: string
     const load = () => setSrc(chosen)
     const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback
     if (ric) {
-      ric(load, { timeout: 1500 })
+      const id = ric(load, { timeout: 1500 })
+      return () => window.cancelIdleCallback(id)
     } else {
-      setTimeout(load, 200)
+      const id = setTimeout(load, 200)
+      return () => clearTimeout(id)
     }
   }, [])
 
@@ -57,6 +58,7 @@ export default function HeroScrollPhone({ className = '' }: { className?: string
   })
 
   useEffect(() => {
+    if (!src) return
     let raf: number
     const tick = () => {
       const video = videoRef.current
@@ -70,7 +72,7 @@ export default function HeroScrollPhone({ className = '' }: { className?: string
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [])
+  }, [src])
 
   return (
     <div ref={containerRef} className={className}>
@@ -78,6 +80,8 @@ export default function HeroScrollPhone({ className = '' }: { className?: string
         ref={videoRef}
         src={src ?? undefined}
         poster="/sawa-app-scroll-poster.png"
+        width={768}
+        height={1080}
         muted
         playsInline
         preload="auto"

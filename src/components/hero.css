@@ -1,0 +1,182 @@
+.sawa-hero {
+  padding: 136px 0 34px;
+  overflow: hidden;
+  background: #fdfcf8;
+}
+.sawa-hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  align-items: center;
+  gap: 28px;
+}
+.sawa-hero-copy { padding-bottom: 26px; }
+.sawa-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #526348;
+}
+.sawa-hero-eyebrow > span { width: 7px; height: 7px; border-radius: 50%; background: #6d8847; }
+.sawa-hero-heading {
+  font-size: clamp(60px, 6.8vw, 88px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -.055em;
+}
+.sawa-hero-heading > span { color: #2d5016; font-style: italic; }
+.sawa-hero-description {
+  max-width: 420px;
+  margin-top: 27px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #62665d;
+}
+.sawa-hero-downloads { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.sawa-store-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 62px;
+  padding: 10px 22px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: background-color .2s, transform .2s, box-shadow .2s;
+}
+.sawa-store-link small, .sawa-store-link strong { display: block; }
+.sawa-store-link small { font-size: 10px; line-height: 1.6; letter-spacing: .025em; }
+.sawa-store-link strong { font-size: 16px; font-weight: 500; line-height: 1.5; }
+.sawa-store-link-primary { background: #2d5016; color: #fff; box-shadow: 0 5px 12px #2d501612; }
+.sawa-store-link-secondary { border-color: #dcded5; background: #fffefa; color: #20251b; }
+.sawa-store-link-primary:hover { background: #1a330a; }
+.sawa-store-link-secondary:hover { background: #eef1e8; }
+.sawa-store-link:hover { transform: translateY(-2px); box-shadow: 0 7px 16px #2d50161a; }
+.sawa-hero a:focus-visible { outline: 3px solid #6c863f; outline-offset: 5px; }
+.sawa-hero-reassurance { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 23px; font-size: 12px; }
+.sawa-hero-reassurance > span { display: flex; align-items: center; gap: 7px; color: #62665d; }
+.sawa-hero-reassurance a { display: inline-flex; align-items: center; gap: 6px; color: #2d5016; text-decoration: underline; text-underline-offset: 4px; }
+.sawa-hero-reassurance a svg { width: 16px; }
+.sawa-hero-visual { position: relative; height: 570px; min-width: 0; }
+.sawa-hero-arch {
+  position: absolute;
+  inset: 6px 12px 42px 30px;
+  overflow: hidden;
+  border-radius: 240px 240px 36px 36px;
+  background: #e9eddf;
+}
+.sawa-hero-orbit { position: absolute; width: 610px; height: 610px; border: 1px solid #cad3b8; border-radius: 50%; }
+.sawa-hero-orbit-one { left: -330px; top: 70px; }
+.sawa-hero-orbit-two { right: -330px; top: -270px; }
+.sawa-hero-spark { position: absolute; right: 52px; top: 70px; color: #84965d; font-size: 46px; font-weight: 300; }
+.sawa-hero-phone {
+  position: absolute;
+  z-index: 1;
+  width: 480px;
+  max-width: none;
+  left: 50%;
+  top: -67px;
+  transform: translateX(-50%) rotate(-5deg);
+  filter: drop-shadow(12px 24px 14px #243a1a1a);
+}
+.sawa-hero-phone video { aspect-ratio: 768 / 1080; }
+.sawa-contact-note {
+  position: absolute;
+  z-index: 2;
+  top: 102px;
+  right: -6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fffefa;
+  border: 1px solid #e3e6da;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px #273d1e0d;
+  transform: rotate(3deg);
+}
+.sawa-contact-avatar { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #eee2cb; color: #6a5536; font-family: var(--font-fraunces), Georgia, serif; font-size: 19px; }
+.sawa-contact-note small { display: block; margin-bottom: 3px; font-size: 10px; color: #74786c; }
+.sawa-contact-note strong { display: block; font-size: 12px; font-weight: 500; }
+.sawa-contact-check { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #e9eddf; color: #2d5016; font-size: 11px; }
+.sawa-message-note {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 108px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 16px 16px 16px 3px;
+  background: #2d5016;
+  color: #fff;
+  box-shadow: 0 12px 28px #273d1e1a;
+  transform: rotate(-3deg);
+}
+.sawa-message-icon { display: grid; place-items: center; width: 30px; height: 30px; background: #ffffff15; border: 1px solid #ffffff30; border-radius: 50%; }
+.sawa-message-icon svg { transform: rotate(-35deg); width: 18px; }
+.sawa-message-note strong { font-size: 14px; line-height: 1.6; font-weight: 500; }
+.sawa-message-note p { margin-top: 7px; font-size: 11px; color: #d2ddc6; }
+.sawa-hero-visual-caption { position: absolute; bottom: 8px; width: 100%; text-align: center; font-size: 9px; letter-spacing: .22em; color: #65715a; }
+.sawa-hero-footer { display: flex; align-items: center; gap: 48px; margin-top: 26px; padding-top: 26px; border-top: 1px solid #e2e5d9; }
+.sawa-hero-footer > p { flex-shrink: 0; font-family: var(--font-fraunces), Georgia, serif; font-size: 18px; line-height: 1.35; }
+.sawa-hero-footer > p > span { color: #66765b; font-style: italic; }
+.sawa-hero-footer ul { display: flex; flex: 1; justify-content: space-between; gap: 20px; }
+.sawa-hero-footer li { display: flex; align-items: center; gap: 13px; font-size: 13px; color: #58604f; }
+.sawa-hero-footer li > span { font-size: 10px; color: #7a856c; }
+
+@media (min-width: 1280px) { .sawa-hero > .container-custom { max-width: 1200px; } }
+@media (max-width: 1023px) {
+  .sawa-hero { padding-top: 128px; }
+  .sawa-hero-grid { gap: 8px; grid-template-columns: 1.1fr 1fr; }
+  .sawa-hero-heading { font-size: clamp(50px, 6.5vw, 66px); }
+  .sawa-hero-eyebrow { font-size: 9px; letter-spacing: .07em; }
+  .sawa-hero-description { font-size: 16px; }
+  .sawa-hero-visual { height: 490px; }
+  .sawa-hero-phone { width: 410px; top: -50px; }
+  .sawa-contact-note { right: -8px; top: 80px; padding: 10px; gap: 7px; }
+  .sawa-contact-check { display: none; }
+  .sawa-message-note { left: -8px; bottom: 80px; padding: 15px; }
+  .sawa-hero-downloads { gap: 8px; }
+  .sawa-store-link { padding: 10px 13px; gap: 9px; }
+  .sawa-store-link strong { font-size: 14px; }
+  .sawa-hero-footer { gap: 30px; }
+  .sawa-hero-footer li { max-width: 170px; font-size: 12px; }
+}
+@media (max-width: 767px) {
+  .sawa-hero { padding: 122px 0 28px; }
+  .sawa-hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .sawa-hero-copy { text-align: center; padding-bottom: 0; }
+  .sawa-hero-eyebrow { justify-content: center; margin-bottom: 21px; font-size: 9px; letter-spacing: .08em; }
+  .sawa-hero-heading { font-size: clamp(50px, 10vw, 76px); }
+  .sawa-hero-description { max-width: 380px; margin: 20px auto 0; font-size: 16px; line-height: 1.65; }
+  .sawa-hero-downloads { justify-content: center; margin-top: 26px; gap: 10px; }
+  .sawa-store-link { padding: 10px 16px; }
+  .sawa-hero-reassurance { justify-content: center; gap: 12px 20px; margin-top: 18px; font-size: 11px; }
+  .sawa-hero-visual { width: 100%; max-width: 440px; height: 480px; margin: 12px auto 0; }
+  .sawa-hero-arch { inset: 12px 14px 30px; }
+  .sawa-hero-phone { width: 405px; top: -50px; }
+  .sawa-contact-note { right: 0; top: 80px; }
+  .sawa-message-note { left: 0; bottom: 80px; }
+  .sawa-message-note strong { font-size: 12px; }
+  .sawa-message-note p { font-size: 10px; }
+  .sawa-hero-footer { margin-top: 16px; padding-top: 22px; gap: 24px; align-items: flex-start; }
+  .sawa-hero-footer > p { font-size: 17px; }
+  .sawa-hero-footer ul { flex-direction: column; gap: 12px; }
+  .sawa-hero-footer li { max-width: none; }
+}
+@media (max-width: 359px) {
+  .sawa-hero-eyebrow { font-size: 8px; gap: 6px; }
+  .sawa-store-link { padding: 10px 12px; gap: 8px; }
+  .sawa-store-link strong { font-size: 12px; }
+  .sawa-hero-visual { height: 440px; }
+  .sawa-hero-phone { width: 365px; top: -38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sawa-store-link { transition: none; }
+  .sawa-store-link:hover { transform: none; }
+}

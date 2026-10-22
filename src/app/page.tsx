@@ -4,9 +4,8 @@ import {
   FadeIn,
   FadeInLeft,
   FadeInRight,
-  FloatingCard,
 } from '@/components/AnimatedSection'
-import HeroScrollPhone from '@/components/HeroScrollPhone'
+import HeroSection from '@/components/HeroSection'
 import StoryScrollSection from '@/components/StoryScrollSection'
 import TownHallSection from '@/components/TownHallSection'
 import WaitlistForm from '@/components/WaitlistForm'
@@ -35,108 +34,7 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-clip bg-cream font-sans selection:bg-forest-green/20 selection:text-forest-green-dark">
 
-      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative pt-36 pb-16 lg:pt-44 lg:pb-28 overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          aria-hidden="true"
-          style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 25%, rgba(212,175,55,0.05), transparent 60%), radial-gradient(ellipse 60% 50% at 50% 100%, rgba(45,80,22,0.03), transparent 55%)',
-          }}
-        />
-
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-
-            <div className="reveal">
-              <h1 className="heading-hero text-charcoal mb-6">
-                Send money{' '}
-                <br className="hidden sm:block" />
-                <span className="text-forest-green italic">like a text.</span>
-              </h1>
-            </div>
-
-            <div className="reveal reveal-1">
-              <p className="text-body-lg mb-10 max-w-xl mx-auto">
-                Crypto wallets are complicated. Sawa replaces long addresses
-                with phone numbers — send, receive, and pay friends instantly.
-              </p>
-            </div>
-
-            <div className="reveal reveal-2">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
-                <a
-                  href="https://testflight.apple.com/join/5CT6rA8q"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 bg-charcoal text-white rounded-xl hover:bg-charcoal/90 transition-colors font-medium text-sm shadow-sm"
-                  aria-label="Join the Sawa Wallet iOS beta on TestFlight"
-                >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                  </svg>
-                  Download for iOS
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.sawawallet.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 bg-white border border-gray-200 rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-colors font-medium text-sm text-charcoal shadow-sm"
-                  aria-label="Get Sawa Wallet on Google Play"
-                >
-                  <Image src="/google-play-badge.png" alt="" width={646} height={250} className="h-5 w-auto" />
-                  Download for Android
-                </a>
-              </div>
-            </div>
-
-            <div className="reveal reveal-3">
-              <div className="flex items-center justify-center gap-8 sm:gap-14 mb-12">
-                {[
-                  { value: 'Any', label: 'Phone number' },
-                  { value: '2.4s', label: 'Avg transfer' },
-                  { value: '<0.5%', label: 'Network fees' },
-                ].map((stat, i) => (
-                  <div key={i} className="text-center">
-                    <div className="font-display text-2xl sm:text-3xl font-semibold text-forest-green leading-none">
-                      {stat.value}
-                    </div>
-                    <div className="mt-1.5 text-[11px] uppercase tracking-widest text-gray-400 font-medium">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="reveal reveal-4 relative">
-              {/* Height follows the render's aspect ratio rather than a fixed
-                  pixel height, so the bottom bezel is never sliced off. The
-                  render carries ~12% transparent padding top and bottom; the
-                  negative margins crop that dead space instead of letting it
-                  push the phone below the fold. */}
-              <div className="relative mx-auto w-full max-w-[900px]">
-                <HeroScrollPhone className="relative z-20 mx-auto w-[360px] sm:w-[540px] max-w-full -my-14 sm:-my-24" />
-                <div className="absolute left-1/2 bottom-2 -translate-x-1/2 w-48 h-12 bg-forest-green/15 rounded-full blur-2xl" aria-hidden="true" />
-
-                <FloatingCard
-                  animateY={[0, -8, 0]}
-                  delay={1.5}
-                  className="absolute left-[16%] bottom-[24%] bg-white/90 backdrop-blur-md px-4 py-3 rounded-xl shadow-lg border border-gray-100/80 z-30 hidden sm:flex items-center gap-3 w-56"
-                >
-                  <div className="w-9 h-9 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 flex-shrink-0" aria-hidden="true">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-charcoal">Just a phone number</div>
-                    <div className="text-xs text-gray-500">No address needed</div>
-                  </div>
-                </FloatingCard>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* ─── STORY ──────────────────────────────────────────────────────── */}
       <StoryScrollSection />

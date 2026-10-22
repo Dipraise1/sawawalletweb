@@ -60,6 +60,7 @@ export default function StoryScrollSection() {
 
   return (
     <section
+      id="how-it-works"
       ref={containerRef}
       className="relative z-10"
       style={{ height: '360vh' }}
