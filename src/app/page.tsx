@@ -6,6 +6,7 @@ import {
   FadeInRight,
 } from '@/components/AnimatedSection'
 import HeroSection from '@/components/HeroSection'
+import DesktopInfrastructure from '@/components/DesktopInfrastructure'
 import StoryScrollSection from '@/components/StoryScrollSection'
 import TownHallSection from '@/components/TownHallSection'
 import WaitlistForm from '@/components/WaitlistForm'
@@ -40,7 +41,7 @@ export default function Home() {
       <StoryScrollSection />
 
       {/* ─── POWERED BY ──────────────────────────────────────────────────── */}
-      <section className="py-14 bg-white border-t border-gray-100 overflow-hidden">
+      <section className="sawa-partners-mobile py-14 bg-white border-t border-gray-100 overflow-hidden">
         <div className="container-custom mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
             Powered by industry-leading infrastructure
@@ -67,6 +68,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <DesktopInfrastructure />
 
       {/* ─── WHY SAWA ──────────────────────────────────────────────────── */}
       <section className="py-24 bg-white">

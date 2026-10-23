@@ -1,0 +1,27 @@
+.sawa-infrastructure { display: none; }
+@media (min-width: 1024px) {
+  .sawa-partners-mobile { display: none; }
+  .sawa-infrastructure { display: block; padding: 74px 0 78px; background: #fdfcf8; border-top: 1px solid #e8eadf; }
+  .sawa-infrastructure-inner { max-width: 1200px; }
+  .sawa-infrastructure-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 56px; padding-bottom: 34px; }
+  .sawa-infrastructure-heading > div > p { margin-bottom: 19px; color: #526348; font-size: 10px; font-weight: 500; letter-spacing: .15em; }
+  .sawa-infrastructure-heading h2 { font-size: clamp(38px, 3.7vw, 50px); font-weight: 500; letter-spacing: -.045em; line-height: 1.13; }
+  .sawa-infrastructure-heading h2 span { color: #2d5016; font-style: italic; }
+  .sawa-infrastructure-heading > p { flex: 0 0 275px; max-width: 275px; padding-bottom: 5px; color: #62665d; font-size: 14px; line-height: 1.75; }
+  .sawa-infrastructure-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #e2e5d9; border-left: 1px solid #e2e5d9; }
+  .sawa-infrastructure-list li { display: flex; min-height: 76px; align-items: center; justify-content: center; gap: 11px; padding: 14px; border-right: 1px solid #e2e5d9; border-bottom: 1px solid #e2e5d9; color: #51594b; }
+  .sawa-infrastructure-mark { width: 21px; height: 21px; flex: 0 0 21px; color: #66735a; }
+  .sawa-infrastructure-letter { width: 19px; height: 19px; flex-basis: 19px; }
+  .sawa-infrastructure-list li > span { font-size: 14px; font-weight: 500; letter-spacing: -.015em; }
+}
+@media (min-width: 1280px) {
+  .sawa-infrastructure { padding: 80px 0 84px; }
+  .sawa-infrastructure-list { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .sawa-infrastructure-list li { min-height: 90px; flex-direction: column; gap: 9px; }
+  .sawa-infrastructure-mark { width: 23px; height: 23px; flex-basis: 23px; }
+  .sawa-infrastructure-list li > span { font-size: 13px; }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .sawa-infrastructure-heading { gap: 30px; }
+  .sawa-infrastructure-heading h2 { font-size: 38px; }
+}
