@@ -6,8 +6,8 @@ const INFRASTRUCTURE: { name: string; Mark?: (props: { className?: string }) => 
   { name: 'Ethereum', Mark: EthereumMark },
   { name: 'Bitcoin', Mark: BitcoinMark },
   { name: 'Privy' },
-  { name: 'Tron' },
-  { name: 'Meld' },
+  { name: 'Jupiter' },
+  { name: 'Korapay' },
   { name: 'Paystack' },
   { name: 'Helius' },
 ]
