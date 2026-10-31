@@ -8,7 +8,6 @@ const INFRASTRUCTURE: { name: string; Mark?: (props: { className?: string }) => 
   { name: 'Privy' },
   { name: 'Jupiter' },
   { name: 'Korapay' },
-  { name: 'Paystack' },
   { name: 'Helius' },
 ]
 

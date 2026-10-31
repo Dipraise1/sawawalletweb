@@ -27,7 +27,6 @@ const PARTNERS: { name: string; Mark?: (p: { className?: string }) => JSX.Elemen
   { name: 'Privy' },
   { name: 'Jupiter' },
   { name: 'Korapay' },
-  { name: 'Paystack' },
   { name: 'Helius' },
 ]
 
