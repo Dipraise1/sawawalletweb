@@ -49,6 +49,30 @@ const FEES = [
       'Withdrawing to a wallet outside Sawa costs only the blockchain network fee, passed through at cost. On Solana this is typically a fraction of a cent.',
   },
   {
+    action: 'Swap tokens',
+    fee: '1%',
+    detail:
+      'Swaps on Solana and EVM chains carry a 1% platform fee on top of the best route we find. Network fees are passed through at cost.',
+  },
+  {
+    action: 'Tokenized stocks',
+    fee: '2%',
+    detail:
+      'Buying or selling tokenized US stocks carries a 2% platform fee, taken in USDC. The order preview shows the fee and the shares you get before you confirm.',
+  },
+  {
+    action: 'Gold (PAXG) & dollar yield (USDY)',
+    fee: '0.5%',
+    detail:
+      'Savings assets are meant to be held, not traded, so they carry a lighter 0.5% platform fee on each buy or sell.',
+  },
+  {
+    action: 'Prediction markets',
+    fee: '2%',
+    detail:
+      'A 2% platform fee on each position, shown on the bet sheet before you place it.',
+  },
+  {
     action: 'Bills & airtime',
     fee: 'Small service fee',
     detail:

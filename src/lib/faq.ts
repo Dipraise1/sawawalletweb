@@ -26,7 +26,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Which cryptocurrencies and blockchains does Sawa support?',
     answer:
-      'You can hold and send USDC, USDT, SOL, ETH, SUI and Bitcoin across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism and Sui — all from a single wallet with one login.',
+      'You can hold and send USDC, USDT, SOL, ETH, SUI and Bitcoin across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism, Hyperliquid, Robinhood Chain and Sui — all from a single wallet with one login.',
   },
   {
     question: 'Can I swap tokens inside Sawa Wallet?',
@@ -34,9 +34,24 @@ export const FAQ_ITEMS: FaqItem[] = [
       'Yes. Sawa has built-in swaps at the best available rates on Solana and EVM chains, including cross-chain swaps — trade tokens in seconds without leaving the app or using an exchange.',
   },
   {
+    question: 'Can I buy US stocks with Sawa Wallet?',
+    answer:
+      'Yes. Sawa offers over 50 US stocks and ETFs — including Apple, Tesla, NVIDIA and the S&P 500 — as tokenized stocks (xStocks issued by Backed Finance) on Solana, bought with USDC from about $1. They track the share price but carry no voting or shareholder rights, and they are not available to US persons.',
+  },
+  {
+    question: 'Can I save in gold or dollars with Sawa?',
+    answer:
+      'Yes. You can hold PAXG, a Paxos token backed by one troy ounce of physical gold, and USDY, an Ondo Finance token backed by short-term US Treasuries whose value grows as interest accrues. USDY is not a stablecoin or a bank deposit, and it is not available to US persons. Both carry a 0.5% platform fee.',
+  },
+  {
+    question: 'How does Sawa protect me from crypto scams?',
+    answer:
+      'Before you send, Sawa checks the address against the wallets you already pay and warns you if it only looks familiar — a common trick called address poisoning — and it blocks sends to token contract addresses, where money would be lost. Before you buy a token, Sawa flags red flags such as fake copies of real tokens, creators who can freeze or mint more of it, and too little liquidity to sell.',
+  },
+  {
     question: 'Does Sawa Wallet offer virtual cards?',
     answer:
-      'Virtual Visa cards are rolling out soon — create a card from your balance, fund it, reveal details securely, and freeze or unfreeze it anytime, starting with Nigeria and South Africa.',
+      'Virtual USD Mastercard cards are rolling out — create a card from your USDC balance, fund it, reveal details securely, and freeze or unfreeze it anytime. Cards require identity verification.',
   },
   {
     question: 'What languages does Sawa Wallet support?',

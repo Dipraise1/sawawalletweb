@@ -7,13 +7,17 @@ Sawa Wallet replaces complex wallet addresses with phone numbers, so sending cry
 ## What Sawa Wallet does
 
 - **Send by phone number**: Send crypto to anyone using their phone number from your contacts — no addresses to copy. Usernames and email work too.
-- **Multi-chain, including Bitcoin**: Hold and send USDC, USDT, SOL, ETH, SUI and BTC across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism and Sui from one wallet.
+- **Multi-chain, including Bitcoin**: Hold and send USDC, USDT, SOL, ETH, SUI and BTC across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism, Hyperliquid, Robinhood Chain and Sui from one wallet.
 - **Buy crypto instantly**: Top up with a local bank transfer; crypto arrives in minutes.
-- **Cash out locally**: Withdraw to a bank account or mobile money in your local currency.
+- **Cash out locally**: Withdraw to a bank account — live in Nigeria (NGN) today, other countries to follow.
 - **Private rails**: Sawa operates its own on- and off-ramp infrastructure (not public), so conversions are faster and fairly priced with no third-party middleman.
 - **In-app swaps**: Trade tokens at the best available rates on Solana and EVM chains, including cross-chain swaps, without leaving the app.
 - **Sawa Pay**: Pay bills, buy airtime and data, and settle electricity and cable TV directly from your crypto balance — plus merchant payment links with QR checkout for getting paid.
-- **Virtual cards**: Virtual Visa cards to spend your balance anywhere (rolling out soon, starting with Nigeria and South Africa).
+- **Virtual cards**: A virtual USD Mastercard funded from your USDC balance (rolling out; requires identity verification).
+- **Tokenized stocks**: 50+ US stocks and ETFs (Apple, Tesla, NVIDIA, S&P 500) as xStocks by Backed Finance on Solana. Not available to US persons.
+- **Gold & dollar savings**: Hold PAXG (Paxos, backed by physical gold) and USDY (Ondo Finance, backed by short-term US Treasuries; not available to US persons).
+- **Scam protection**: Warnings on look-alike (address-poisoning) recipients, blocked sends to token contract addresses, and risk flags on tokens before you buy.
+- **Prediction markets**: Positions on real-world events via Jupiter Predict (not available in the US or South Korea).
 - **Earn & protect**: Built-in staking to grow idle assets, and on-chain escrow for safer deals.
 - **Non-custodial & secure**: You own your private keys, protected by biometrics and a server-verified passcode with brute-force lockout. Optional identity verification (KYC) unlocks higher limits.
 - **Local-first experience**: 7 languages (English, Nigerian Pidgin, Yoruba, Igbo, Hausa, French, Swahili) and 19 display currencies with live exchange rates.
@@ -24,16 +28,16 @@ People sending money to family, paying suppliers across borders, freelancers rec
 
 ## Coverage
 
-50+ countries, with deep local support in Nigeria, Kenya, Ghana, South Africa, Uganda, Tanzania, Zambia and more.
+Sending and receiving crypto works in 50+ countries. Buying with a bank transfer and cashing out to a bank are live in Nigeria (NGN); other corridors are in build.
 
 ## Key facts
 
 - Category: Non-custodial crypto wallet / cross-border payments / stablecoin wallet
 - Platforms: iOS and Android
-- Networks: Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism, Sui, Bitcoin
-- Assets: USDC, USDT, SOL, ETH, SUI, BTC
+- Networks: Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism, Hyperliquid, Robinhood Chain, Sui, Bitcoin
+- Assets: USDC, USDT, SOL, ETH, SUI, BTC, plus tokenized stocks, PAXG gold and USDY
 - Languages: English, Nigerian Pidgin, Yoruba, Igbo, Hausa, French, Swahili
-- Cost: Free to use; small transparent fee on fiat conversions
+- Cost: Free to receive; 0.5% to send to a Sawa user; 1% + spread to buy or cash out; 1% swaps; 2% stocks and prediction markets; 0.5% gold/USDY
 - Custody: Non-custodial (user holds keys)
 - Open Source: Sawa Toolkit (@sawa/phone-resolver + @sawa/compliance-kit) — production-extracted primitives for Solana consumer apps. Supports phone, specialized username, and email (mail/username as easier first options before full phone). Private Rust rails power on/off-ramps. Ideal for Solana Foundation Developer Tooling grants.
 

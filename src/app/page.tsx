@@ -25,8 +25,8 @@ const PARTNERS: { name: string; Mark?: (p: { className?: string }) => JSX.Elemen
   { name: 'Ethereum', Mark: EthereumMark },
   { name: 'Bitcoin', Mark: BitcoinMark },
   { name: 'Privy' },
-  { name: 'Tron' },
-  { name: 'Meld' },
+  { name: 'Jupiter' },
+  { name: 'Korapay' },
   { name: 'Paystack' },
   { name: 'Helius' },
 ]
@@ -146,7 +146,7 @@ export default function Home() {
             {[
               {
                 title: 'One Wallet, Every Chain',
-                desc: 'Hold and send USDC, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism and Sui — we handle the networks so you don\'t have to.',
+                desc: 'Hold and send USDC, SOL, ETH and Bitcoin across Solana, Ethereum, Base, Polygon, BNB Chain, Arbitrum, Optimism, Hyperliquid, Robinhood Chain and Sui — we handle the networks so you don\'t have to.',
                 icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>),
               },
               {
@@ -181,8 +181,18 @@ export default function Home() {
               },
               {
                 title: 'Own a Piece of the Market',
-                desc: 'Buy fractional Apple, Tesla or S&P 500 exposure as tokenized stocks on Solana — no brokerage account required.',
+                desc: 'Buy fractional Apple, Tesla, NVIDIA or S&P 500 exposure — over 50 US stocks and ETFs as tokenized stocks on Solana. No brokerage account required.',
                 icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16V9m5 7V5m5 11v-4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>),
+              },
+              {
+                title: 'Save in Gold & Dollars',
+                desc: 'Protect your savings from inflation: hold real gold (PAXG, backed by physical gold) or a dollar token that earns interest from US Treasuries (USDY) — from about $1.',
+                icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 17l2.5-6h11L20 17H4zm4-6l1.5-4h5L16 11M2 21h20"/></svg>),
+              },
+              {
+                title: 'Scam Protection Built In',
+                desc: 'Sawa warns you before you pay a look-alike address, blocks sends to token contracts, and flags risky tokens — fake copies, frozen supply, thin liquidity — before you buy.',
+                icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v3.75m0 3.75h.008M12 3l8 3v6c0 4.97-3.582 8.25-8 9-4.418-.75-8-4.03-8-9V6l8-3z"/></svg>),
               },
               {
                 title: 'Trade the Headlines',
@@ -196,8 +206,13 @@ export default function Home() {
               },
               {
                 title: 'Virtual Cards',
-                desc: 'Spend your balance anywhere with virtual Visa cards — create, fund, and freeze them right from the app.',
+                desc: 'Spend your balance anywhere with a virtual USD Mastercard — create, fund, and freeze it right from the app.',
                 icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>),
+              },
+              {
+                title: 'Money Alerts',
+                desc: 'Get notified the moment money lands in your wallet, plus a daily market roundup — so you always know where you stand.',
+                icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>),
               },
               {
                 title: 'Speaks Your Language',
@@ -219,7 +234,7 @@ export default function Home() {
 
           <FadeIn delay={0.4}>
             <p className="mt-10 text-xs text-gray-400 max-w-2xl mx-auto text-center leading-relaxed">
-              Tokenized stocks, prediction markets and virtual cards are not available in every country. Some features require identity verification. Nothing here is investment advice.
+              Tokenized stocks, gold and dollar-yield tokens, prediction markets and virtual cards are not available in every country — tokenized stocks and USDY are not offered to US persons. Some features require identity verification. Nothing here is investment advice.
             </p>
           </FadeIn>
         </div>
