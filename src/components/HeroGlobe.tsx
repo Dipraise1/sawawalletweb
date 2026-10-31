@@ -40,18 +40,17 @@ function hasWebGL(): boolean {
 
 /**
  * Spinning Earth behind the hero phone, pinned at Sawa's corridors.
- * Tablet/desktop only: on phones the textures alone would cost visitors
- * ~1.8 MB of mobile data for a background effect.
+ * Loads on every screen size once the page is idle; the ~1.8 MB of Earth
+ * textures arrive after first paint, never ahead of it.
  */
 export default function HeroGlobe() {
   const [show, setShow] = useState(false)
   const [still, setStill] = useState(false)
 
   useEffect(() => {
-    const wide = window.matchMedia('(min-width: 768px)')
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
     setStill(reduce.matches)
-    if (!wide.matches || !hasWebGL()) return
+    if (!hasWebGL()) return
     // Wait for the page to settle so the globe never competes with first paint.
     const w = window as Window & { requestIdleCallback?: (cb: () => void) => number }
     if (w.requestIdleCallback) w.requestIdleCallback(() => setShow(true))
@@ -61,7 +60,7 @@ export default function HeroGlobe() {
   if (!show) return null
 
   return (
-    <div className="absolute -bottom-[15rem] left-1/2 size-[40rem] -translate-x-1/2 lg:-bottom-[17rem] lg:size-[44rem]" aria-hidden="true">
+    <div className="absolute -bottom-[11rem] left-1/2 size-[30rem] -translate-x-1/2 md:-bottom-[15rem] md:size-[40rem] lg:-bottom-[17rem] lg:size-[44rem]" aria-hidden="true">
       <Globe3D
         className="h-full w-full"
         markers={markers}
