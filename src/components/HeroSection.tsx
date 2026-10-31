@@ -1,4 +1,5 @@
 import HeroScrollPhone from '@/components/HeroScrollPhone'
+import HeroGlobe from '@/components/HeroGlobe'
 import './hero.css'
 
 function Arrow({ className = '' }: { className?: string }) {
@@ -74,6 +75,7 @@ export default function HeroSection() {
               <div className="sawa-hero-orbit sawa-hero-orbit-one" />
               <div className="sawa-hero-orbit sawa-hero-orbit-two" />
               <span className="sawa-hero-spark">✳</span>
+              <HeroGlobe />
             </div>
             <HeroScrollPhone className="sawa-hero-phone" />
             <div className="sawa-contact-note">
