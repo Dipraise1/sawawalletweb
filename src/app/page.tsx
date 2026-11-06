@@ -7,6 +7,7 @@ import {
 } from '@/components/AnimatedSection'
 import HeroSection from '@/components/HeroSection'
 import DesktopInfrastructure from '@/components/DesktopInfrastructure'
+import MarketsSection from '@/components/MarketsSection'
 import StoryScrollSection from '@/components/StoryScrollSection'
 import TownHallSection from '@/components/TownHallSection'
 import WaitlistForm from '@/components/WaitlistForm'
@@ -124,6 +125,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ─── MARKETS ──────────────────────────────────────────────────── */}
+      <MarketsSection />
 
       {/* ─── FEATURES ─────────────────────────────────────────────────── */}
       <section id="features" className="py-24 bg-sand/50">

@@ -46,6 +46,11 @@ export default function Navbar() {
 
   const menuItems = [
     {
+      href: '/#markets',
+      label: 'Markets',
+      description: 'Stocks & exchanges'
+    },
+    {
       href: '/#features',
       label: 'Features',
       description: 'Why Sawa?'
