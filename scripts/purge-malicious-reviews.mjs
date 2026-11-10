@@ -31,10 +31,15 @@ const APPLY = process.argv.includes('--apply')
 // Same heuristic the API uses to flag a submission as an injection attempt.
 const ATTACK_PATTERN = /<[a-z!/]|on\w+\s*=|javascript:|data:text\/html|&#x?\d/i
 
+const PROBE_PATTERN = /('|")\s*(or|and)\s*('|"|\d)|sleep\s*\(|union\s+select|--\s*$|\{\{.*\}\}|\$\{.*\}|\.\.\/|qa-flood|security (validation|audit|test)|automated (test|security)|probe message|safe to bulk delete|will request cleanup/i
+const PROBE_NAME = /^(qa[\w-]*|test(er)?\d*|securityaudit|admin|null|undefined)$/i
+
+// Same rules as isJunk() in the API.
 function isMalicious(r) {
-  return [r?.name, r?.message, r?.location].some(
-    (v) => typeof v === 'string' && ATTACK_PATTERN.test(v),
-  )
+  if (!r) return true
+  const fields = [r.name, r.message, r.location].filter((v) => typeof v === 'string')
+  if (fields.some((v) => ATTACK_PATTERN.test(v) || PROBE_PATTERN.test(v))) return true
+  return typeof r.name === 'string' && PROBE_NAME.test(r.name.replace(/['"\s]/g, ''))
 }
 
 if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) {

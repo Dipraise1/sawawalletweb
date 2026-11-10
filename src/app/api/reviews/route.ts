@@ -63,6 +63,19 @@ let memoryMeta: ReviewMeta[] = []
 // Looks like a script / markup injection attempt rather than a real review.
 const ATTACK_PATTERN = /<[a-z!/]|on\w+\s*=|javascript:|data:text\/html|&#x?\d/i
 
+// SQL-injection / template probes and the "QA / security audit" test spam that
+// scanners post. None of it is a real review.
+const PROBE_PATTERN = /('|")\s*(or|and)\s*('|"|\d)|sleep\s*\(|union\s+select|--\s*$|\{\{.*\}\}|\$\{.*\}|\.\.\/|qa-flood|security (validation|audit|test)|automated (test|security)|probe message|safe to bulk delete|will request cleanup/i
+const PROBE_NAME = /^(qa[\w-]*|test(er)?\d*|securityaudit|admin|null|undefined)$/i
+
+/** True for anything that should never be shown publicly. */
+function isJunk(r: Partial<Review> | null | undefined): boolean {
+  if (!r) return true
+  const fields = [r.name, r.message, r.location].filter((v): v is string => typeof v === 'string')
+  if (fields.some((v) => ATTACK_PATTERN.test(v) || PROBE_PATTERN.test(v))) return true
+  return typeof r.name === 'string' && PROBE_NAME.test(r.name.replace(/['"\s]/g, ''))
+}
+
 function clientMeta(request: Request) {
   const h = request.headers
   // x-forwarded-for is a comma-separated chain; the first entry is the client.
@@ -98,11 +111,12 @@ async function readAll(): Promise<Review[]> {
       for (const r of [...SEED].reverse()) await kv.lpush(LIST_KEY, r)
       await kv.set(SEED_FLAG, 1)
     }
-    const list = await kv.lrange<Review>(LIST_KEY, 0, MAX_RETURN - 1)
-    return list ?? []
+    // Read past the junk so it can't push real reviews off the page.
+    const list = await kv.lrange<Review>(LIST_KEY, 0, 499)
+    return (list ?? []).filter((r) => !isJunk(r)).slice(0, MAX_RETURN)
   }
   if (!memory) memory = [...SEED]
-  return memory.slice(0, MAX_RETURN)
+  return memory.filter((r) => !isJunk(r)).slice(0, MAX_RETURN)
 }
 
 function summarize(reviews: Review[]) {
@@ -165,7 +179,7 @@ export async function POST(request: Request) {
   }
 
   const { ip, ua, ref } = clientMeta(request)
-  const flagged = ATTACK_PATTERN.test(name) || ATTACK_PATTERN.test(message) || ATTACK_PATTERN.test(location)
+  const flagged = isJunk(review)
   const meta: ReviewMeta = { reviewId: review.id, ip, ua, ref, createdAt: review.createdAt, flagged }
 
   // Server-side abuse log — lands in Vercel logs, never in the public API.
@@ -176,13 +190,24 @@ export async function POST(request: Request) {
   try {
     const kv = await getKv()
     if (kv) {
-      await kv.lpush(LIST_KEY, review)
-      await kv.ltrim(LIST_KEY, 0, 499)
+      // Flood guard: a few reviews per IP per hour is plenty for a human.
+      const rlKey = `sawa:reviews:rl:${ip}`
+      const n = await kv.incr(rlKey)
+      if (n === 1) await kv.expire(rlKey, 3600)
+      if (n > 3) {
+        return NextResponse.json({ error: 'Thanks! You have already left a review recently.' }, { status: 429 })
+      }
+      // Junk is logged privately but never published. The sender still gets
+      // a normal response, so probing tells them nothing.
+      if (!flagged) {
+        await kv.lpush(LIST_KEY, review)
+        await kv.ltrim(LIST_KEY, 0, 499)
+      }
       await kv.lpush(META_KEY, meta)
       await kv.ltrim(META_KEY, 0, 999)
     } else {
       if (!memory) memory = [...SEED]
-      memory.unshift(review)
+      if (!flagged) memory.unshift(review)
       memoryMeta.unshift(meta)
     }
   } catch {
